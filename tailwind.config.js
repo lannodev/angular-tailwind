@@ -1,5 +1,6 @@
 module.exports = {
   prefix: '',
+  mode: 'jit',
   content: [
     "./src/**/*.{html,ts}",
   ],
@@ -10,5 +11,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ],
 }
