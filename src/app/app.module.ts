@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/admin/sidebar/sidebar.component';
 import { NavbarComponent } from './layout/admin/navbar/navbar.component';
 import { FooterComponent } from './layout/admin/footer/footer.component';
+import { ResponsiveHelperComponent } from './shared/components/responsive-helper/responsive-helper.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FooterComponent } from './layout/admin/footer/footer.component';
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ResponsiveHelperComponent
   ],
   imports: [
     BrowserModule,
