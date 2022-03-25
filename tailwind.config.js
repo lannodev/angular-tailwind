@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ['Nunito Sans', 'sans-serif'],
+      }
+    },
   },
   variants: {
     extend: {},
