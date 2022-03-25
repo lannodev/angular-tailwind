@@ -1,14 +1,23 @@
-<div class="flex min-h-screen">
+<div class="lg:flex lg:h-screen lg:overflow-hidden w-full">
 
-	<app-sidebar></app-sidebar>
+	<app-menu-bar></app-menu-bar>
 
+	<div class="lg:flex lg:h-screen lg:overflow-hidden w-full">
 
-	<div class="flex-1">
-		<!-- navbar -->
-		<app-navbar></app-navbar>
+		<!-- Sidebar -->
+		<app-sidebar></app-sidebar>
 
-		<!-- main content -->
-		<router-outlet></router-outlet>
+		<div class="transition-transform duration-200 lg:grid lg:flex-grow lg:content-start lg:px-3.5">
+
+			<!-- Header -->
+			<app-navbar></app-navbar>
+
+			<!-- main content -->
+			<div class="flex space-x-3 lg:overflow-hidden">
+				<router-outlet></router-outlet>
+			</div>
+
+		</div>
 
 		<!-- footer -->
 		<!-- <app-footer></app-footer> -->

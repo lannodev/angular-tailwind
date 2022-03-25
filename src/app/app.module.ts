@@ -6,6 +6,7 @@ import { SidebarComponent } from './layout/admin/sidebar/sidebar.component';
 import { NavbarComponent } from './layout/admin/navbar/navbar.component';
 import { FooterComponent } from './layout/admin/footer/footer.component';
 import { ResponsiveHelperComponent } from './shared/components/responsive-helper/responsive-helper.component';
+import { MenuBarComponent } from './layout/admin/menu-bar/menu-bar.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ResponsiveHelperComponent } from './shared/components/responsive-helper
     SidebarComponent,
     NavbarComponent,
     FooterComponent,
-    ResponsiveHelperComponent
+    ResponsiveHelperComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,
