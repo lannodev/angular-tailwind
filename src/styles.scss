@@ -1,3 +1,21 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/** Scroll bar **/
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: #CCCCCC;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #CCCCCC;
+}
+::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: inset 7px 10px 12px #f0f0f0;
+}
