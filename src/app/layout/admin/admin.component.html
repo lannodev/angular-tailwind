@@ -1,0 +1,21 @@
+<div class="lg:flex h-screen lg:overflow-hidden w-full">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <div class="transition-transform duration-200 lg:grid lg:flex-grow lg:content-start lg:px-3.5">
+
+        <!-- Header -->
+        <app-navbar></app-navbar>
+
+        <!-- main content -->
+        <div class="flex space-x-3 lg:overflow-hidden">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+
+</div>
