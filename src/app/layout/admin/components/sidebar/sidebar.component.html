@@ -1,4 +1,5 @@
-<nav class="hidden w-52 h-full flex-none select-none overflow-y-auto bg-gray-50 pt-4 dark:bg-gray-900 lg:block xl:w-64">
+<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-16'"
+     class="hidden h-full flex-none select-none overflow-y-auto bg-gray-50 pt-4 dark:bg-gray-900 lg:block">
 
     <div class="px-3">
         <div class="flex items-center relative">
@@ -20,9 +21,9 @@
                 </svg>
             </a>
             <b class="pl-2 text-sm font-bold dark:text-gray-100">
-                Finance
+                Finance {{isOpen}}
             </b>
-            <button
+            <button (click)="toggleSidebar()"
                     class="absolute top-2 right-0 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="18px"
@@ -107,7 +108,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="pt-2 pl-4">
+                <div class="pt-2 pl-4 hidden">
                     <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
                         <li>
                             <a href="#"
