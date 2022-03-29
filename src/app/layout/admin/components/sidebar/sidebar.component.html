@@ -1,4 +1,4 @@
-<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-16'"
+<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
      class="hidden h-full flex-none overflow-y-auto bg-gray-50 pt-3 dark:bg-gray-900 lg:block border-r transition-all duration-300 border-none z-10">
 
     <div class="px-4">
@@ -55,8 +55,11 @@
                 Base
             </small>
         </div>
-        <ul class="flex flex-col space-y-1">
-            <li class="relative focus-within:text-indigo-400">
+        <ul class="flex flex-col space-y-1"
+            [routerLinkActive]="['in']">
+            <li routerLink=""
+                routerLinkActive="active-link"
+                class="relative focus-within:text-indigo-400">
                 <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
                     <div class="m-2">
                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +81,10 @@
                 </div>
             </li>
             <li>
-                <div class="relative focus-within:text-indigo-400">
-                    <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                <div class="relative group">
+                    <input type="checkbox"
+                           class="peer absolute top-0 inset-x-0 w-full h-9 opacity-0 z-10 cursor-pointer">
+                    <div class="rounded flex items-center justify-start cursor-pointer group-hover:bg-gray-100">
                         <div class="m-2">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  class="h-5 w-5"
@@ -96,45 +101,44 @@
                            class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">
                             Books
                         </a>
-                        <button [ngClass]="{'hidden': !isOpen}"
-                                class="absolute right-0 flex items-center p-1"
-                                tabindex="-1">
-                            <svg class="w-6 h-6 stroke-current"
-                                 fill="none"
-                                 viewBox="0 0 24 24">
-                                <path stroke="currentColor"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="1.5"
-                                      d="M15.25 10.75L12 14.25L8.75 10.75">
-                                </path>
-                            </svg>
-                        </button>
                     </div>
-
-                </div>
-                <div class="pt-1 pl-4"
-                     [ngClass]="{'hidden': !isOpen}">
-                    <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
-                        <li>
-                            <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
-                                Current Files
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
-                                Downloads
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
-                                Trash
-                            </a>
-                        </li>
-                    </ul>
+                    <button [ngClass]="{'hidden': !isOpen}"
+                            class="absolute top-0 right-0 flex items-center p-1 -rotate-90 peer-checked:-rotate-0 transition-all duration-500"
+                            tabindex="-1">
+                        <svg class="w-6 h-6"
+                             fill="none"
+                             viewBox="0 0 24 24">
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                  d="M15.25 10.75L12 14.25L8.75 10.75">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pt-1 pl-4 overflow-hidden max-h-0 peer-checked:max-h-screen transition-all duration-500"
+                         [ngClass]="{'hidden': !isOpen}">
+                        <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
+                            <li>
+                                <a href="#"
+                                   class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                                    Current Files
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                                    Downloads
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                                    Trash
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </li>
             <li class="relative focus-within:text-indigo-400">
