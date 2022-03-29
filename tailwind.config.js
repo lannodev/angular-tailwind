@@ -6,10 +6,9 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {
-      fontFamily: {
-        nunito: ['Nunito Sans', 'sans-serif'],
-      }
+    fontFamily: {
+      poppins: ['Poppins', 'system-ui', 'sans-serif'],
+      nunito: ['Nunito Sans', 'sans-serif']
     },
   },
   variants: {

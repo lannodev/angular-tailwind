@@ -1,40 +1,42 @@
-<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-16'"
-     class="hidden h-full flex-none select-none overflow-y-auto bg-gray-50 pt-4 dark:bg-gray-900 lg:block border-r ">
+<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
+     class="hidden h-full flex-none overflow-y-auto bg-gray-50 pt-3 dark:bg-gray-900 lg:block border-r transition-all duration-300 border-none z-10">
 
     <div class="px-4">
-        <div class="flex items-center relative">
-            <a
-               class="bg-indigo-600 p-1.5 rounded flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
-                <svg class="w-5 h-5 text-white stroke-current"
-                     viewBox="0 0 24 24"
-                     fill="none">
-                    <path d="M12 4.75L19.25 9L12 13.25L4.75 9L12 4.75Z"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                    <path d="M9.25 12L4.75 15L12 19.25L19.25 15L14.6722 12"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                </svg>
-            </a>
-            <b class="pl-2 text-sm font-bold dark:text-gray-100"
-               *ngIf="isOpen">
-                Finance
-            </b>
-            <button *ngIf="isOpen"
-                    (click)="toggleSidebar()"
-                    class="absolute w-5 h-5 top-1.5 right-0 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70">
+        <div class="relative h-10">
+            <div class="flex items-center"
+                 *ngIf="isOpen">
+                <a
+                   class="bg-indigo-500 p-2 rounded flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                    <svg class="w-5 h-5 text-white stroke-current"
+                         viewBox="0 0 24 24"
+                         fill="none">
+                        <path d="M12 4.75L19.25 9L12 13.25L4.75 9L12 4.75Z"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                        <path d="M9.25 12L4.75 15L12 19.25L19.25 15L14.6722 12"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+                <b class="pl-3 ml-1 text-sm font-bold dark:text-gray-100">
+                    Finance
+                </b>
+            </div>
+
+            <button (click)="toggleSidebar()"
+                    class="absolute w-5 h-5 top-1.5 right-2 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70"
+                    [ngClass]="{'rotate-180': !isOpen}">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
                      fill="none"
                      stroke="currentColor"
                      stroke-width="2"
                      stroke-linecap="round"
-                     stroke-linejoin="round"
-                     class="feather feather-chevrons-left">
+                     stroke-linejoin="round">
                     <polyline points="11 17 6 12 11 7"></polyline>
                     <polyline points="18 17 13 12 18 7"></polyline>
                 </svg>
@@ -42,42 +44,42 @@
         </div>
     </div>
 
-    <div class="px-4 pt-4">
-        <hr class="border-gray-200">
+    <div class="px-4 pt-3">
+        <hr class="border-gray-200 border-dashed">
     </div>
 
     <div class="px-4 pt-4">
-        <div class="mb-2 mx-3 flex items-center justify-between">
-            <small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+        <div class="mb-2 mx-1 flex items-center justify-between">
+            <small class="text-xs font-semibold text-gray-400 dark:text-gray-600">
                 Base
             </small>
         </div>
         <ul class="flex flex-col space-y-1">
             <li class="relative focus-within:text-indigo-400">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="h-5 w-5"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor"
-                         stroke-width="1.5">
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                    </svg>
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">Dashboard</a>
                 </div>
-                <a href="#"
-                   class="inline-block w-full py-2 pl-8 pr-4 text-xs font-bold rounded hover:bg-gray-100 focus:outline-none">
-                    Dashboard
-                </a>
             </li>
             <li>
-                <div class="relative flex justify-between focus-within:text-indigo-400">
-                    <div class="flex items-center w-full">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+                <div class="relative focus-within:text-indigo-400">
+                    <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                        <div class="m-2">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  class="h-5 w-5"
                                  fill="none"
@@ -86,16 +88,16 @@
                                  stroke-width="1.5">
                                 <path stroke-linecap="round"
                                       stroke-linejoin="round"
-                                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
                         </div>
                         <a href="#"
-                           class="inline-block w-full py-2 pl-8 pr-4 text-xs font-bold rounded hover:bg-gray-100 focus:outline-none">
-                            My Files
+                           class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">
+                            Books
                         </a>
                         <button class="absolute right-0 flex items-center p-1"
                                 tabindex="-1">
-                            <svg class="w-5 h-5 stroke-current"
+                            <svg class="w-6 h-6 stroke-current"
                                  fill="none"
                                  viewBox="0 0 24 24">
                                 <path stroke="currentColor"
@@ -107,24 +109,25 @@
                             </svg>
                         </button>
                     </div>
+
                 </div>
-                <div class="pt-2 pl-4 ">
+                <div class="pt-1 pl-4">
                     <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Current Files
                             </a>
                         </li>
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Downloads
                             </a>
                         </li>
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
+                               class="inline-block w-full px-4 py-2 text-xs  rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Trash
                             </a>
                         </li>
@@ -132,76 +135,159 @@
                 </div>
             </li>
             <li class="relative focus-within:text-indigo-400">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="h-5 w-5"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor"
-                         stroke-width="1.5">
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">Recent Uploads</a>
                 </div>
-                <a href="#"
-                   class="inline-block w-full py-2 pl-8 pr-4 text-xs font-bold rounded hover:bg-gray-100 focus:outline-none">
-                    Recent Uploads
-                </a>
             </li>
         </ul>
     </div>
 
     <div class="px-4 pt-4">
-        <div class="mb-2 mx-3 flex items-center justify-between">
-            <small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+        <div class="mb-2 mx-1 flex items-center justify-between">
+            <small class="text-xs font-semibold text-gray-400 dark:text-gray-600">
                 Colaboration
             </small>
         </div>
         <ul class="flex flex-col space-y-1">
             <li class="relative focus-within:text-indigo-400">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="h-5 w-5"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor"
-                         stroke-width="1.5">
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
 
-                    </svg>
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Download</a>
                 </div>
-                <a href="#"
-                   class="inline-block w-full py-2 pl-8 pr-4 text-xs font-bold rounded hover:bg-gray-100 focus:outline-none">
-                    Download
-                </a>
             </li>
             <li class="relative focus-within:text-indigo-400">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="h-5 w-5"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor"
-                         stroke-width="1.5">
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-
-                    </svg>
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Gift Card</a>
                 </div>
-                <a href="#"
-                   class="inline-block w-full py-2 pl-8 pr-4 text-xs font-bold rounded hover:bg-gray-100 focus:outline-none">
-                    Gift Card
-                </a>
             </li>
+            <li class="relative focus-within:text-indigo-400">
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Dashboard</a>
+                </div>
+            </li>
+
         </ul>
     </div>
 
     <div class="px-4 pt-4">
-        <hr class="border-gray-200">
+        <hr class="border-gray-200 border-dashed">
+    </div>
+
+    <div class="px-4 pt-4">
+        <ul class="flex flex-col space-y-1">
+            <li class="relative focus-within:text-indigo-400">
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Settings</a>
+                </div>
+            </li>
+            <li class="relative focus-within:text-indigo-400">
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Notifications</a>
+                </div>
+            </li>
+            <li class="relative focus-within:text-indigo-400">
+                <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
+                    <div class="m-2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.5">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <a href="#"
+                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Apps</a>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </nav>
