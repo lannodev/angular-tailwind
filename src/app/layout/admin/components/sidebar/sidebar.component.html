@@ -55,9 +55,8 @@
                 Base
             </small>
         </div>
-        <ul class="flex flex-col space-y-1"
-            [routerLinkActive]="['in']">
-            <li routerLink=""
+        <ul class="flex flex-col space-y-1">
+            <li routerLink="/dashboard/"
                 routerLinkActive="active-link"
                 class="relative focus-within:text-indigo-400">
                 <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
@@ -76,13 +75,13 @@
                                   d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                         </svg>
                     </div>
-                    <a href="#"
-                       class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">Dashboard</a>
+                    <a class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate">Dashboard</a>
                 </div>
             </li>
             <li>
                 <div class="relative group">
                     <input type="checkbox"
+                           [checked]="isActive(['/books'])"
                            class="peer absolute top-0 inset-x-0 w-full h-9 opacity-0 z-10 cursor-pointer">
                     <div class="rounded flex items-center justify-start cursor-pointer group-hover:bg-gray-100">
                         <div class="m-2">
@@ -120,19 +119,22 @@
                          [ngClass]="{'hidden': !isOpen}">
                         <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
                             <li>
-                                <a href="#"
+                                <a routerLink="/books/current-files"
+                                   routerLinkActive="active-link"
                                    class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                     Current Files
                                 </a>
                             </li>
                             <li>
-                                <a href="#"
+                                <a routerLink="/books/download"
+                                   routerLinkActive="active-link"
                                    class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                     Downloads
                                 </a>
                             </li>
                             <li>
-                                <a href="#"
+                                <a routerLink="/books/trash"
+                                   routerLinkActive="active-link"
                                    class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                     Trash
                                 </a>
@@ -263,7 +265,7 @@
                 <div class="rounded flex items-center justify-start cursor-pointer hover:bg-gray-100">
                     <div class="m-2">
                         <svg xmlns="http://www.w3.org/2000/svg"
-                             class="h-5 w-5"
+                             class="h-5 w-5 rotate-45"
                              fill="none"
                              viewBox="0 0 24 24"
                              stroke="currentColor"
@@ -272,6 +274,12 @@
                                   stroke-linejoin="round"
                                   d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                         </svg>
+                    </div>
+                    <div>
+                        <span
+                              class="absolute left-4 bottom-1.5 flex items-center justify-center w-4 h-4 bg-red-500 text-white rounded-full text-[10px] font-bold ">5</span>
+                        <span
+                              class="absolute animate-ping left-4 bottom-1.5 flex items-center justify-center w-4 h-4 bg-red-500 text-white rounded-full text-xs font-bold"></span>
                     </div>
                     <a href="#"
                        class="ml-1 text-xs font-semibold focus:outline-none tracking-wide truncate ">Notifications</a>

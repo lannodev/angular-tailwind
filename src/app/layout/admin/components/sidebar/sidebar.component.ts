@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +10,9 @@ export class SidebarComponent implements OnInit {
 
   public isOpen = true;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -18,4 +21,20 @@ export class SidebarComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  isActive(instruction: any[]): boolean {
+    return this.router.isActive(
+      this.router.createUrlTree(instruction),
+      { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' }
+    );
+  }
+}
+
+export interface MenuItem {
+  icon: string;
+  text: string;
+  value: string;
+  subMenu: Array<{
+    text: string;
+    value: string;
+  }>
 }
