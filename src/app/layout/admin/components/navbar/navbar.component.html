@@ -1,381 +1,153 @@
-<div class="hidden lg:block">
-    <div class="flex items-center justify-between py-3">
-        <div class="relative flex select-none items-center text-left">
-            <div class="-mt-0.5 mr-2 hidden cursor-pointer p-2 lg:block">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="17px"
-                     height="17px"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     class="feather feather-menu">
-                    <line x1="3"
-                          y1="12"
-                          x2="21"
-                          y2="12"></line>
-                    <line x1="3"
-                          y1="6"
-                          x2="21"
-                          y2="6"></line>
-                    <line x1="3"
-                          y1="18"
-                          x2="21"
-                          y2="18"></line>
-                </svg>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 width="17px"
-                 height="17px"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="2"
-                 stroke-linecap="round"
-                 stroke-linejoin="round"
-                 class="mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-            <b
-               class="inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4">
-                My Files
-            </b>
-            <div id="folder-actions"
-                 class="relative ml-3 transform cursor-pointer rounded-md bg-light-background py-0.5 px-1.5 transition-all duration-200 dark:bg-dark-foreground -translate-x-4 opacity-0">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="14px"
-                     height="14px"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     class="feather feather-more-horizontal">
-                    <circle cx="12"
-                            cy="12"
-                            r="1"></circle>
-                    <circle cx="19"
-                            cy="12"
-                            r="1"></circle>
-                    <circle cx="5"
-                            cy="12"
-                            r="1"></circle>
-                </svg>
-            </div>
-        </div>
-        <div class="flex items-center">
-            <div data-v-5d0dc97d=""
-                 class="popover-wrapper"><button title="Create Something"
-                        class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground"
-                        data-v-5d0dc97d="">
-                    <svg fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.5"
-                         fill-rule="evenodd"
-                         stroke-linecap="round"
-                         stroke-linejoin="round"
-                         width="15px"
-                         height="15px"
-                         viewBox="0 0 17 12"
-                         version="1.1"
+<nav class="bg-gray-50">
+    <div class=" mx-auto px-4 sm:px-6 lg:px-2">
+        <div class="relative flex items-center justify-between h-16">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+
+                    <svg class="block h-6 w-6"
                          xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                         class="preview-list-icon vue-feather group-hover-text-theme scale-125">
-                        <path d="M14.2729998,10.7729998 C15.6774712,10.0073227 16.384111,8.38688297 15.9895447,6.83668332 C15.5949785,5.28648367 14.1996249,4.20105605 12.5999998,4.19999993 L11.7179998,4.19999993 C11.1377566,1.9556703 9.23470173,0.300843012 6.93154234,0.0378706728 C4.62838295,-0.225101666 2.40127934,0.958148431 1.33005562,3.01391529 C0.258831904,5.06968215 0.564955244,7.57295196 2.09999996,9.30999984"
-                              id="Path"></path>
-                        <line x1="8.5"
-                              y1="7"
-                              x2="8.5"
-                              y2="12"
-                              id="Path"></line>
-                        <line x1="6"
-                              y1="9.5"
-                              x2="11"
-                              y2="9.5"
-                              id="Path"></line>
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                         aria-hidden="true">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+
+                    <svg class="hidden h-6 w-6"
+                         xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                         aria-hidden="true">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <!---->
             </div>
-            <div
-                 class="relative cursor-pointer rounded-lg bg-light-background dark:bg-dark-foreground ml-5 hidden lg:block xl:ml-8">
-                <div class="flex w-56 items-center justify-between px-4 py-2.5 text-left xl:w-64">
-                    <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
-                             width="18px"
-                             height="18px"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             class="vue-feather text-gray-400 dark:text-gray-600 feather feather-search">
-                            <circle cx="11"
-                                    cy="11"
-                                    r="8"></circle>
-                            <line x1="21"
-                                  y1="21"
-                                  x2="16.65"
-                                  y2="16.65"></line>
-                        </svg> <span class="pl-2.5 text-xs font-bold text-gray-400 dark:text-gray-600">
-                            Search anything...
-                        </span></div> <span
-                          class="rounded border px-1 py-0.5 text-xs font-bold tracking-normal text-gray-400 dark:border-slate-200 dark:border-opacity-5 dark:text-gray-600">
-                        Ctrl+K
-                    </span>
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="block lg:hidden h-8 w-auto"
+                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                         alt="Workflow">
+                    <!-- <img class="hidden lg:block h-8 w-auto"
+                         src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                         alt="Workflow"> -->
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-2">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <a href="#"
+                           class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                           aria-current="page">Dashboard</a>
+
+                        <a href="#"
+                           class=" hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">Team</a>
+
+                        <a href="#"
+                           class=" hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+
+                        <a href="#"
+                           class=" hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                    </div>
                 </div>
             </div>
-            <div class="ml-5 flex items-center xl:ml-8">
-                <!---->
-                <div class="flex items-center"><button title="Convert into Team Folder"
-                            class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive">
-                        <!---->
-                        <!---->
-                        <!----> <svg xmlns="http://www.w3.org/2000/svg"
-                             width="19px"
-                             height="19px"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             class="vue-feather group-hover-text-theme feather feather-user-plus">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="8.5"
-                                    cy="7"
-                                    r="4"></circle>
-                            <line x1="20"
-                                  y1="8"
-                                  x2="20"
-                                  y2="14"></line>
-                            <line x1="23"
-                                  y1="11"
-                                  x2="17"
-                                  y2="11"></line>
-                        </svg>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                    </button> <button title="Share item"
-                            class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive">
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!----> <svg xmlns="http://www.w3.org/2000/svg"
-                             width="19px"
-                             height="19px"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             class="vue-feather group-hover-text-theme feather feather-link">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                    </button> <button title="Move"
-                            class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive"><svg
-                             xmlns="http://www.w3.org/2000/svg"
-                             width="19px"
-                             height="19px"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             class="vue-feather group-hover-text-theme feather feather-corner-down-right">
-                            <polyline points="15 10 20 15 15 20"></polyline>
-                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
-                        </svg>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                    </button> <button title="Delete"
-                            class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive">
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!----> <svg xmlns="http://www.w3.org/2000/svg"
-                             width="19px"
-                             height="19px"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             class="vue-feather group-hover-text-theme feather feather-trash-2">
-                            <polyline points="3 6 5 6 21 6"></polyline>
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                            </path>
-                            <line x1="10"
-                                  y1="11"
-                                  x2="10"
-                                  y2="17"></line>
-                            <line x1="14"
-                                  y1="11"
-                                  x2="14"
-                                  y2="17"></line>
-                        </svg>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                    </button></div>
-            </div>
-            <div class="ml-5 flex items-center xl:ml-8">
-                <div data-v-5d0dc97d=""
-                     class="popover-wrapper"><button title="Sorting and View"
-                            class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground"
-                            data-v-5d0dc97d="">
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!----> <svg fill="none"
-                             stroke="currentColor"
-                             stroke-width="1.5"
-                             fill-rule="evenodd"
-                             stroke-linecap="round"
-                             stroke-linejoin="round"
-                             width="15px"
-                             height="15px"
-                             viewBox="0 0 20 16"
-                             version="1.1"
-                             xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                             class="preview-list-icon vue-feather group-hover-text-theme scale-125">
-                            <rect x="9.77777778"
-                                  y="0"
-                                  width="6.22222222"
-                                  height="6.22222222"></rect>
-                            <rect x="9.77777778"
-                                  y="9.77777778"
-                                  width="6.22222222"
-                                  height="6.22222222"></rect>
-                            <line x1="0"
-                                  y1="2"
-                                  x2="6"
-                                  y2="2"></line>
-                            <line x1="0"
-                                  y1="8"
-                                  x2="6"
-                                  y2="8"></line>
-                            <line x1="0"
-                                  y1="14"
-                                  x2="6"
-                                  y2="14"></line>
-                        </svg>
-                        <!---->
-                    </button>
-                    <!---->
-                </div> <button title="Info panel"
-                        class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground">
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!----> <svg xmlns="http://www.w3.org/2000/svg"
-                         width="19px"
-                         height="19px"
-                         viewBox="0 0 24 24"
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <button type="button"
+                        class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <span class="sr-only">View notifications</span>
+                    <!-- Heroicon name: outline/bell -->
+                    <svg class="h-6 w-6"
+                         xmlns="http://www.w3.org/2000/svg"
                          fill="none"
+                         viewBox="0 0 24 24"
                          stroke="currentColor"
-                         stroke-width="2"
-                         stroke-linecap="round"
-                         stroke-linejoin="round"
-                         class="vue-feather group-hover-text-theme feather feather-info">
-                        <circle cx="12"
-                                cy="12"
-                                r="10"></circle>
-                        <line x1="12"
-                              y1="16"
-                              x2="12"
-                              y2="12"></line>
-                        <line x1="12"
-                              y1="8"
-                              x2="12.01"
-                              y2="8"></line>
+                         aria-hidden="true">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                     </svg>
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
                 </button>
+
+                <!-- Profile dropdown -->
+                <div class="ml-3 relative">
+                    <div>
+                        <button type="button"
+                                class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                id="user-menu-button"
+                                aria-expanded="false"
+                                aria-haspopup="true">
+                            <span class="sr-only">Open user menu</span>
+                            <img class="h-8 w-8 rounded-full"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                        </button>
+                    </div>
+
+                    <!--
+              Dropdown menu, show/hide based on menu state.
+  
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+                    <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                         role="menu"
+                         aria-orientation="vertical"
+                         aria-labelledby="user-menu-button"
+                         tabindex="-1">
+                        <!-- Active: "bg-gray-100", Not Active: "" -->
+                        <a href="#"
+                           class="block px-4 py-2 text-sm text-gray-700"
+                           role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-0">Your Profile</a>
+                        <a href="#"
+                           class="block px-4 py-2 text-sm text-gray-700"
+                           role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-1">Settings</a>
+                        <a href="#"
+                           class="block px-4 py-2 text-sm text-gray-700"
+                           role="menuitem"
+                           tabindex="-1"
+                           id="user-menu-item-2">Sign out</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!---->
-</div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden"
+         id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#"
+               class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+               aria-current="page">Dashboard</a>
+
+            <a href="#"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+            <a href="#"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+            <a href="#"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+        </div>
+    </div>
+</nav>

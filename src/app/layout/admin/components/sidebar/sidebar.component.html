@@ -1,10 +1,10 @@
 <nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-16'"
-     class="hidden h-full flex-none select-none overflow-y-auto bg-gray-50 pt-4 dark:bg-gray-900 lg:block">
+     class="hidden h-full flex-none select-none overflow-y-auto bg-gray-50 pt-4 dark:bg-gray-900 lg:block border-r ">
 
-    <div class="px-3">
+    <div class="px-4">
         <div class="flex items-center relative">
             <a
-               class="bg-blue-600 p-1.5 rounded flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+               class="bg-indigo-600 p-1.5 rounded flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
                 <svg class="w-5 h-5 text-white stroke-current"
                      viewBox="0 0 24 24"
                      fill="none">
@@ -20,14 +20,14 @@
                           stroke-linejoin="round"></path>
                 </svg>
             </a>
-            <b class="pl-2 text-sm font-bold dark:text-gray-100">
-                Finance {{isOpen}}
+            <b class="pl-2 text-sm font-bold dark:text-gray-100"
+               *ngIf="isOpen">
+                Finance
             </b>
-            <button (click)="toggleSidebar()"
-                    class="absolute top-2 right-0 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70">
+            <button *ngIf="isOpen"
+                    (click)="toggleSidebar()"
+                    class="absolute w-5 h-5 top-1.5 right-0 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70">
                 <svg xmlns="http://www.w3.org/2000/svg"
-                     width="18px"
-                     height="18px"
                      viewBox="0 0 24 24"
                      fill="none"
                      stroke="currentColor"
@@ -42,18 +42,18 @@
         </div>
     </div>
 
-    <div class="px-3 pt-4">
+    <div class="px-4 pt-4">
         <hr class="border-gray-200">
     </div>
 
-    <div class="px-3 pt-4">
+    <div class="px-4 pt-4">
         <div class="mb-2 mx-3 flex items-center justify-between">
             <small class="text-xs font-bold text-gray-400 dark:text-gray-600">
                 Base
             </small>
         </div>
         <ul class="flex flex-col space-y-1">
-            <li class="relative focus-within:text-orange-400">
+            <li class="relative focus-within:text-indigo-400">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="h-5 w-5"
@@ -75,7 +75,7 @@
                 </a>
             </li>
             <li>
-                <div class="relative flex justify-between focus-within:text-orange-400">
+                <div class="relative flex justify-between focus-within:text-indigo-400">
                     <div class="flex items-center w-full">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -108,30 +108,30 @@
                         </button>
                     </div>
                 </div>
-                <div class="pt-2 pl-4 hidden">
+                <div class="pt-2 pl-4 ">
                     <ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-orange-400">
+                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Current Files
                             </a>
                         </li>
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-orange-400">
+                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Downloads
                             </a>
                         </li>
                         <li>
                             <a href="#"
-                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-orange-400">
+                               class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100 focus:text-indigo-400">
                                 Trash
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="relative focus-within:text-orange-400">
+            <li class="relative focus-within:text-indigo-400">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="h-5 w-5"
@@ -152,14 +152,14 @@
         </ul>
     </div>
 
-    <div class="px-3 pt-4">
+    <div class="px-4 pt-4">
         <div class="mb-2 mx-3 flex items-center justify-between">
             <small class="text-xs font-bold text-gray-400 dark:text-gray-600">
                 Colaboration
             </small>
         </div>
         <ul class="flex flex-col space-y-1">
-            <li class="relative focus-within:text-orange-400">
+            <li class="relative focus-within:text-indigo-400">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="h-5 w-5"
@@ -178,7 +178,7 @@
                     Download
                 </a>
             </li>
-            <li class="relative focus-within:text-orange-400">
+            <li class="relative focus-within:text-indigo-400">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="h-5 w-5"
@@ -200,7 +200,7 @@
         </ul>
     </div>
 
-    <div class="px-3 pt-4">
+    <div class="px-4 pt-4">
         <hr class="border-gray-200">
     </div>
 
