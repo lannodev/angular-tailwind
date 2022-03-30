@@ -7,11 +7,9 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extends: {
-      colors: {
-        primary: '#0070f3',
-        secondary: '#19857b',
-      }
+    colors: {
+      'primary': '#1fb6ff',
+      'secondary': '#ff49db'
     },
     fontFamily: {
       poppins: ['Poppins', 'system-ui', 'sans-serif'],
