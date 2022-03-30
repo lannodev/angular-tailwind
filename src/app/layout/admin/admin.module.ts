@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MenuItemComponent } from './components/sidebar/menu-item/menu-item.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 @NgModule({
@@ -12,11 +16,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AdminComponent,
     FooterComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuItemComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ]
 })
 export class AdminModule { }

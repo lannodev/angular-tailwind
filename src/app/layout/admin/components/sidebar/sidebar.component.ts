@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MenuItem } from 'src/app/shared/models/menu.model';
+import { Menu } from 'src/app/shared/constants/menu';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,10 +10,11 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
 
   public isOpen = true;
+  public pagesMenu: MenuItem[];
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor() {
+    this.pagesMenu = Menu.pages;
+  }
 
   ngOnInit(): void {
   }
@@ -21,20 +23,5 @@ export class SidebarComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  isActive(instruction: any[]): boolean {
-    return this.router.isActive(
-      this.router.createUrlTree(instruction),
-      { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' }
-    );
-  }
 }
 
-export interface MenuItem {
-  icon: string;
-  text: string;
-  value: string;
-  subMenu: Array<{
-    text: string;
-    value: string;
-  }>
-}

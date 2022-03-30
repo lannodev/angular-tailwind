@@ -1,0 +1,63 @@
+<div class="px-4 pt-4"
+	 *ngFor="let menu of menuItem">
+	<div class="mb-2 mx-1 flex items-center justify-between">
+		<small [ngClass]="{'hidden': !isOpen}"
+			   class="text-xs font-semibold text-gray-400 dark:text-gray-600">
+			{{menu.group}}
+		</small>
+	</div>
+	<ul class="flex flex-col space-y-1"
+		*ngFor="let items of menu.items">
+		<li>
+			<div (click)="expandedMenu(items)"
+				 class="relative"
+				 routerLinkActive="{{items.children ? '' : 'active-link'}} ">
+
+				<div class="m-2 absolute pointer-events-none">
+					<svg-icon src="{{items.icon}}"
+							  [svgClass]="'h-5 w-5'">
+					</svg-icon>
+				</div>
+
+				<!-- Workaround:: Enable routerLink -->
+				<div *ngIf="!items.children"
+					 class="rounded flex items-center justify-start h-9 cursor-pointer hover:bg-gray-100"
+					 routerLink="{{items.route}}">
+					<a class="ml-10 text-xs font-semibold focus:outline-none tracking-wide truncate">
+						{{items.label}}
+					</a>
+				</div>
+
+				<!-- Workaround:: Disable routerLink -->
+				<div *ngIf="items.children"
+					 class="rounded flex items-center justify-start h-9  cursor-pointer hover:bg-gray-100">
+					<a class="ml-10 text-xs font-semibold focus:outline-none tracking-wide truncate">
+						{{items.label}}
+					</a>
+				</div>
+
+				<button *ngIf="items.children"
+						[ngClass]="{'hidden': !isOpen, 'rotate-90': items.expanded}"
+						class="absolute top-1 right-0 flex items-center pointer-events-none p-1 transition-all duration-500"
+						tabindex="-1">
+					<svg-icon src="assets/icons/chevron-right.svg"
+							  [svgClass]="'h-5 w-5'">
+					</svg-icon>
+				</button>
+			</div>
+
+			<!-- Submenu items -->
+			<div class="pt-1 pl-4 overflow-hidden max-h-0 transition-all duration-500"
+				 [ngClass]="{'hidden': !isOpen, 'max-h-screen': items.expanded}">
+				<ul class="flex flex-col pl-2 border-dashed border-l border-gray-200">
+					<li *ngFor="let sub of items.children">
+						<a routerLink="{{sub.route}}"
+						   routerLinkActive="active-link"
+						   class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-gray-100">
+							{{sub.label}}
+						</a>
+					</li>
+				</ul>
+			</div>
+	</ul>
+</div>
