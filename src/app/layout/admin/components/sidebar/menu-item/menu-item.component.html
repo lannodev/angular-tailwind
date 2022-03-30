@@ -10,7 +10,7 @@
 		*ngFor="let items of menu.items">
 		<li>
 			<div (click)="expandedMenu(items)"
-				 class="relative dark:text-slate-400"
+				 class="relative dark:text-slate-400 group"
 				 routerLinkActive="{{items.children ? '' : 'active-link'}} ">
 
 				<div class="m-2 absolute pointer-events-none">
@@ -45,6 +45,16 @@
 							  [svgClass]="'h-5 w-5'">
 					</svg-icon>
 				</button>
+
+				<div class="fixed w-full"
+					 *ngIf="!isOpen">
+					<span class="absolute w-auto p-2 min-w-max left-12 -top-[34px] rounded-md shadow-md text-white bg-slate-900 dark:text-slate-900 dark:bg-white text-xs
+					  font-bold z-1 transition-all duration-200 scale-0 origin-left group-hover:scale-100">
+						{{items.label}}
+					</span>
+				</div>
+
+
 			</div>
 
 			<!-- Submenu items -->
@@ -61,4 +71,10 @@
 				</ul>
 			</div>
 	</ul>
+
+	<div class="pt-3"
+		 *ngIf="menu.separator">
+		<hr class="border-gray-200 dark:border-slate-700 border-dashed">
+	</div>
+
 </div>

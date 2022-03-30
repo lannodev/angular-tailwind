@@ -7,6 +7,12 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
+    extends: {
+      colors: {
+        primary: '#0070f3',
+        secondary: '#19857b',
+      }
+    },
     fontFamily: {
       poppins: ['Poppins', 'system-ui', 'sans-serif'],
       nunito: ['Nunito Sans', 'sans-serif']

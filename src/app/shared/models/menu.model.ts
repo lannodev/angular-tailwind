@@ -1,5 +1,6 @@
 export interface MenuItem {
 	group: string;
+	separator?: boolean;
 	items: Array<{
 		icon: string;
 		label: string;
