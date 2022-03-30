@@ -1,6 +1,7 @@
 module.exports = {
   prefix: '',
   mode: 'jit',
+  important: false,
   content: [
     "./src/**/*.{html,ts}",
   ],
