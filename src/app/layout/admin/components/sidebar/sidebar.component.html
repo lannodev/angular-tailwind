@@ -1,25 +1,30 @@
 <nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
-     class="hidden h-full flex-none overflow-y-auto bg-gray-50 pt-3 dark:bg-slate-800 lg:block border-r transition-all duration-300 border-none z-10">
+     class="hidden h-full flex-none overflow-y-auto bg-gray-50 pt-3 
+     dark:bg-night-700 lg:block border-r transition-all duration-300 
+     border-none z-10">
 
     <div class="px-4">
         <div class="relative h-10">
             <div class="flex items-center"
                  *ngIf="isOpen">
-                <a
-                   class="bg-indigo-500 p-2 rounded flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                <a class="bg-orange-500 p-2 rounded flex items-center justify-center 
+                   focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 
+                   focus:ring-offset-gray-900">
 
                     <svg-icon src="assets/icons/logo.svg">
                         [svgClass]="'h-5 w-5'">
                     </svg-icon>
 
                 </a>
-                <b class="pl-3 ml-1 text-sm font-bold dark:text-slate-100">
+                <b class="pl-3 ml-1 text-sm font-bold text-gray-900 dark:text-night-50">
                     Finance
                 </b>
             </div>
 
             <button (click)="toggleSidebar()"
-                    class="absolute w-5 h-5 top-2 right-2 flex items-center justify-center rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70 dark:text-slate-100"
+                    class="absolute w-5 h-5 top-2 right-2 flex items-center 
+                    justify-center rounded focus:outline-none opacity-20 transition-all 
+                    duration-200 hover:opacity-70 dark:text-orange-50"
                     [ngClass]="{'rotate-180': !isOpen}">
                 <svg-icon src="assets/icons/chevron-double-left.svg">
                     [svgClass]="'h-5 w-5'">
@@ -29,7 +34,7 @@
     </div>
 
     <div class="px-4 pt-3">
-        <hr class="border-gray-200 dark:border-slate-700 border-dashed">
+        <hr class="border-gray-200 dark:border-night-500 border-dashed">
     </div>
 
     <app-menu-item [isOpen]="isOpen"
