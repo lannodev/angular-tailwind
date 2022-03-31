@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardComponent } from '../../pages/admin/dashboard/dashboard.component';
 import { AdminComponent } from './admin.component';
-import { CurrentFilesComponent } from './pages/current-files/current-files.component';
-import { TrashComponent } from './pages/trash/trash.component';
-import { DownloadComponent } from './pages/download/download.component';
 
 const routes: Routes = [
   {
@@ -12,9 +9,9 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'books/current-files', component: CurrentFilesComponent },
-      { path: 'books/download', component: DownloadComponent },
-      { path: 'books/trash', component: TrashComponent },
+      { path: 'books/current-files', component: DashboardComponent },
+      { path: 'books/download', component: DashboardComponent },
+      { path: 'books/trash', component: DashboardComponent },
     ],
   },
 ];

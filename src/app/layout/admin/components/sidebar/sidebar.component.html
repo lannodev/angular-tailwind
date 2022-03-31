@@ -1,50 +1,61 @@
 <nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
-     class="hidden h-full flex-none overflow-y-auto bg-gray-50 pt-3 
-     dark:bg-night-700 lg:block border-r transition-all duration-300 
-     border-none z-10">
+     class="hidden lg:flex flex-col justify-between h-full overflow-y-auto bg-gray-50 
+     pt-3 dark:bg-night-700 transition-all duration-300">
 
     <div class="px-4">
+        <!-- Logo -->
         <div class="relative h-10">
             <div class="flex items-center"
                  *ngIf="isOpen">
-                <a class="bg-primary p-2 rounded flex items-center justify-center 
-                   focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2 
-                   focus:ring-offset-gray-900">
+                <a class="bg-orange-500 p-2 rounded flex items-center justify-center 
+                       focus:outline-none focus:ring-1 focus:ring-orange-500 focus:ring-offset-2 
+                       focus:ring-offset-gray-900">
 
                     <svg-icon src="assets/icons/logo.svg">
                         [svgClass]="'h-5 w-5'">
                     </svg-icon>
 
                 </a>
-                <b class="pl-3 ml-1 text-sm font-bold text-gray-900 dark:text-night-50">
+                <b class="pl-3 ml-1 text-sm font-bold dark:text-slate-100">
                     Finance
                 </b>
             </div>
-
             <button (click)="toggleSidebar()"
-                    class="absolute w-5 h-5 top-2 right-2 flex items-center 
-                    justify-center rounded focus:outline-none opacity-20 transition-all 
-                    duration-200 hover:opacity-70 dark:text-night-50"
+                    class="absolute w-5 h-5 top-2 right-2 flex items-center justify-center 
+                        rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70 
+                        dark:text-slate-100"
                     [ngClass]="{'rotate-180': !isOpen}">
                 <svg-icon src="assets/icons/chevron-double-left.svg">
                     [svgClass]="'h-5 w-5'">
                 </svg-icon>
             </button>
         </div>
+
+        <!-- Separator -->
+        <div class="pt-3">
+            <hr class="border-gray-200 dark:border-night-500 border-dashed">
+        </div>
+
+        <!-- Menu Items -->
+        <app-menu-item [isOpen]="isOpen"
+                       [menuItem]="pagesMenu">
+        </app-menu-item>
+
     </div>
 
-    <div class="px-4 pt-3">
-        <hr class="border-gray-200 dark:border-night-500 border-dashed">
+    <div class="px-4 py-4">
+        <div (click)="toggleTheme()"
+             class="space-y-1 relative text-gray-400 dark:text-night-400 rounded 
+             items-center justify-start  cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600">
+            <span class="text-xs">
+                Dark
+            </span>
+        </div>
+        <div class="text-xs flex justify-center font-light text-gray-400 dark:text-night-200">
+            <span class="mr-2"
+                  [ngClass]="{'hidden': !isOpen}">Version:</span>
+            <span class="px-2 text-white bg-primary rounded-sm">1.0.0</span>
+        </div>
     </div>
-
-    <app-menu-item [isOpen]="isOpen"
-                   [menuItem]="pagesMenu">
-    </app-menu-item>
-
-    <button (click)="toggleTheme()">
-        Change Theme
-    </button>
-
-
 
 </nav>
