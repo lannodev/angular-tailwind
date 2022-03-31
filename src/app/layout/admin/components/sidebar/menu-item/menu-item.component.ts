@@ -34,7 +34,7 @@ export class MenuItemComponent implements OnInit {
   }
 
   /** Check active route */
-  private isActive(instruction: any[]): boolean {
+  public isActive(instruction: any[]): boolean {
     return this.router.isActive(
       this.router.createUrlTree(instruction),
       { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' }

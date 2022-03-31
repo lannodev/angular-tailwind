@@ -11,9 +11,10 @@
 		<li>
 			<div (click)="expandedMenu(items)"
 				 class="relative text-gray-400 dark:text-night-400 group"
-				 routerLinkActive="{{items.children ? '' : 'active-link'}} ">
+				 routerLinkActive="active-link">
 
-				<div class="m-2 absolute pointer-events-none">
+				<div [ngClass]="{'active-link' : isActive([items.route]) && !isOpen}"
+					 class="m-2 absolute pointer-events-none">
 					<svg-icon src="{{items.icon}}"
 							  [svgClass]="'h-5 w-5'">
 					</svg-icon>
