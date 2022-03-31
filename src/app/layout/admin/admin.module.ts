@@ -1,15 +1,23 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { AdminRoutingModule } from './admin-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { PagesRouting } from 'src/app/pages/pages-routing.module';
 import { AdminComponent } from './admin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuItemComponent } from './components/sidebar/menu-item/menu-item.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: AdminComponent,
+    children: PagesRouting,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +29,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    RouterModule.forChild(routes),
     HttpClientModule,
     AngularSvgIconModule.forRoot()
   ]

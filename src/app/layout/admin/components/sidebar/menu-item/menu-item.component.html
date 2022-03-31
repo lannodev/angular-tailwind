@@ -11,9 +11,9 @@
 		<li>
 			<div (click)="expandedMenu(items)"
 				 class="relative text-gray-400 dark:text-night-400 group"
-				 routerLinkActive="active-link">
+				 routerLinkActive="text-primary">
 
-				<div [ngClass]="{'active-link' : isActive([items.route]) && !isOpen}"
+				<div [ngClass]="{'text-primary' : isActive([items.route]) && !isOpen}"
 					 class="m-2 absolute pointer-events-none">
 					<svg-icon src="{{items.icon}}"
 							  [svgClass]="'h-5 w-5'">
@@ -24,7 +24,7 @@
 				<div *ngIf="!items.children"
 					 routerLink="{{items.route}}"
 					 class="rounded flex items-center justify-start h-9 cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600">
-					<a routerLinkActive="active-link"
+					<a routerLinkActive="text-primary"
 					   class="ml-10 text-xs font-semibold focus:outline-none tracking-wide truncate text-gray-600 dark:text-night-100">
 						{{items.label}}
 					</a>
@@ -66,7 +66,7 @@
 				<ul class="flex flex-col pl-2 border-dashed border-l border-gray-200 dark:border-night-500">
 					<li *ngFor="let sub of items.children">
 						<a routerLink="{{sub.route}}"
-						   routerLinkActive="active-link"
+						   routerLinkActive="text-primary"
 						   class="inline-block w-full px-4 py-2 text-xs font-semibold rounded hover:bg-gray-100 dark:hover:bg-night-600 text-night-200">
 							{{sub.label}}
 						</a>

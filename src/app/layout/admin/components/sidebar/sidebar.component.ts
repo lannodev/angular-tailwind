@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'src/app/shared/models/menu.model';
 import { Menu } from 'src/app/shared/constants/menu';
 import { ThemeService } from 'src/app/shared/services/theme.service';
+import packageJson from '../../../../../../package.json';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,11 +11,12 @@ import { ThemeService } from 'src/app/shared/services/theme.service';
 })
 export class SidebarComponent implements OnInit {
 
-  public isOpen = true;
+  public isOpen = false;
   public pagesMenu: MenuItem[];
+  public appJson: any = packageJson;
 
   constructor(
-    private themeService: ThemeService
+    public themeService: ThemeService
   ) {
     this.pagesMenu = Menu.pages;
   }
