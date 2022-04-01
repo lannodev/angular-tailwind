@@ -15,7 +15,7 @@
                     </svg-icon>
 
                 </a>
-                <b class="pl-3 ml-1 text-sm font-bold dark:text-night-50">
+                <b class="pl-2 ml-1 text-sm font-bold dark:text-night-50">
                     {{appJson.name}}
                 </b>
             </div>
@@ -24,7 +24,7 @@
                         rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70 
                         dark:text-slate-100"
                     [ngClass]="{'rotate-180': !isOpen}">
-                <svg-icon src="assets/icons/chevron-double-left.svg">
+                <svg-icon src="assets/icons/solid/chevron-double-left.svg">
                     [svgClass]="'h-5 w-5'">
                 </svg-icon>
             </button>
@@ -49,7 +49,7 @@
              class="group rounded flex items-center justify-start h-9 
              cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2">
 
-            <svg-icon [src]="themeService.isDark ? 'assets/icons/sun.svg' : 'assets/icons/moon.svg'"
+            <svg-icon [src]="themeService.isDark ? 'assets/icons/outline/sun.svg' : 'assets/icons/outline/moon.svg'"
                       [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
             </svg-icon>
 
@@ -74,7 +74,7 @@
              cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2
              group">
 
-            <svg-icon src="assets/icons/logout.svg"
+            <svg-icon src="assets/icons/outline/logout.svg"
                       [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
             </svg-icon>
 
@@ -98,7 +98,7 @@
         <div class="rounded flex items-center justify-start h-9 
              cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2 group">
 
-            <svg-icon src="assets/icons/information-circle.svg"
+            <svg-icon src="assets/icons/outline/information-circle.svg"
                       [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
             </svg-icon>
 
