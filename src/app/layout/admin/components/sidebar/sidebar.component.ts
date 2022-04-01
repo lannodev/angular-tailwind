@@ -11,7 +11,7 @@ import packageJson from '../../../../../../package.json';
 })
 export class SidebarComponent implements OnInit {
 
-  public isOpen = false;
+  public isOpen = true;
   public pagesMenu: MenuItem[];
   public appJson: any = packageJson;
 
