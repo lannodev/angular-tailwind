@@ -8,6 +8,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        'custom': '0px 0px 50px 0px rgb(82 63 105 / 15%)',
+      },
       colors: {
         night: {
           50: '#e4e4eb',
