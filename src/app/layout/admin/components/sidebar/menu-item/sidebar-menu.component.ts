@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { MenuItem } from 'src/app/shared/models/menu.model';
 
 @Component({
-  selector: 'app-menu-item',
-  templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.scss']
+  selector: 'app-sidebar-menu',
+  templateUrl: './sidebar-menu.component.html',
+  styleUrls: ['./sidebar-menu.component.scss']
 })
-export class MenuItemComponent implements OnInit {
+export class SidebarMenuComponent implements OnInit {
 
   @Input() public isOpen = true;
   @Input() public menuItem: MenuItem[] = [];

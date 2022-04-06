@@ -7,7 +7,7 @@ import { PagesRouting } from 'src/app/pages/pages-routing.module';
 import { AdminComponent } from './admin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MenuItemComponent } from './components/sidebar/menu-item/menu-item.component';
+import { SidebarMenuComponent } from './components/sidebar/menu-item/sidebar-menu.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
@@ -25,7 +25,7 @@ const routes: Routes = [
     FooterComponent,
     SidebarComponent,
     NavbarComponent,
-    MenuItemComponent
+    SidebarMenuComponent
   ],
   imports: [
     CommonModule,
