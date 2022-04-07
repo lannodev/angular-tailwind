@@ -13,7 +13,7 @@
 				 class="relative text-gray-400 dark:text-night-400 group"
 				 routerLinkActive="text-primary">
 
-				<div [ngClass]="{'text-primary' : isActive([items.route]) && !isOpen}"
+				<div [ngClass]="isActive([items.route]) && !isOpen ? 'text-primary' : ''"
 					 class="m-2 absolute pointer-events-none">
 					<svg-icon src="{{items.icon}}"
 							  [svgClass]="'h-5 w-5'">
@@ -47,6 +47,7 @@
 					</svg-icon>
 				</button>
 
+				<!-- Tooltip -->
 				<div class="fixed w-full"
 					 *ngIf="!isOpen">
 					<span class="absolute w-auto p-2 min-w-max left-12 -top-[34px] rounded-md shadow-md 

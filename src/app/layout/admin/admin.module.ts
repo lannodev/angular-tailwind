@@ -11,6 +11,7 @@ import { SidebarMenuComponent } from './components/sidebar/sidebar-menu/sidebar-
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProfileMenuComponent } from './components/navbar/profile-menu/profile-menu.component';
 import { NavbarMenuComponent } from './components/navbar/navbar-menu/navbar-menu.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    SharedModule
   ]
 })
 export class AdminModule { }
