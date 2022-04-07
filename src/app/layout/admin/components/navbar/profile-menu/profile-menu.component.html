@@ -11,7 +11,7 @@
              alt="">
     </button>
     <div #profileMenu
-         [ngClass]="isMenuOpen ? 'scale-100' : 'scale-0'"
+         [ngClass]="isMenuOpen ? 'animate-fade-in-up' : 'hidden'"
          class="absolute origin-top-right right-0 mt-2 w-60 rounded-md shadow-custom 
          py-4 bg-white dark:bg-night-600 ring-1 ring-transparent ring-opacity-5 
          focus:outline-none transition-all ease-in">
@@ -49,5 +49,6 @@
                 Sign out
             </li>
         </ul>
+
     </div>
 </div>
