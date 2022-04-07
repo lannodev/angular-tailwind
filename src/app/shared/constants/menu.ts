@@ -28,7 +28,7 @@ export class Menu {
 			]
 		},
 		{
-			group: '',
+			group: 'Config',
 			separator: false,
 			items: [
 				{ icon: 'assets/icons/outline/cog.svg', label: 'Settings', route: '/settings', expanded: false, },

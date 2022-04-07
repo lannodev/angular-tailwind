@@ -6,13 +6,13 @@
 			{{menu.group}}
 		</small>
 	</div>
-	<ul class="flex flex-col space-y-1"
-		*ngFor="let items of menu.items">
-		<li>
+	<ul class="flex flex-col space-y-1">
+		<li *ngFor="let items of menu.items">
 			<div (click)="expandedMenu(items)"
 				 class="relative text-gray-400 dark:text-night-400 group"
 				 routerLinkActive="text-primary">
 
+				<!-- Icon -->
 				<div [ngClass]="isActive([items.route]) && !isOpen ? 'text-primary' : ''"
 					 class="m-2 absolute pointer-events-none">
 					<svg-icon src="{{items.icon}}"
@@ -39,6 +39,7 @@
 					</a>
 				</div>
 
+				<!-- Arrow Icon -->
 				<button *ngIf="items.children"
 						[ngClass]="{'hidden': !isOpen, 'rotate-90': items.expanded}"
 						class="absolute top-1 right-0 flex items-center pointer-events-none p-1 transition-all duration-500 text-gray-600 dark:text-night-400">

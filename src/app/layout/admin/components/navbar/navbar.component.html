@@ -4,7 +4,7 @@
 		<div class="relative flex items-center justify-between h-16">
 
 			<!-- Mobile Menu Button-->
-			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+			<div class="sm:hidden absolute inset-y-0 left-0 flex items-center">
 				<button type="button"
 						class="inline-flex items-center justify-center p-2 rounded-md 
 								text-gray-500/50 hover:text-gray-900 dark:text-night-50/50  dark:hover:text-night-50 
@@ -29,7 +29,7 @@
 			<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex-shrink-0 flex items-center">
 					<!-- Logo  -->
-					<div class="flex items-center  lg:hidden">
+					<div class="flex items-center lg:hidden">
 						<a class="bg-primary p-2 rounded flex items-center justify-center 
                        focus:outline-none focus:ring-1">
 
@@ -44,20 +44,29 @@
 					</div>
 				</div>
 				<div class="hidden sm:block sm:ml-6 lg:ml-0">
-					<div class="flex space-x-2">
-						<a href="#"
-						   class="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium"
-						   aria-current="page">Dashboard</a>
+					<ul class="flex space-x-2">
+						<!-- <li>
+							<a href="#"
+							   class="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium"
+							   aria-current="page">Dashboard</a>
+						</li> -->
 
-						<a href="#"
-						   class=" hover:bg-gray-200 dark:hover:bg-night-700 dark:text-night-200 px-3 py-2 rounded-md text-sm font-medium">Team</a>
+						<li *ngFor="let menu of pagesMenu">
+							<a class="absolute group hover:bg-gray-200 dark:hover:bg-night-600 
+						   dark:text-night-200  px-3 py-2 rounded-md text-sm 
+						   font-medium cursor-pointer">
+								{{menu.group}}
+							</a>
+							<div class="relative top-0 left-0 ">
+								<ul>
+									<li *ngFor="let items of menu.items">
+										{{items.label}}
+									</li>
+								</ul>
+							</div>
+						</li>
 
-						<a href="#"
-						   class=" hover:bg-gray-200 dark:hover:bg-night-700 dark:text-night-200 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
-						<a href="#"
-						   class=" hover:bg-gray-200 dark:hover:bg-night-700 dark:text-night-200 px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-					</div>
+					</ul>
 				</div>
 			</div>
 
