@@ -15,7 +15,7 @@ export class Menu {
 						{ label: 'Downloads', route: '/books/download' },
 						{ label: 'Trash', route: '/books/trash' },
 					]
-				},
+				}
 			]
 		},
 		{

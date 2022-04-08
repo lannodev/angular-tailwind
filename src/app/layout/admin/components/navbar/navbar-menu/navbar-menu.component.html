@@ -1,1 +1,90 @@
-<p>navbar-menu works!</p>
+<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+    <div class="flex-shrink-0 flex items-center">
+        <!-- Logo  -->
+        <div class="flex items-center lg:hidden">
+            <a class="bg-primary p-2 rounded flex items-center justify-center 
+           focus:outline-none focus:ring-1">
+
+                <svg-icon src="assets/icons/logo.svg">
+                    [svgClass]="'h-5 w-5'">
+                </svg-icon>
+
+            </a>
+            <b class="pl-3  text-sm font-bold dark:text-night-50">
+                Finance
+            </b>
+        </div>
+    </div>
+    <div class="hidden sm:block sm:ml-6 lg:ml-0">
+        <ul class="flex space-x-2">
+            <!-- <li>
+                <a href="#"
+                   class="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium"
+                   aria-current="page">Dashboard</a>
+            </li> -->
+
+            <li (clickOutside)="menu.selected=false"
+                class="relative"
+                *ngFor="let menu of pagesMenu">
+                <a (click)="toggleMenu(menu)"
+                   class="text-gray-600 dark:text-night-200 hover:bg-gray-100 dark:hover:bg-night-600 hover:text-indigo-500  
+                   px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
+                    {{menu.group}}
+                </a>
+                <!-- Dropdown  -->
+                <div [ngClass]="menu.selected ? 'animate-fade-in-up' : 'hidden'"
+                     class="absolute shadow-custom min-w-[200px] origin-top-left top-10 bg-white dark:bg-night-600 py-4 rounded-md transition-all duration-200 
+                     ">
+                    <ul>
+                        <li *ngFor="let items of menu.items"
+                            class="group relative px-2 text-gray-600 dark:text-night-200 text-xs font-semibold">
+
+                            <div [routerLink]="items.route"
+                                 (click)="toggleMenu(menu)"
+                                 class="group flex justify-between px-3 py-2 hover:bg-gray-100 dark:hover:bg-night-500 
+                                 cursor-pointer rounded-md hover:text-purple-500">
+
+                                <div class=" flex items-center">
+                                    <!-- Icon -->
+                                    <div class="text-gray-400 dark:text-night-400 mr-3 pointer-events-none">
+                                        <svg-icon src="{{items.icon}}"
+                                                  [svgClass]="'h-5 w-5'">
+                                        </svg-icon>
+                                    </div>
+
+                                    <a>{{items.label}}</a>
+                                </div>
+
+                                <!-- Arrow Icon -->
+                                <button *ngIf="items.children"
+                                        class="text-gray-400 dark:text-night-400">
+                                    <svg-icon src="assets/icons/solid/chevron-right.svg"
+                                              [svgClass]="'h-5 w-5'">
+                                    </svg-icon>
+                                </button>
+
+                            </div>
+
+                            <!-- Submenu Dropdown -->
+                            <ul *ngIf="items.children"
+                                class="absolute shadow-custom min-w-[200px] origin-top-left top-0 -right-[200px] bg-white 
+                                dark:bg-night-600 px-4 py-4 rounded-md transition-all duration-200 scale-0 group-hover:scale-100">
+
+                                <!-- List of submenu -->
+                                <li *ngFor="let children of items.children"
+                                    [routerLink]="children.route"
+                                    class="relative block px-3 py-2 hover:bg-gray-100 hover:text-purple-500 dark:hover:bg-night-500
+                                    cursor-pointer rounded-md">
+                                    {{children.label}}
+                                </li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

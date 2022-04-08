@@ -26,49 +26,7 @@
 			</div>
 
 			<!-- Desktop Menu  -->
-			<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-				<div class="flex-shrink-0 flex items-center">
-					<!-- Logo  -->
-					<div class="flex items-center lg:hidden">
-						<a class="bg-primary p-2 rounded flex items-center justify-center 
-                       focus:outline-none focus:ring-1">
-
-							<svg-icon src="assets/icons/logo.svg">
-								[svgClass]="'h-5 w-5'">
-							</svg-icon>
-
-						</a>
-						<b class="pl-3  text-sm font-bold dark:text-night-50">
-							Finance
-						</b>
-					</div>
-				</div>
-				<div class="hidden sm:block sm:ml-6 lg:ml-0">
-					<ul class="flex space-x-2">
-						<!-- <li>
-							<a href="#"
-							   class="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium"
-							   aria-current="page">Dashboard</a>
-						</li> -->
-
-						<li *ngFor="let menu of pagesMenu">
-							<a class="absolute group hover:bg-gray-200 dark:hover:bg-night-600 
-						   dark:text-night-200  px-3 py-2 rounded-md text-sm 
-						   font-medium cursor-pointer">
-								{{menu.group}}
-							</a>
-							<div class="relative top-0 left-0 ">
-								<ul>
-									<li *ngFor="let items of menu.items">
-										{{items.label}}
-									</li>
-								</ul>
-							</div>
-						</li>
-
-					</ul>
-				</div>
-			</div>
+			<app-navbar-menu [pagesMenu]="pagesMenu"></app-navbar-menu>
 
 			<!-- Right items -->
 			<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -80,18 +38,6 @@
 	</div>
 
 	<!-- Mobile menu -->
-	<div class="sm:hidden">
-		<div class="px-6 pt-2 pb-3 space-y-2">
-
-			<a class="bg-primary text-white block px-3 py-2 rounded-md text-sm font-medium"
-			   aria-current="page">Dashboard</a>
-
-			<a class="hover:bg-gray-100 hover:text-gray-700 
-				dark:text-night-100 dark:hover:bg-night-500 cursor-pointer
-				 block px-3 py-2 rounded-md text-sm font-medium">
-				Team
-			</a>
-		</div>
-	</div>
+	<app-navbar-mobile-menu [pagesMenu]="pagesMenu"></app-navbar-mobile-menu>
 
 </nav>
