@@ -17,20 +17,20 @@
     </div>
     <div class="hidden sm:block sm:ml-6 lg:ml-0">
         <ul class="flex space-x-2">
-            <!-- <li>
-                <a href="#"
-                   class="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium"
-                   aria-current="page">Dashboard</a>
-            </li> -->
 
             <li (clickOutside)="menu.selected=false"
                 class="relative"
                 *ngFor="let menu of pagesMenu">
+
                 <a (click)="toggleMenu(menu)"
-                   class="text-gray-600 dark:text-night-200 hover:bg-gray-100 dark:hover:bg-night-600 hover:text-indigo-500  
+                   [ngClass]="menu.selected 
+                   ? 'text-white bg-primary'
+                   :'text-gray-600 dark:text-night-200 hover:bg-gray-100 dark:hover:bg-night-600 hover:text-indigo-500 '"
+                   class="  
                    px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
                     {{menu.group}}
                 </a>
+
                 <!-- Dropdown  -->
                 <div [ngClass]="menu.selected ? 'animate-fade-in-up' : 'hidden'"
                      class="absolute shadow-custom min-w-[200px] origin-top-left top-10 bg-white dark:bg-night-600 py-4 rounded-md transition-all duration-200 
@@ -41,8 +41,8 @@
 
                             <div [routerLink]="items.route"
                                  (click)="toggleMenu(menu)"
-                                 class="group flex justify-between px-3 py-2 hover:bg-gray-100 dark:hover:bg-night-500 
-                                 cursor-pointer rounded-md hover:text-purple-500">
+                                 class="flex justify-between px-3 py-2 cursor-pointer rounded-md 
+                                 group-hover:bg-gray-100 dark:group-hover:bg-night-500 group-hover:text-purple-500">
 
                                 <div class=" flex items-center">
                                     <!-- Icon -->
@@ -73,11 +73,11 @@
                                 <!-- List of submenu -->
                                 <li *ngFor="let children of items.children"
                                     [routerLink]="children.route"
+                                    (click)="toggleMenu(menu)"
                                     class="relative block px-3 py-2 hover:bg-gray-100 hover:text-purple-500 dark:hover:bg-night-500
                                     cursor-pointer rounded-md">
                                     {{children.label}}
                                 </li>
-
                             </ul>
 
                         </li>
