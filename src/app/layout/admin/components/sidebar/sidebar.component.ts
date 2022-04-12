@@ -7,22 +7,18 @@ import packageJson from '../../../../../../package.json';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-
   public isOpen = true;
   public pagesMenu: MenuItem[];
   public appJson: any = packageJson;
 
-  constructor(
-    public themeService: ThemeService
-  ) {
+  constructor(public themeService: ThemeService) {
     this.pagesMenu = Menu.pages;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public toggleSidebar() {
     this.isOpen = !this.isOpen;
@@ -31,6 +27,4 @@ export class SidebarComponent implements OnInit {
   toggleTheme() {
     this.themeService.theme = !this.themeService.isDark ? 'dark' : 'light';
   }
-
 }
-

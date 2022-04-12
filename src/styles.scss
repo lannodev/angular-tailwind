@@ -1,38 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .text-primary {
-	@apply text-violet-500;
+  @apply text-violet-500;
 }
 
 .bg-primary {
-	@apply bg-violet-500;
+  @apply bg-violet-500;
 }
 
 .text-primary {
-	@apply text-violet-500;
+  @apply text-violet-500;
 }
 
 /** Scroll bar **/
 ::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #e4e4e4;
-	border-radius: 10px;
+  background: #e4e4e4;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #fafafa;
+  background: #fafafa;
 }
 
 ::-webkit-scrollbar-track {
-	background: #ffffff;
-	border-radius: 10px;
-	box-shadow: inset 7px 10px 12px #f0f0f0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
 }

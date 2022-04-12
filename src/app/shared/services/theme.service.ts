@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
-
   public default = 'light';
 
-  constructor() { }
+  constructor() {}
 
   public get theme(): string {
     return localStorage.getItem('theme') ?? this.default;
@@ -20,6 +19,4 @@ export class ThemeService {
   public get isDark(): boolean {
     return this.theme == 'dark';
   }
-
-
 }

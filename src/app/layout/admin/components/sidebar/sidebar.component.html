@@ -1,125 +1,124 @@
-<nav [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
-     class="hidden lg:flex flex-col justify-between h-full overflow-y-auto bg-white 
-     pt-3 dark:bg-night-700 transition-all duration-300">
-
-    <div class="px-4">
-        <!-- Logo -->
-        <div class="relative h-10">
-            <div class="flex items-center"
-                 *ngIf="isOpen">
-                <a class="bg-primary p-2 rounded flex items-center justify-center 
-                       focus:outline-none focus:ring-1">
-
-                    <svg-icon src="assets/icons/logo.svg">
-                        [svgClass]="'h-5 w-5'">
-                    </svg-icon>
-
-                </a>
-                <b class="pl-2 ml-1 text-sm font-bold dark:text-night-50">
-                    {{appJson.name}}
-                </b>
-            </div>
-            <button (click)="toggleSidebar()"
-                    class="absolute w-5 h-5 top-2 right-2 flex items-center justify-center 
-                        rounded focus:outline-none opacity-20 transition-all duration-200 hover:opacity-70 
-                        dark:text-slate-100"
-                    [ngClass]="{'rotate-180': !isOpen}">
-                <svg-icon src="assets/icons/solid/chevron-double-left.svg">
-                    [svgClass]="'h-5 w-5'">
-                </svg-icon>
-            </button>
-        </div>
-
-        <!-- Separator -->
-        <div class="pt-3">
-            <hr class="border-gray-200 dark:border-night-500 border-dashed">
-        </div>
-
-        <!-- Menu Items -->
-        <app-sidebar-menu [isOpen]="isOpen"
-                          [menuItem]="pagesMenu">
-        </app-sidebar-menu>
-
+<nav
+  [ngClass]="isOpen ? 'w-52 xl:w-64' : 'w-[70px]'"
+  class="hidden h-full flex-col justify-between overflow-y-auto bg-white pt-3 transition-all duration-300 dark:bg-night-700 lg:flex"
+>
+  <div class="px-4">
+    <!-- Logo -->
+    <div class="relative h-10">
+      <div class="flex items-center" *ngIf="isOpen">
+        <a
+          class="bg-primary flex items-center justify-center rounded p-2 focus:outline-none focus:ring-1"
+        >
+          <svg-icon src="assets/icons/logo.svg">
+            [svgClass]="'h-5 w-5'">
+          </svg-icon>
+        </a>
+        <b class="ml-1 pl-2 text-sm font-bold dark:text-night-50">
+          {{ appJson.name }}
+        </b>
+      </div>
+      <button
+        (click)="toggleSidebar()"
+        class="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded opacity-20 transition-all duration-200 hover:opacity-70 focus:outline-none dark:text-slate-100"
+        [ngClass]="{ 'rotate-180': !isOpen }"
+      >
+        <svg-icon src="assets/icons/solid/chevron-double-left.svg">
+          [svgClass]="'h-5 w-5'">
+        </svg-icon>
+      </button>
     </div>
 
-    <div class="mx-4 my-4  space-y-1">
-        <!-- Dark Theme -->
-
-        <div (click)="toggleTheme()"
-             class="group rounded flex items-center justify-start h-9 
-             cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2">
-
-            <svg-icon [src]="themeService.isDark ? 'assets/icons/outline/sun.svg' : 'assets/icons/outline/moon.svg'"
-                      [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
-            </svg-icon>
-
-            <a class="ml-3 text-xs font-semibold focus:outline-none tracking-wide 
-               truncate text-gray-600 dark:text-night-100">
-                {{themeService.isDark ? 'Light Theme' : 'Dark Theme'}}
-            </a>
-
-            <div class="fixed w-full"
-                 *ngIf="!isOpen">
-                <span class="absolute w-auto p-2 min-w-max left-12 -top-4 rounded-md shadow-md 
-						  text-white bg-black dark:text-night-900 dark:bg-white text-xs 
-						  font-bold z-1 transition-all duration-200 scale-0 origin-left 
-						  group-hover:scale-100">
-                    Theme
-                </span>
-            </div>
-
-        </div>
-
-        <div class="rounded flex items-center justify-start h-9 
-             cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2
-             group">
-
-            <svg-icon src="assets/icons/outline/logout.svg"
-                      [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
-            </svg-icon>
-
-            <a class="ml-3 text-xs font-semibold focus:outline-none tracking-wide 
-               truncate text-gray-600 dark:text-night-100">
-                Sign out
-            </a>
-
-            <div class="fixed w-full"
-                 *ngIf="!isOpen">
-                <span class="absolute w-auto p-2 min-w-max left-12 -top-4 rounded-md shadow-md 
-						  text-white bg-black dark:text-night-900 dark:bg-white text-xs 
-						  font-bold z-1 transition-all duration-200 scale-0 origin-left 
-						  group-hover:scale-100">
-                    Sign out
-                </span>
-            </div>
-
-        </div>
-
-        <div class="rounded flex items-center justify-start h-9 
-             cursor-pointer hover:bg-gray-100 dark:hover:bg-night-600 p-2 group">
-
-            <svg-icon src="assets/icons/outline/information-circle.svg"
-                      [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
-            </svg-icon>
-
-            <a class="ml-3 text-[10px] font-semibold focus:outline-none tracking-wide 
-               truncate text-gray-600 dark:text-night-100">
-                <span class="px-2 font-semibold bg-yellow-400/10 text-yellow-500 rounded-lg">v{{appJson.version}}</span>
-            </a>
-
-            <div class="fixed w-full"
-                 *ngIf="!isOpen">
-                <span class="absolute w-auto p-2 min-w-max left-12 -top-4 rounded-md shadow-md 
-						  text-white bg-black dark:text-night-900 dark:bg-white text-xs 
-						  font-bold z-1 transition-all duration-200 scale-0 origin-left 
-						  group-hover:scale-100">
-                    v{{appJson.version}}
-                </span>
-            </div>
-
-        </div>
-
-
+    <!-- Separator -->
+    <div class="pt-3">
+      <hr class="border-dashed border-gray-200 dark:border-night-500" />
     </div>
 
+    <!-- Menu Items -->
+    <app-sidebar-menu [isOpen]="isOpen" [menuItem]="pagesMenu">
+    </app-sidebar-menu>
+  </div>
+
+  <div class="mx-4 my-4 space-y-1">
+    <!-- Dark Theme -->
+
+    <div
+      (click)="toggleTheme()"
+      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600"
+    >
+      <svg-icon
+        [src]="
+          themeService.isDark
+            ? 'assets/icons/outline/sun.svg'
+            : 'assets/icons/outline/moon.svg'
+        "
+        [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'"
+      >
+      </svg-icon>
+
+      <a
+        class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100"
+      >
+        {{ themeService.isDark ? "Light Theme" : "Dark Theme" }}
+      </a>
+
+      <div class="fixed w-full" *ngIf="!isOpen">
+        <span
+          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900"
+        >
+          Theme
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600"
+    >
+      <svg-icon
+        src="assets/icons/outline/logout.svg"
+        [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'"
+      >
+      </svg-icon>
+
+      <a
+        class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100"
+      >
+        Sign out
+      </a>
+
+      <div class="fixed w-full" *ngIf="!isOpen">
+        <span
+          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900"
+        >
+          Sign out
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600"
+    >
+      <svg-icon
+        src="assets/icons/outline/information-circle.svg"
+        [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'"
+      >
+      </svg-icon>
+
+      <a
+        class="ml-3 truncate text-[10px] font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100"
+      >
+        <span
+          class="rounded-lg bg-yellow-400/10 px-2 font-semibold text-yellow-500"
+          >v{{ appJson.version }}</span
+        >
+      </a>
+
+      <div class="fixed w-full" *ngIf="!isOpen">
+        <span
+          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900"
+        >
+          v{{ appJson.version }}
+        </span>
+      </div>
+    </div>
+  </div>
 </nav>

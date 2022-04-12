@@ -5,40 +5,40 @@ import { MenuItem } from 'src/app/shared/models/menu.model';
 @Component({
   selector: 'app-sidebar-menu',
   templateUrl: './sidebar-menu.component.html',
-  styleUrls: ['./sidebar-menu.component.scss']
+  styleUrls: ['./sidebar-menu.component.scss'],
 })
 export class SidebarMenuComponent implements OnInit {
-
   @Input() public isOpen = true;
   @Input() public menuItem: MenuItem[] = [];
 
-
-  constructor(
-    private router: Router
-  ) {
+  constructor(private router: Router) {
     /** await menu values */
     setTimeout(() => {
-      this.menuItem.forEach(menu => {
-        menu.items.forEach(item => item.expanded = this.isActive([item.route]))
+      this.menuItem.forEach((menu) => {
+        menu.items.forEach(
+          (item) => (item.expanded = this.isActive([item.route]))
+        );
       });
     }, 0);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public expandedMenu(menu: any) {
     let expanded = menu.expanded;
-    this.menuItem.forEach(menu => menu.items.forEach(item => item.expanded = false));
+    this.menuItem.forEach((menu) =>
+      menu.items.forEach((item) => (item.expanded = false))
+    );
     menu.expanded = !expanded;
   }
 
   /** Check active route */
   public isActive(instruction: any[]): boolean {
-    return this.router.isActive(
-      this.router.createUrlTree(instruction),
-      { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' }
-    );
+    return this.router.isActive(this.router.createUrlTree(instruction), {
+      paths: 'subset',
+      queryParams: 'subset',
+      fragment: 'ignored',
+      matrixParams: 'ignored',
+    });
   }
-
 }

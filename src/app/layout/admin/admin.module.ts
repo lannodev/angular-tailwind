@@ -14,7 +14,6 @@ import { NavbarMenuComponent } from './components/navbar/navbar-menu/navbar-menu
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile-menu/navbar-mobile-menu.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -32,14 +31,14 @@ const routes: Routes = [
     SidebarMenuComponent,
     ProfileMenuComponent,
     NavbarMenuComponent,
-    NavbarMobileMenuComponent
+    NavbarMobileMenuComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}
