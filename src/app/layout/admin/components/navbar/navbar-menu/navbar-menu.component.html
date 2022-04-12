@@ -1,97 +1,85 @@
 <div
-  class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
->
-  <div class="flex flex-shrink-0 items-center">
-    <!-- Logo  -->
-    <div class="flex items-center lg:hidden">
-      <a
-        class="bg-primary flex items-center justify-center rounded p-2 focus:outline-none focus:ring-1"
-      >
-        <svg-icon src="assets/icons/logo.svg">
-          [svgClass]="'h-5 w-5'">
-        </svg-icon>
-      </a>
-      <b class="pl-3 text-sm font-bold dark:text-night-50"> Finance </b>
-    </div>
-  </div>
-  <div class="hidden sm:ml-6 sm:block lg:ml-0">
-    <ul class="flex space-x-2">
-      <li
-        (clickOutside)="menu.selected = false"
-        class="relative"
-        *ngFor="let menu of pagesMenu"
-      >
-        <a
-          (click)="toggleMenu(menu)"
-          [ngClass]="
-            menu.selected
-              ? 'bg-primary text-white'
-              : 'text-gray-600 hover:bg-gray-100 hover:text-indigo-500 dark:text-night-200 dark:hover:bg-night-600 '
-          "
-          class="cursor-pointer rounded-md px-3 py-2 text-sm font-medium"
-        >
-          {{ menu.group }}
-        </a>
+	class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+	<div class="flex flex-shrink-0 items-center">
+		<!-- Logo  -->
+		<div class="flex items-center lg:hidden">
+			<a
+				class="bg-primary flex items-center justify-center rounded p-2 focus:outline-none focus:ring-1">
+				<svg-icon src="assets/icons/logo.svg">
+					[svgClass]="'h-5 w-5'">
+				</svg-icon>
+			</a>
+			<b class="pl-3 text-sm font-bold dark:text-night-50"> Finance </b>
+		</div>
+	</div>
+	<div class="hidden sm:ml-6 sm:block lg:ml-0">
+		<ul class="flex space-x-2">
+			<li
+				(clickOutside)="menu.selected = false"
+				class="relative"
+				*ngFor="let menu of pagesMenu">
+				<a
+					(click)="toggleMenu(menu)"
+					[ngClass]="
+						menu.selected
+							? 'bg-primary text-white'
+							: 'text-gray-600 hover:bg-gray-100 hover:text-indigo-500 dark:text-night-200 dark:hover:bg-night-600 '
+					"
+					class="cursor-pointer rounded-md px-3 py-2 text-sm font-medium">
+					{{ menu.group }}
+				</a>
 
-        <!-- Dropdown  -->
-        <div
-          [ngClass]="menu.selected ? 'animate-fade-in-up' : 'hidden'"
-          class="absolute top-10 min-w-[200px] origin-top-left rounded-md bg-white py-4 shadow-custom transition-all duration-200 dark:bg-night-600"
-        >
-          <ul>
-            <li
-              *ngFor="let items of menu.items"
-              class="group relative px-2 text-xs font-semibold text-gray-600 dark:text-night-200"
-            >
-              <div
-                [routerLink]="items.route"
-                (click)="toggleMenu(menu)"
-                class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-purple-500 dark:group-hover:bg-night-500"
-              >
-                <div class="flex items-center">
-                  <!-- Icon -->
-                  <div
-                    class="pointer-events-none mr-3 text-gray-400 dark:text-night-400"
-                  >
-                    <svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'">
-                    </svg-icon>
-                  </div>
+				<!-- Dropdown  -->
+				<div
+					[ngClass]="menu.selected ? 'animate-fade-in-up' : 'hidden'"
+					class="absolute top-10 min-w-[200px] origin-top-left rounded-md bg-white py-4 shadow-custom transition-all duration-200 dark:bg-night-600">
+					<ul>
+						<li
+							*ngFor="let items of menu.items"
+							class="group relative px-2 text-xs font-semibold text-gray-600 dark:text-night-200">
+							<div
+								[routerLink]="items.route"
+								(click)="toggleMenu(menu)"
+								class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-purple-500 dark:group-hover:bg-night-500">
+								<div class="flex items-center">
+									<!-- Icon -->
+									<div
+										class="pointer-events-none mr-3 text-gray-400 dark:text-night-400">
+										<svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'">
+										</svg-icon>
+									</div>
 
-                  <a>{{ items.label }}</a>
-                </div>
+									<a>{{ items.label }}</a>
+								</div>
 
-                <!-- Arrow Icon -->
-                <button
-                  *ngIf="items.children"
-                  class="text-gray-400 dark:text-night-400"
-                >
-                  <svg-icon
-                    src="assets/icons/solid/chevron-right.svg"
-                    [svgClass]="'h-5 w-5'"
-                  >
-                  </svg-icon>
-                </button>
-              </div>
+								<!-- Arrow Icon -->
+								<button
+									*ngIf="items.children"
+									class="text-gray-400 dark:text-night-400">
+									<svg-icon
+										src="assets/icons/solid/chevron-right.svg"
+										[svgClass]="'h-5 w-5'">
+									</svg-icon>
+								</button>
+							</div>
 
-              <!-- Submenu Dropdown -->
-              <ul
-                *ngIf="items.children"
-                class="absolute top-0 -right-[200px] min-w-[200px] origin-top-left scale-0 rounded-md bg-white px-4 py-4 shadow-custom transition-all duration-200 group-hover:scale-100 dark:bg-night-600"
-              >
-                <!-- List of submenu -->
-                <li
-                  *ngFor="let children of items.children"
-                  [routerLink]="children.route"
-                  (click)="toggleMenu(menu)"
-                  class="relative block cursor-pointer rounded-md px-3 py-2 hover:bg-gray-100 hover:text-purple-500 dark:hover:bg-night-500"
-                >
-                  {{ children.label }}
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
+							<!-- Submenu Dropdown -->
+							<ul
+								*ngIf="items.children"
+								class="absolute top-0 -right-[200px] min-w-[200px] origin-top-left scale-0 rounded-md bg-white px-4 py-4 shadow-custom transition-all duration-200 group-hover:scale-100 dark:bg-night-600">
+								<!-- List of submenu -->
+								<li
+									*ngFor="let children of items.children"
+									[routerLink]="children.route"
+									(click)="toggleMenu(menu)"
+									class="relative block cursor-pointer rounded-md px-3 py-2 hover:bg-gray-100 hover:text-purple-500 dark:hover:bg-night-500">
+									{{ children.label }}
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>

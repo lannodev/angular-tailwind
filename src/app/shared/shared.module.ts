@@ -4,8 +4,8 @@ import { ResponsiveHelperComponent } from './components/responsive-helper/respon
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
-  declarations: [ResponsiveHelperComponent, ClickOutsideDirective],
-  imports: [CommonModule],
-  exports: [ResponsiveHelperComponent, ClickOutsideDirective],
+	declarations: [ResponsiveHelperComponent, ClickOutsideDirective],
+	imports: [CommonModule],
+	exports: [ResponsiveHelperComponent, ClickOutsideDirective],
 })
 export class SharedModule {}

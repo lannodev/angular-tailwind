@@ -5,34 +5,34 @@
 @import "tailwindcss/utilities";
 
 .text-primary {
-  @apply text-violet-500;
+	@apply text-violet-500;
 }
 
 .bg-primary {
-  @apply bg-violet-500;
+	@apply bg-violet-500;
 }
 
 .text-primary {
-  @apply text-violet-500;
+	@apply text-violet-500;
 }
 
 /** Scroll bar **/
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+	width: 5px;
+	height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e4e4e4;
-  border-radius: 10px;
+	background: #e4e4e4;
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fafafa;
+	background: #fafafa;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: inset 7px 10px 12px #f0f0f0;
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: inset 7px 10px 12px #f0f0f0;
 }

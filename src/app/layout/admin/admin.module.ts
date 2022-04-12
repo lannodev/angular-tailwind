@@ -15,30 +15,30 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile-menu/navbar-mobile-menu.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AdminComponent,
-    children: PagesRouting,
-  },
+	{
+		path: '',
+		component: AdminComponent,
+		children: PagesRouting,
+	},
 ];
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    FooterComponent,
-    SidebarComponent,
-    NavbarComponent,
-    SidebarMenuComponent,
-    ProfileMenuComponent,
-    NavbarMenuComponent,
-    NavbarMobileMenuComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    HttpClientModule,
-    AngularSvgIconModule.forRoot(),
-    SharedModule,
-  ],
+	declarations: [
+		AdminComponent,
+		FooterComponent,
+		SidebarComponent,
+		NavbarComponent,
+		SidebarMenuComponent,
+		ProfileMenuComponent,
+		NavbarMenuComponent,
+		NavbarMobileMenuComponent,
+	],
+	imports: [
+		CommonModule,
+		RouterModule.forChild(routes),
+		HttpClientModule,
+		AngularSvgIconModule.forRoot(),
+		SharedModule,
+	],
 })
 export class AdminModule {}
