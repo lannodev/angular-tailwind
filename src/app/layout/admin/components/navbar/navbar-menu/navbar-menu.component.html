@@ -1,23 +1,16 @@
-<div
-	class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 	<div class="flex flex-shrink-0 items-center">
 		<!-- Logo  -->
 		<div class="flex items-center lg:hidden">
-			<a
-				class="bg-primary flex items-center justify-center rounded p-2 focus:outline-none focus:ring-1">
-				<svg-icon src="assets/icons/logo.svg">
-					[svgClass]="'h-5 w-5'">
-				</svg-icon>
+			<a class="bg-primary flex items-center justify-center rounded p-2 focus:outline-none focus:ring-1">
+				<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
 			</a>
 			<b class="pl-3 text-sm font-bold dark:text-night-50"> Finance </b>
 		</div>
 	</div>
 	<div class="hidden sm:ml-6 sm:block lg:ml-0">
 		<ul class="flex space-x-2">
-			<li
-				(clickOutside)="menu.selected = false"
-				class="relative"
-				*ngFor="let menu of pagesMenu">
+			<li (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu">
 				<a
 					(click)="toggleMenu(menu)"
 					[ngClass]="
@@ -43,22 +36,16 @@
 								class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-purple-500 dark:group-hover:bg-night-500">
 								<div class="flex items-center">
 									<!-- Icon -->
-									<div
-										class="pointer-events-none mr-3 text-gray-400 dark:text-night-400">
-										<svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'">
-										</svg-icon>
+									<div class="pointer-events-none mr-3 text-gray-400 dark:text-night-400">
+										<svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 									</div>
 
 									<a>{{ items.label }}</a>
 								</div>
 
 								<!-- Arrow Icon -->
-								<button
-									*ngIf="items.children"
-									class="text-gray-400 dark:text-night-400">
-									<svg-icon
-										src="assets/icons/solid/chevron-right.svg"
-										[svgClass]="'h-5 w-5'">
+								<button *ngIf="items.children" class="text-gray-400 dark:text-night-400">
+									<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'">
 									</svg-icon>
 								</button>
 							</div>

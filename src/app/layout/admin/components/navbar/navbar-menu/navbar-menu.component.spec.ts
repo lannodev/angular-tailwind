@@ -1,24 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { NavbarMenuComponent } from './navbar-menu.component';
+import { NavbarMenuComponent } from './navbar-menu.component'
 
 describe('NavbarMenuComponent', () => {
-	let component: NavbarMenuComponent;
-	let fixture: ComponentFixture<NavbarMenuComponent>;
+	let component: NavbarMenuComponent
+	let fixture: ComponentFixture<NavbarMenuComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [NavbarMenuComponent],
-		}).compileComponents();
-	});
+		}).compileComponents()
+	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(NavbarMenuComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
+		fixture = TestBed.createComponent(NavbarMenuComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
 	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
-});
+		expect(component).toBeTruthy()
+	})
+})

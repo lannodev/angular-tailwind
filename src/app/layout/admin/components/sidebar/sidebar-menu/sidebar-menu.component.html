@@ -1,8 +1,6 @@
 <div class="pt-4" *ngFor="let menu of menuItem">
 	<div class="mx-1 mb-2 flex items-center justify-between">
-		<small
-			[ngClass]="{ hidden: !isOpen }"
-			class="text-xs font-semibold text-gray-400 dark:text-night-200">
+		<small [ngClass]="{ hidden: !isOpen }" class="text-xs font-semibold text-gray-400 dark:text-night-200">
 			{{ menu.group }}
 		</small>
 	</div>
@@ -46,10 +44,7 @@
 					*ngIf="items.children"
 					[ngClass]="{ hidden: !isOpen, 'rotate-90': items.expanded }"
 					class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
-					<svg-icon
-						src="assets/icons/solid/chevron-right.svg"
-						[svgClass]="'h-5 w-5'">
-					</svg-icon>
+					<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</button>
 
 				<!-- Tooltip -->
@@ -65,8 +60,7 @@
 			<div
 				class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
 				[ngClass]="{ hidden: !isOpen, 'max-h-screen': items.expanded }">
-				<ul
-					class="flex flex-col border-l border-dashed border-gray-200 pl-2 dark:border-night-500">
+				<ul class="flex flex-col border-l border-dashed border-gray-200 pl-2 dark:border-night-500">
 					<li *ngFor="let sub of items.children">
 						<a
 							routerLink="{{ sub.route }}"

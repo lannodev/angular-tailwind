@@ -1,5 +1,5 @@
-import { Routes } from '@angular/router';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { Routes } from '@angular/router'
+import { DashboardComponent } from './admin/dashboard/dashboard.component'
 
 const PagesRouting: Routes = [
 	// {
@@ -13,6 +13,6 @@ const PagesRouting: Routes = [
 	{ path: 'books/trash', component: DashboardComponent },
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 	{ path: '**', redirectTo: 'error/404' },
-];
+]
 
-export { PagesRouting };
+export { PagesRouting }

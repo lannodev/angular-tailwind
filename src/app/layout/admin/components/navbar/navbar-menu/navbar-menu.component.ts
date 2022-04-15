@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from 'src/app/shared/models/menu.model';
+import { Component, Input, OnInit } from '@angular/core'
+import { MenuItem } from 'src/app/shared/models/menu.model'
 
 @Component({
 	selector: 'app-navbar-menu',
@@ -7,13 +7,13 @@ import { MenuItem } from 'src/app/shared/models/menu.model';
 	styleUrls: ['./navbar-menu.component.scss'],
 })
 export class NavbarMenuComponent implements OnInit {
-	@Input() pagesMenu: MenuItem[] = [];
+	@Input() pagesMenu: MenuItem[] = []
 
 	constructor() {}
 
 	ngOnInit(): void {}
 
 	public toggleMenu(menu: MenuItem): void {
-		menu.selected = !menu.selected;
+		menu.selected = !menu.selected
 	}
 }

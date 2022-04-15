@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from 'src/app/shared/models/menu.model';
+import { Component, Input, OnInit } from '@angular/core'
+import { MenuItem } from 'src/app/shared/models/menu.model'
 
 @Component({
 	selector: 'app-navbar-mobile-menu',
@@ -7,7 +7,7 @@ import { MenuItem } from 'src/app/shared/models/menu.model';
 	styleUrls: ['./navbar-mobile-menu.component.scss'],
 })
 export class NavbarMobileMenuComponent implements OnInit {
-	@Input() pagesMenu: MenuItem[] = [];
+	@Input() pagesMenu: MenuItem[] = []
 
 	constructor() {}
 
