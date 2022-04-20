@@ -4,18 +4,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.text-primary {
-	@apply text-violet-500;
-}
-
-.bg-primary {
-	@apply bg-violet-500;
-}
-
-.text-primary {
-	@apply text-violet-500;
-}
-
 /** Scroll bar **/
 ::-webkit-scrollbar {
 	width: 5px;

@@ -33,7 +33,7 @@
 							<div
 								[routerLink]="items.route"
 								(click)="toggleMenu(menu)"
-								class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-purple-500 dark:group-hover:bg-night-500">
+								class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-primary-500 dark:group-hover:bg-night-500">
 								<div class="flex items-center">
 									<!-- Icon -->
 									<div class="pointer-events-none mr-3 text-gray-400 dark:text-night-400">
@@ -59,7 +59,7 @@
 									*ngFor="let children of items.children"
 									[routerLink]="children.route"
 									(click)="toggleMenu(menu)"
-									class="relative block cursor-pointer rounded-md px-3 py-2 hover:bg-gray-100 hover:text-purple-500 dark:hover:bg-night-500">
+									class="relative block cursor-pointer rounded-md px-3 py-2 hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-night-500">
 									{{ children.label }}
 								</li>
 							</ul>
