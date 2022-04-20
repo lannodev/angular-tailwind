@@ -1,27 +1,44 @@
-# Finance
+<p align="center">
+    <img src="src/assets/preview/logo.png" width="150">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+<p align="center">
+    <a href="https://github.com/luciano-work/angular-tailwind/stargazers">
+        <img height= "24" src="https://img.shields.io/github/stars/luciano-work/angular-tailwind?colorA=1e1e28&colorB=c9cbff&style=for-the-badge">
+    </a>
+    <a href="https://github.com/luciano-work/angular-tailwind/issues">
+        <img height= "24" src="https://img.shields.io/github/issues/luciano-work/angular-tailwind?colorA=1e1e28&colorB=f7be95&style=for-the-badge">
+    </a>
+    <a href="https://github.com/luciano-work/angular-tailwind/contributors">
+        <img height= "24" src="https://img.shields.io/github/contributors/luciano-work/angular-tailwind?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge">
+    </a>
+</p>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Motivation
 
-## Code scaffolding
+For me, the best strategies for learning new skills is to practice. 
+I have created this project to learning more about Tailwind css using my favorite framework (Angular). I have to tell you, Tailwind it is amazing!
+<b>The project is not finished yet!</b>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p>
+  <img alt="Preview" src="src/assets/preview/demo.gif">
+</p>
 
-## Build
+#### Versions
+<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 13-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/tailwind 3-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Features
+  * [X] Sidebar
+  * [x] Navbar
+  * [ ] Footer
+  * [x] Dark Theme
+  * [ ] Auth Module
+  * [ ] Profile Page
+  * [ ] Dashboard Page
+  * [ ] Users Module
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Disclaimer
+The Tailwind name and logos are trademarks of Tailwind Labs Inc.
+The Angular name and logos are trademarks of Google.
