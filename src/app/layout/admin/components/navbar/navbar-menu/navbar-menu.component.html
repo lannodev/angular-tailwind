@@ -3,7 +3,7 @@
 		<!-- Logo  -->
 		<div class="flex items-center lg:hidden">
 			<a class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
-				<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
+				<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5 text-red'"> </svg-icon>
 			</a>
 			<b class="pl-3 text-sm font-bold dark:text-night-50"> Finance </b>
 		</div>
@@ -15,8 +15,8 @@
 					(click)="toggleMenu(menu)"
 					[ngClass]="
 						menu.selected
-							? 'bg-primary text-white'
-							: 'text-gray-600 hover:bg-gray-100 hover:text-indigo-500 dark:text-night-200 dark:hover:bg-night-600 '
+							? 'bg-primary-500 text-white'
+							: 'text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-600 '
 					"
 					class="cursor-pointer rounded-md px-3 py-2 text-sm font-medium">
 					{{ menu.group }}
