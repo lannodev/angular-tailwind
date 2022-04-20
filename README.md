@@ -14,7 +14,6 @@
     </a>
 </p>
 
-
 #### Motivation
 
 For me, the best strategies for learning new skills is to practice. 
@@ -30,14 +29,13 @@ I have created this project to learning more about Tailwind css using my favorit
 
 #### Features
   * [X] Sidebar
-  * [x] Navbar
-  * [ ] Footer
   * [x] Dark Theme
+  * [ ] Navbar
+  * [ ] Footer
   * [ ] Auth Module
+  * [ ] User Module
   * [ ] Profile Page
   * [ ] Dashboard Page
-  * [ ] Users Module
-
 
 #### Disclaimer
 The Tailwind name and logos are trademarks of Tailwind Labs Inc.
