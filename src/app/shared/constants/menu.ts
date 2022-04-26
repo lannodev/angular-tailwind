@@ -15,7 +15,7 @@ export class Menu {
 				{
 					icon: 'assets/icons/outline/bookmark.svg',
 					label: 'Books',
-					route: '/books',
+					route: null,
 					expanded: false,
 					children: [
 						{ label: 'Current Files', route: '/books/current-files' },

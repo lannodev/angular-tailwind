@@ -5,44 +5,43 @@
 		</small>
 	</div>
 	<ul class="flex flex-col space-y-1">
-		<li *ngFor="let items of menu.items">
+		<!-- List items -->
+		<li *ngFor="let item of menu.items">
 			<div
-				(click)="expandedMenu(items)"
+				(click)="expandedMenu(item)"
 				class="group relative text-gray-400 dark:text-night-400"
 				routerLinkActive="text-primary-500">
 				<!-- Icon -->
 				<div
-					[ngClass]="isActive([items.route]) && !isOpen ? 'text-primary-500' : ''"
+					[ngClass]="item.active && !isOpen ? 'text-primary-500' : ''"
 					class="pointer-events-none absolute m-2">
-					<svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+					<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</div>
-
 				<!-- Workaround:: Enable routerLink -->
 				<div
-					*ngIf="!items.children"
-					routerLink="{{ items.route }}"
 					class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
 					<a
-						routerLinkActive="text-primary"
+						(click)="changeRoute(item, menu)"
+						routerLinkActive="text-primary-500"
 						class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
-						{{ items.label }}
+						{{ item.label }}
 					</a>
 				</div>
 
 				<!-- Workaround:: Disable routerLink -->
-				<div
-					*ngIf="items.children"
+				<!-- <div
+					*ngIf="item.children"
 					class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
 					<a
 						class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
-						{{ items.label }}
+						{{ item.label }}
 					</a>
-				</div>
+				</div> -->
 
 				<!-- Arrow Icon -->
 				<button
-					*ngIf="items.children"
-					[ngClass]="{ hidden: !isOpen, 'rotate-90': items.expanded }"
+					*ngIf="item.children"
+					[ngClass]="{ hidden: !isOpen, 'rotate-90': item.expanded }"
 					class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
 					<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</button>
@@ -51,7 +50,7 @@
 				<div class="fixed w-full" *ngIf="!isOpen">
 					<span
 						class="z-1 absolute left-12 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
-						{{ items.label }}
+						{{ item.label }}
 					</span>
 				</div>
 			</div>
@@ -59,13 +58,14 @@
 			<!-- Submenu items -->
 			<div
 				class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
-				[ngClass]="{ hidden: !isOpen, 'max-h-screen': items.expanded }">
-				<ul class="flex flex-col border-l border-dashed border-gray-200 pl-2 dark:border-night-500">
-					<li *ngFor="let sub of items.children">
+				[ngClass]="{ hidden: !isOpen, 'max-h-screen': item.expanded }">
+				<ul
+					class="flex flex-col border-l border-dashed border-gray-200 pl-2 text-night-200 dark:border-night-500">
+					<li *ngFor="let sub of item.children">
 						<a
 							routerLink="{{ sub.route }}"
 							routerLinkActive="text-primary-500"
-							class="inline-block w-full rounded px-4 py-2 text-xs font-semibold text-night-200 hover:bg-gray-100 dark:hover:bg-night-600">
+							class="inline-block w-full rounded px-4 py-2 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-night-600">
 							{{ sub.label }}
 						</a>
 					</li>
