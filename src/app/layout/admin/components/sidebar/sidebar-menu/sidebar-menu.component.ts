@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core'
 import { Router } from '@angular/router'
+import { Observable } from 'rxjs';
 import { MenuItem } from 'src/app/shared/models/menu.model'
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
 	selector: 'app-sidebar-menu',
@@ -9,12 +11,17 @@ import { MenuItem } from 'src/app/shared/models/menu.model'
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarMenuComponent implements OnInit, OnChanges {
-	@Input() public isOpen = true
-	@Input() public menuItem: MenuItem[] = []
+
+	@Input() public menuItem: MenuItem[] = [];
+	public isOpen$: Observable<boolean> = new Observable<boolean>();
 
 	constructor(
 		private router: Router,
+		private menuService: MenuService
 	) {
+
+		this.isOpen$ = this.menuService.isOpen$;
+
 		/** await menu values */
 		setTimeout(() => {
 			this.menuItem.forEach((menu) => {
@@ -44,6 +51,7 @@ export class SidebarMenuComponent implements OnInit, OnChanges {
 
 	public toggleMenu(menu: any) {
 		let expanded = menu.expanded;
+		this.menuService.isOpen = true;
 		this.menuItem.forEach((sub) => {
 			sub.items.forEach((item) => {
 				item.expanded = false;

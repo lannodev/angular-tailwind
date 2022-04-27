@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { SubMenuItem } from 'src/app/shared/models/menu.model';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
   selector: 'app-sidebar-submenu',
@@ -9,9 +11,13 @@ import { SubMenuItem } from 'src/app/shared/models/menu.model';
 export class SidebarSubmenuComponent implements OnInit {
 
   @Input() public submenu = <SubMenuItem>{};
-  @Input() public isOpen = true;
+  public isOpen$: Observable<boolean> = new Observable<boolean>();
 
-  constructor() { }
+  constructor(
+    private menuService: MenuService
+  ) {
+    this.isOpen$ = this.menuService.isOpen$;
+  }
 
   ngOnInit(): void {
   }

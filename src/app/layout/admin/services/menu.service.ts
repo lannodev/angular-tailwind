@@ -15,5 +15,5 @@ export class MenuService {
   }
 
   get isOpen$() { return this._isOpen$.asObservable(); }
-  // set isOpen(value: boolean) { this._isOpen$.next(value); }
+  set isOpen(value: boolean) { this._isOpen$.next(value); }
 }
