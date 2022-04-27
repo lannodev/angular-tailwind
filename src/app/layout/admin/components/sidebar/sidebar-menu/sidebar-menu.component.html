@@ -7,36 +7,35 @@
 	<ul class="flex flex-col space-y-1">
 		<!-- List items -->
 		<li *ngFor="let item of menu.items">
-			<div
-				(click)="expandedMenu(item)"
-				class="group relative text-gray-400 dark:text-night-400"
-				routerLinkActive="text-primary-500">
+			<!-- Menu List -->
+			<div (click)="toggleMenu(item)" class="group relative text-gray-400 dark:text-night-400">
 				<!-- Icon -->
 				<div
-					[ngClass]="item.active && !isOpen ? 'text-primary-500' : ''"
+					[ngClass]="isActive(item.route) && !isOpen ? 'text-primary-500' : ''"
 					class="pointer-events-none absolute m-2">
 					<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</div>
 				<!-- Workaround:: Enable routerLink -->
 				<div
-					class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
+					*ngIf="!item.children"
+					routerLink="{{ item.route }}"
+					class="flex h-9 cursor-pointer items-center justify-start rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-night-600">
 					<a
-						(click)="changeRoute(item, menu)"
 						routerLinkActive="text-primary-500"
-						class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
+						class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none dark:text-night-100">
 						{{ item.label }}
 					</a>
 				</div>
 
 				<!-- Workaround:: Disable routerLink -->
-				<!-- <div
+				<div
 					*ngIf="item.children"
 					class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
 					<a
 						class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
 						{{ item.label }}
 					</a>
-				</div> -->
+				</div>
 
 				<!-- Arrow Icon -->
 				<button
@@ -56,21 +55,7 @@
 			</div>
 
 			<!-- Submenu items -->
-			<div
-				class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
-				[ngClass]="{ hidden: !isOpen, 'max-h-screen': item.expanded }">
-				<ul
-					class="flex flex-col border-l border-dashed border-gray-200 pl-2 text-night-200 dark:border-night-500">
-					<li *ngFor="let sub of item.children">
-						<a
-							routerLink="{{ sub.route }}"
-							routerLinkActive="text-primary-500"
-							class="inline-block w-full rounded px-4 py-2 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-night-600">
-							{{ sub.label }}
-						</a>
-					</li>
-				</ul>
-			</div>
+			<app-sidebar-submenu [submenu]="item" [isOpen]="isOpen"></app-sidebar-submenu>
 		</li>
 	</ul>
 

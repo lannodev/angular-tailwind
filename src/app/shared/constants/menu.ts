@@ -15,12 +15,33 @@ export class Menu {
 				{
 					icon: 'assets/icons/outline/bookmark.svg',
 					label: 'Books',
-					route: null,
+					route: '/books',
 					expanded: false,
 					children: [
-						{ label: 'Current Files', route: '/books/current-files' },
+						{
+							label: 'Anime', route: '/anime', children: [
+								{ label: 'Dragronball', route: '/books/anime/dragonball' },
+								{ label: 'Naruto', route: '/books/anime/naruto' },
+							],
+						},
+						{
+							label: 'Fantasy', route: '/books/trash', children: [
+								{ label: 'Mythology', route: '/books/fantasy/mythology' },
+								{
+									label: 'The Witcher', route: '/books/trash', children: [
+										{ label: 'Dragronball', route: '/books/anime/dragonball' },
+										{
+											label: 'Naruto', route: '/books/anime/naruto', children: [
+												{ label: 'Dragronball', route: '/books/anime/dragonball' },
+												{ label: 'Naruto', route: '/books/anime/naruto' },
+											],
+										},
+									],
+								},
+							],
+						},
 						{ label: 'Downloads', route: '/books/download' },
-						{ label: 'Trash', route: '/books/trash' },
+						// { label: 'Trash', route: '/books/trash' },
 					],
 				},
 			],

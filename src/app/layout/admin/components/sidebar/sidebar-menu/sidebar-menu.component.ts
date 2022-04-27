@@ -19,8 +19,9 @@ export class SidebarMenuComponent implements OnInit, OnChanges {
 				menu.items.forEach((item) => {
 					const active = this.isActive(item.route);
 					item.expanded = active;
-					item.active = active;
-					console.log(item.active);
+					if (item.children) {
+						this.expand(item.children);
+					}
 				})
 			})
 		}, 0)
@@ -32,14 +33,31 @@ export class SidebarMenuComponent implements OnInit, OnChanges {
 
 	ngOnInit(): void { }
 
-	public expandedMenu(menu: any) {
+	public toggleMenu(menu: any) {
 		let expanded = menu.expanded;
 		this.menuItem.forEach((menu) => {
 			menu.items.forEach((item) => {
 				item.expanded = false;
+				if (item.children) {
+					this.collapse(item.children);
+				}
 			})
 		});
 		menu.expanded = !expanded;
+	}
+
+	private collapse(items: Array<any>) {
+		items.forEach((item) => {
+			item.expanded = false;
+			if (item.children) this.collapse(item.children);
+		})
+	}
+
+	private expand(items: Array<any>) {
+		items.forEach((item) => {
+			item.expanded = this.isActive(item.route);
+			if (item.children) this.collapse(item.children);
+		})
 	}
 
 	/** Check active route */
@@ -52,11 +70,4 @@ export class SidebarMenuComponent implements OnInit, OnChanges {
 		})
 	}
 
-	/** Change Route */
-	public changeRoute(item: any, menu: any) {
-		if (!item.children) {
-			this.router.navigate([item.route]);
-			item.active = true;
-		}
-	}
 }

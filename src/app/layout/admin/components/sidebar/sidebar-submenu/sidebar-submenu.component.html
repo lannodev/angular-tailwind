@@ -1,0 +1,40 @@
+<div
+	class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
+	[ngClass]="{ hidden: !isOpen, 'max-h-screen': submenu.expanded }">
+	<ul class="flex flex-col border-l border-dashed border-gray-200 pl-2 text-night-200 dark:border-night-500">
+		<li *ngFor="let sub of submenu.children">
+			<div class="flex rounded hover:bg-gray-100 dark:hover:bg-night-600" (click)="toggleMenu(sub)">
+				<!-- Condition -->
+				<ng-container
+					[ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
+					[ngTemplateOutletContext]="{ sub: sub }">
+				</ng-container>
+
+				<!-- Parent Menu -->
+				<ng-template #parentMenu let-sub="sub">
+					<a
+						[routerLink]="sub.route"
+						routerLinkActive="text-primary-500"
+						[routerLinkActiveOptions]="{ exact: true }"
+						class="inline-block w-full px-4 py-2 text-xs font-semibold">
+						{{ sub.label }}
+					</a>
+				</ng-template>
+
+				<!-- Child Menu -->
+				<ng-template #childMenu let-sub="sub">
+					<a class="inline-block w-full cursor-pointer px-4 py-2 text-xs font-semibold">
+						{{ sub.label }}
+					</a>
+					<button
+						[ngClass]="{ hidden: !isOpen, 'rotate-90': sub.expanded }"
+						class="flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
+						<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+					</button>
+				</ng-template>
+			</div>
+			<!-- Submenu items -->
+			<app-sidebar-submenu [submenu]="sub" [isOpen]="isOpen"></app-sidebar-submenu>
+		</li>
+	</ul>
+</div>
