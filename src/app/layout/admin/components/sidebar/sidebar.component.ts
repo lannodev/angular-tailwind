@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
 import { Menu } from 'src/app/shared/constants/menu'
 import { MenuItem } from 'src/app/shared/models/menu.model'
 import { ThemeService } from 'src/app/shared/services/theme.service'
 import packageJson from '../../../../../../package.json'
+import { MenuService } from '../../services/menu.service'
 
 @Component({
 	selector: 'app-sidebar',
@@ -10,18 +12,22 @@ import packageJson from '../../../../../../package.json'
 	styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-	public isOpen = true
+	public isOpen$: Observable<boolean> = new Observable<boolean>();
 	public pagesMenu: MenuItem[]
 	public appJson: any = packageJson
 
-	constructor(public themeService: ThemeService) {
+	constructor(
+		public themeService: ThemeService,
+		private menuService: MenuService
+	) {
+		this.isOpen$ = this.menuService.isOpen$;
 		this.pagesMenu = Menu.pages
 	}
 
 	ngOnInit(): void { }
 
 	public toggleSidebar() {
-		this.isOpen = !this.isOpen
+		this.menuService.toggleSidebar();
 	}
 
 	toggleTheme() {
