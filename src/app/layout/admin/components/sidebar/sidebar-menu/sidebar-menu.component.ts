@@ -6,38 +6,48 @@ import { MenuItem } from 'src/app/shared/models/menu.model'
 	selector: 'app-sidebar-menu',
 	templateUrl: './sidebar-menu.component.html',
 	styleUrls: ['./sidebar-menu.component.scss'],
-	// changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarMenuComponent implements OnInit, OnChanges {
 	@Input() public isOpen = true
 	@Input() public menuItem: MenuItem[] = []
 
-	constructor(private router: Router) {
+	constructor(
+		private router: Router,
+	) {
 		/** await menu values */
 		setTimeout(() => {
 			this.menuItem.forEach((menu) => {
 				menu.items.forEach((item) => {
-					const active = this.isActive(item.route);
-					item.expanded = active;
+					item.expanded = this.isActive(item.route);
 					if (item.children) {
 						this.expand(item.children);
 					}
 				})
 			})
 		}, 0)
+
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		console.log(changes);
+		/** Set active menu */
+		if (changes['isOpen']) {
+			this.menuItem.forEach((sub) => {
+				sub.items.forEach((item) => {
+					item.active = this.isActive(item.route);
+				})
+			});
+		}
 	}
 
 	ngOnInit(): void { }
 
 	public toggleMenu(menu: any) {
 		let expanded = menu.expanded;
-		this.menuItem.forEach((menu) => {
-			menu.items.forEach((item) => {
+		this.menuItem.forEach((sub) => {
+			sub.items.forEach((item) => {
 				item.expanded = false;
+				item.active = this.isActive(item.route);
 				if (item.children) {
 					this.collapse(item.children);
 				}
