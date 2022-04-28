@@ -1,19 +1,84 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { Menu } from 'src/app/shared/constants/menu';
+import { MenuItem } from 'src/app/shared/models/menu.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  private _isOpen$ = new BehaviorSubject<boolean>(false);
+  private _isOpen$ = new BehaviorSubject<boolean>(true);
+  public _pagesMenu$ = new BehaviorSubject<MenuItem[]>([]);
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {
+    this._pagesMenu$.next(Menu.pages);
+
+    /** Expand menu base on active route */
+    this._pagesMenu$.forEach((menuItem) => {
+      menuItem.forEach((menu) => {
+        menu.items.forEach((item) => {
+          item.expanded = this.isActive(item.route);
+          if (item.children) {
+            this.expand(item.children);
+          }
+        })
+      })
+
+    })
+
+  }
 
   public toggleSidebar() {
     this._isOpen$.next(!this._isOpen$.value);
   }
 
+  public toggleMenu(menu: any) {
+    let expanded = menu.expanded;
+    this.isOpen = true;
+    this._pagesMenu$.forEach((menuItem) => {
+      menuItem.forEach((menu) => {
+        menu.items.forEach((item) => {
+          item.expanded = false;
+          item.active = this.isActive(item.route);
+          if (item.children) {
+            this.collapse(item.children);
+          }
+        })
+      })
+    });
+    menu.expanded = !expanded;
+  }
+
   get isOpen$() { return this._isOpen$.asObservable(); }
   set isOpen(value: boolean) { this._isOpen$.next(value); }
+  get pagesMenu$() { return this._pagesMenu$.asObservable(); }
+
+
+  private isActive(instruction: any): boolean {
+    return this.router.isActive(this.router.createUrlTree([instruction]), {
+      paths: 'subset',
+      queryParams: 'subset',
+      fragment: 'ignored',
+      matrixParams: 'ignored',
+    })
+  }
+
+  private expand(items: Array<any>) {
+    items.forEach((item) => {
+      item.expanded = this.isActive(item.route);
+      if (item.children) this.collapse(item.children);
+    })
+  }
+
+  private collapse(items: Array<any>) {
+    items.forEach((item) => {
+      item.expanded = false;
+      if (item.children) this.collapse(item.children);
+    })
+  }
+
 }

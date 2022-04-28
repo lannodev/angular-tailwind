@@ -1,4 +1,4 @@
-<div class="pt-4" *ngFor="let menu of menuItem">
+<div class="pt-4" *ngFor="let menu of pagesMenu$ | async">
 	<div class="mx-1 mb-2 flex items-center justify-between">
 		<small
 			[ngClass]="{ hidden: !(isOpen$ | async) }"

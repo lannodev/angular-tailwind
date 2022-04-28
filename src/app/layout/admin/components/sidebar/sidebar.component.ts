@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
-import { Menu } from 'src/app/shared/constants/menu'
 import { MenuItem } from 'src/app/shared/models/menu.model'
 import { ThemeService } from 'src/app/shared/services/theme.service'
 import packageJson from '../../../../../../package.json'
@@ -13,7 +12,7 @@ import { MenuService } from '../../services/menu.service'
 })
 export class SidebarComponent implements OnInit {
 	public isOpen$: Observable<boolean> = new Observable<boolean>();
-	public pagesMenu: MenuItem[]
+	public pagesMenu$: Observable<MenuItem[]> = new Observable<MenuItem[]>();
 	public appJson: any = packageJson
 
 	constructor(
@@ -21,7 +20,7 @@ export class SidebarComponent implements OnInit {
 		private menuService: MenuService
 	) {
 		this.isOpen$ = this.menuService.isOpen$;
-		this.pagesMenu = Menu.pages
+		this.pagesMenu$ = this.menuService.pagesMenu$
 	}
 
 	ngOnInit(): void { }
