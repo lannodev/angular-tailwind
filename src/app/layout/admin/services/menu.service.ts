@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { Menu } from 'src/app/shared/constants/menu';
-import { MenuItem } from 'src/app/shared/models/menu.model';
+import { MenuItem, SubMenuItem } from 'src/app/shared/models/menu.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +15,38 @@ export class MenuService {
   constructor(
     private router: Router
   ) {
+
     this._pagesMenu$.next(Menu.pages);
 
-    /** Expand menu base on active route */
-    this._pagesMenu$.forEach((menuItem) => {
-      menuItem.forEach((menu) => {
-        menu.items.forEach((item) => {
-          item.expanded = this.isActive(item.route);
-          if (item.children) {
-            this.expand(item.children);
-          }
-        })
-      })
+    // /** Expand menu base on active route */
+    // this._pagesMenu$.forEach((menuItem) => {
+    //   menuItem.forEach((menu) => {
+    //     menu.items.forEach((item) => {
+    //       item.expanded = this.isActive(item.route);
+    //       if (item.children) {
+    //         this.expand(item.children);
+    //       }
+    //     })
+    //   })
+    // })
 
+    this.router.events.subscribe((event) => {
+
+      if (event instanceof NavigationEnd) {
+        /** Expand menu base on active route */
+        this._pagesMenu$.forEach((menuItem) => {
+          menuItem.forEach((menu) => {
+            menu.items.forEach((item) => {
+              const active = this.isActive(item.route);
+              item.expanded = active;
+              item.active = active;
+              if (item.children) {
+                this.expand(item.children);
+              }
+            })
+          })
+        })
+      }
     })
 
   }
@@ -53,12 +72,24 @@ export class MenuService {
     menu.expanded = !expanded;
   }
 
+  public toggleSubMenu(submenu: SubMenuItem) {
+    const expanded = !submenu.expanded;
+    // this.submenu.children?.forEach((menu: any) => {
+    //   menu.expanded = false;
+    //   if (menu.children) {
+    //     this.collapse(menu.children);
+    //   }
+    // });
+    submenu.expanded = expanded;
+  }
+
   get isOpen$() { return this._isOpen$.asObservable(); }
   set isOpen(value: boolean) { this._isOpen$.next(value); }
   get pagesMenu$() { return this._pagesMenu$.asObservable(); }
 
 
   private isActive(instruction: any): boolean {
+    console.log('-- isActive --')
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',
       queryParams: 'subset',

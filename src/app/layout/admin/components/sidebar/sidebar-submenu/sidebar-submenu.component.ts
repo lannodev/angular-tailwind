@@ -23,14 +23,15 @@ export class SidebarSubmenuComponent implements OnInit {
   }
 
   public toggleMenu(menu: any) {
-    const expanded = !menu.expanded;
-    this.submenu.children?.forEach((menu: any) => {
-      menu.expanded = false;
-      if (menu.children) {
-        this.collapse(menu.children);
-      }
-    });
-    menu.expanded = expanded;
+    // const expanded = !menu.expanded;
+    // this.submenu.children?.forEach((menu: any) => {
+    //   menu.expanded = false;
+    //   if (menu.children) {
+    //     this.collapse(menu.children);
+    //   }
+    // });
+    // menu.expanded = expanded;
+    this.menuService.toggleSubMenu(menu);
   }
 
   private collapse(items: Array<any>) {
