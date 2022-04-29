@@ -10,11 +10,11 @@
 	</div>
 	<div class="hidden sm:ml-6 sm:block lg:ml-0">
 		<ul class="flex space-x-2">
-			<li (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu">
+			<li (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu$ | async">
 				<a
 					(click)="toggleMenu(menu)"
 					[ngClass]="
-						menu.selected
+						menu.selected || menu.active
 							? 'bg-primary-500 text-white'
 							: 'text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-600 '
 					"

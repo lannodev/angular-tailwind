@@ -24,15 +24,17 @@ export class MenuService implements OnDestroy {
         /** Expand menu base on active route */
         this._pagesMenu$.forEach((menuItem) => {
           menuItem.forEach((menu) => {
-            menu.items.forEach((item) => {
-              const active = this.isActive(item.route);
-              item.expanded = active;
-              item.active = active;
-              menu.active = active;
-              if (item.children) {
-                this.expand(item.children);
+            let activeGroup = false;
+            menu.items.forEach((subMenu) => {
+              const active = this.isActive(subMenu.route);
+              subMenu.expanded = active;
+              subMenu.active = active;
+              if (active) activeGroup = true;
+              if (subMenu.children) {
+                this.expand(subMenu.children);
               }
             })
+            menu.active = activeGroup;
           })
         })
       }
@@ -40,9 +42,9 @@ export class MenuService implements OnDestroy {
     this.subscription.add(sub);
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  get isOpen$() { return this._isOpen$.asObservable(); }
+  set isOpen(value: boolean) { this._isOpen$.next(value); }
+  get pagesMenu$() { return this._pagesMenu$.asObservable(); }
 
   public toggleSidebar() {
     this._isOpen$.next(!this._isOpen$.value);
@@ -57,10 +59,12 @@ export class MenuService implements OnDestroy {
     submenu.expanded = !submenu.expanded;
   }
 
-  get isOpen$() { return this._isOpen$.asObservable(); }
-  set isOpen(value: boolean) { this._isOpen$.next(value); }
-  get pagesMenu$() { return this._pagesMenu$.asObservable(); }
-
+  private expand(items: Array<any>) {
+    items.forEach((item) => {
+      item.expanded = this.isActive(item.route);
+      if (item.children) this.expand(item.children);
+    })
+  }
 
   private isActive(instruction: any): boolean {
     return this.router.isActive(this.router.createUrlTree([instruction]), {
@@ -71,11 +75,8 @@ export class MenuService implements OnDestroy {
     })
   }
 
-  private expand(items: Array<any>) {
-    items.forEach((item) => {
-      item.expanded = this.isActive(item.route);
-      if (item.children) this.expand(item.children);
-    })
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
