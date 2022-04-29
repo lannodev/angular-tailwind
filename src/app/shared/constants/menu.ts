@@ -17,25 +17,16 @@ export class Menu {
 					route: '/books',
 					children: [
 						{
-							label: 'Anime', route: '/anime', children: [
+							label: 'Anime', route: '/books/anime', children: [
 								{ label: 'Dragronball', route: '/books/anime/dragonball' },
-								{ label: 'Naruto', route: '/books/anime/naruto' },
-							],
-						},
-						{
-							label: 'Fantasy', route: '/fantasy', children: [
-								{ label: 'Mythology', route: '/mythology' },
 								{
-									label: 'The Witcher', route: '/books/trash', children: [
-										{ label: 'Dragronball', route: '/books/anime/dragonball' },
-										{
-											label: 'Naruto', route: '/books/anime/naruto', children: [
-												{ label: 'Dragronball', route: '/books/anime/dragonball' },
-												{ label: 'Naruto', route: '/books/anime/naruto' },
-											],
-										},
-									],
+									label: 'Naruto', route: '/books/anime/naruto', children: [
+										{ label: 'Naruto 1', route: '/books/anime/naruto/1' },
+										{ label: 'Naruto 2', route: '/books/anime/naruto/2' },
+										{ label: 'Naruto 3', route: '/books/anime/naruto/3' },
+									]
 								},
+
 							],
 						},
 						{ label: 'Downloads', route: '/books/download' },

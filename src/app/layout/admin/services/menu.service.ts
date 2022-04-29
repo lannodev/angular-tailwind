@@ -18,20 +18,7 @@ export class MenuService {
 
     this._pagesMenu$.next(Menu.pages);
 
-    // /** Expand menu base on active route */
-    // this._pagesMenu$.forEach((menuItem) => {
-    //   menuItem.forEach((menu) => {
-    //     menu.items.forEach((item) => {
-    //       item.expanded = this.isActive(item.route);
-    //       if (item.children) {
-    //         this.expand(item.children);
-    //       }
-    //     })
-    //   })
-    // })
-
     this.router.events.subscribe((event) => {
-
       if (event instanceof NavigationEnd) {
         /** Expand menu base on active route */
         this._pagesMenu$.forEach((menuItem) => {
@@ -40,6 +27,7 @@ export class MenuService {
               const active = this.isActive(item.route);
               item.expanded = active;
               item.active = active;
+              menu.active = active;
               if (item.children) {
                 this.expand(item.children);
               }
@@ -48,7 +36,6 @@ export class MenuService {
         })
       }
     })
-
   }
 
   public toggleSidebar() {
@@ -56,31 +43,12 @@ export class MenuService {
   }
 
   public toggleMenu(menu: any) {
-    let expanded = menu.expanded;
     this.isOpen = true;
-    this._pagesMenu$.forEach((menuItem) => {
-      menuItem.forEach((menu) => {
-        menu.items.forEach((item) => {
-          item.expanded = false;
-          item.active = this.isActive(item.route);
-          if (item.children) {
-            this.collapse(item.children);
-          }
-        })
-      })
-    });
-    menu.expanded = !expanded;
+    menu.expanded = !menu.expanded;
   }
 
   public toggleSubMenu(submenu: SubMenuItem) {
-    const expanded = !submenu.expanded;
-    // this.submenu.children?.forEach((menu: any) => {
-    //   menu.expanded = false;
-    //   if (menu.children) {
-    //     this.collapse(menu.children);
-    //   }
-    // });
-    submenu.expanded = expanded;
+    submenu.expanded = !submenu.expanded;
   }
 
   get isOpen$() { return this._isOpen$.asObservable(); }
@@ -89,26 +57,18 @@ export class MenuService {
 
 
   private isActive(instruction: any): boolean {
-    console.log('-- isActive --')
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',
       queryParams: 'subset',
       fragment: 'ignored',
-      matrixParams: 'ignored',
+      matrixParams: 'ignored'
     })
   }
 
   private expand(items: Array<any>) {
     items.forEach((item) => {
       item.expanded = this.isActive(item.route);
-      if (item.children) this.collapse(item.children);
-    })
-  }
-
-  private collapse(items: Array<any>) {
-    items.forEach((item) => {
-      item.expanded = false;
-      if (item.children) this.collapse(item.children);
+      if (item.children) this.expand(item.children);
     })
   }
 
