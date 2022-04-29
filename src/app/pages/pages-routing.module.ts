@@ -14,6 +14,9 @@ const PagesRouting: Routes = [
 	{ path: 'books/anime/naruto/3', component: DashboardComponent },
 	{ path: 'books/download', component: DashboardComponent },
 	{ path: 'books/trash', component: DashboardComponent },
+	{ path: 'folders/current-files', component: DashboardComponent },
+	{ path: 'folders/download', component: DashboardComponent },
+	{ path: 'folders/trash', component: DashboardComponent },
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 	{ path: '**', redirectTo: 'error/404' },
 ]

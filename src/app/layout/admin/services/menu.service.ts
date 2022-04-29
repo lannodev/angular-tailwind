@@ -10,6 +10,7 @@ import { MenuItem, SubMenuItem } from 'src/app/shared/models/menu.model';
 export class MenuService implements OnDestroy {
 
   private _isOpen$ = new BehaviorSubject<boolean>(true);
+  private _showMobileMenu$ = new BehaviorSubject<boolean>(false);
   public _pagesMenu$ = new BehaviorSubject<MenuItem[]>([]);
   private subscription = new Subscription();
 
@@ -44,10 +45,18 @@ export class MenuService implements OnDestroy {
 
   get isOpen$() { return this._isOpen$.asObservable(); }
   set isOpen(value: boolean) { this._isOpen$.next(value); }
+
+  get showMobileMenu$() { return this._isOpen$.asObservable(); }
+  set showMobileMenu(value: boolean) { this._showMobileMenu$.next(value); }
+
   get pagesMenu$() { return this._pagesMenu$.asObservable(); }
 
   public toggleSidebar() {
     this._isOpen$.next(!this._isOpen$.value);
+  }
+
+  public toggleMobileMenu() {
+    this._showMobileMenu$.next(!this._showMobileMenu$.value);
   }
 
   public toggleMenu(menu: any) {

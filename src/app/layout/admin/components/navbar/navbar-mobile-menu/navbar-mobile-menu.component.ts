@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Observable } from 'rxjs';
 import { MenuItem } from 'src/app/shared/models/menu.model'
+import { MenuService } from '../../../services/menu.service'
 
 @Component({
 	selector: 'app-navbar-mobile-menu',
@@ -8,8 +10,17 @@ import { MenuItem } from 'src/app/shared/models/menu.model'
 })
 export class NavbarMobileMenuComponent implements OnInit {
 	@Input() pagesMenu: MenuItem[] = []
+	public showMobileMenu$: Observable<boolean> = new Observable<boolean>();
 
-	constructor() {}
+	constructor(
+		private menuService: MenuService
+	) {
+		this.showMobileMenu$ = this.menuService.showMobileMenu$
+	}
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
+
+	public toggleMobileMenu(): void {
+		this.menuService.toggleMobileMenu();
+	}
 }
