@@ -9,7 +9,7 @@ import { MenuItem, SubMenuItem } from 'src/app/shared/models/menu.model';
 })
 export class MenuService implements OnDestroy {
 
-  private _isOpen$ = new BehaviorSubject<boolean>(true);
+  private _showSidebar$ = new BehaviorSubject<boolean>(true);
   private _showMobileMenu$ = new BehaviorSubject<boolean>(false);
   public _pagesMenu$ = new BehaviorSubject<MenuItem[]>([]);
   private subscription = new Subscription();
@@ -43,16 +43,16 @@ export class MenuService implements OnDestroy {
     this.subscription.add(sub);
   }
 
-  get isOpen$() { return this._isOpen$.asObservable(); }
-  set isOpen(value: boolean) { this._isOpen$.next(value); }
+  get showSideBar$() { return this._showSidebar$.asObservable(); }
+  set showSideBar(value: boolean) { this._showSidebar$.next(value); }
 
-  get showMobileMenu$() { return this._isOpen$.asObservable(); }
+  get showMobileMenu$() { return this._showSidebar$.asObservable(); }
   set showMobileMenu(value: boolean) { this._showMobileMenu$.next(value); }
 
   get pagesMenu$() { return this._pagesMenu$.asObservable(); }
 
   public toggleSidebar() {
-    this._isOpen$.next(!this._isOpen$.value);
+    this._showSidebar$.next(!this._showSidebar$.value);
   }
 
   public toggleMobileMenu() {
@@ -60,7 +60,7 @@ export class MenuService implements OnDestroy {
   }
 
   public toggleMenu(menu: any) {
-    this.isOpen = true;
+    this.showSideBar = true;
     menu.expanded = !menu.expanded;
   }
 

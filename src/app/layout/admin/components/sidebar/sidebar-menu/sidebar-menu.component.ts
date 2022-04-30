@@ -12,12 +12,12 @@ import { MenuService } from '../../../services/menu.service';
 export class SidebarMenuComponent implements OnInit {
 
 	public pagesMenu$: Observable<MenuItem[]> = new Observable<MenuItem[]>();
-	public isOpen$: Observable<boolean> = new Observable<boolean>();
+	public showSideBar$: Observable<boolean> = new Observable<boolean>();
 
 	constructor(
 		private menuService: MenuService
 	) {
-		this.isOpen$ = this.menuService.isOpen$;
+		this.showSideBar$ = this.menuService.showSideBar$;
 		this.pagesMenu$ = this.menuService.pagesMenu$
 	}
 

@@ -11,7 +11,7 @@ import { MenuService } from '../../services/menu.service'
 	styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-	public isOpen$: Observable<boolean> = new Observable<boolean>();
+	public showSideBar$: Observable<boolean> = new Observable<boolean>();
 	public pagesMenu$: Observable<MenuItem[]> = new Observable<MenuItem[]>();
 	public appJson: any = packageJson
 
@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
 		public themeService: ThemeService,
 		private menuService: MenuService
 	) {
-		this.isOpen$ = this.menuService.isOpen$;
+		this.showSideBar$ = this.menuService.showSideBar$;
 		this.pagesMenu$ = this.menuService.pagesMenu$
 	}
 

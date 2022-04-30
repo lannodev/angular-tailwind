@@ -11,12 +11,12 @@ import { MenuService } from '../../../services/menu.service';
 export class SidebarSubmenuComponent implements OnInit {
 
   @Input() public submenu = <SubMenuItem>{};
-  public isOpen$: Observable<boolean> = new Observable<boolean>();
+  public showSideBar$: Observable<boolean> = new Observable<boolean>();
 
   constructor(
     private menuService: MenuService
   ) {
-    this.isOpen$ = this.menuService.isOpen$;
+    this.showSideBar$ = this.menuService.showSideBar$;
   }
 
   ngOnInit(): void {

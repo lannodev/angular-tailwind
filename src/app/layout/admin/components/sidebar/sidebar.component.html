@@ -1,10 +1,10 @@
 <nav
-	[ngClass]="(isOpen$ | async) ? 'w-52 xl:w-64' : 'w-[70px]'"
+	[ngClass]="(showSideBar$ | async) ? 'w-52 xl:w-64' : 'w-[70px]'"
 	class="hidden h-full flex-col justify-between overflow-auto bg-white pt-3 transition-all duration-300 dark:bg-night-700 lg:flex">
 	<div class="px-4">
 		<!-- Logo -->
 		<div class="relative h-10">
-			<div class="flex items-center" *ngIf="isOpen$ | async">
+			<div class="flex items-center" *ngIf="showSideBar$ | async">
 				<a class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
 					<svg-icon src="assets/icons/logo.svg"> </svg-icon>
 				</a>
@@ -15,7 +15,7 @@
 			<button
 				(click)="toggleSidebar()"
 				class="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded opacity-20 transition-all duration-200 hover:opacity-70 focus:outline-none dark:text-slate-100"
-				[ngClass]="{ 'rotate-180': !(isOpen$ | async) }">
+				[ngClass]="{ 'rotate-180': !(showSideBar$ | async) }">
 				<svg-icon src="assets/icons/solid/chevron-double-left.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
 			</button>
 		</div>
@@ -45,7 +45,7 @@
 				{{ themeService.isDark ? 'Light Theme' : 'Dark Theme' }}
 			</a>
 
-			<div class="fixed w-full" *ngIf="!(isOpen$ | async)">
+			<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
 				<span
 					class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
 					Theme
@@ -63,7 +63,7 @@
 				Sign out
 			</a>
 
-			<div class="fixed w-full" *ngIf="!(isOpen$ | async)">
+			<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
 				<span
 					class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
 					Sign out
@@ -85,7 +85,7 @@
 				>
 			</a>
 
-			<div class="fixed w-full" *ngIf="!(isOpen$ | async)">
+			<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
 				<span
 					class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
 					v{{ appJson.version }}
