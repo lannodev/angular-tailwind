@@ -9,7 +9,7 @@ import { MenuService } from '../../../services/menu.service'
 	styleUrls: ['./navbar-mobile-menu.component.scss'],
 })
 export class NavbarMobileMenuComponent implements OnInit {
-	@Input() pagesMenu: MenuItem[] = []
+	// @Input() pagesMenu: MenuItem[] = []
 	public showMobileMenu$: Observable<boolean> = new Observable<boolean>();
 
 	constructor(
@@ -21,6 +21,6 @@ export class NavbarMobileMenuComponent implements OnInit {
 	ngOnInit(): void { }
 
 	public toggleMobileMenu(): void {
-		this.menuService.toggleMobileMenu();
+		this.menuService.showMobileMenu = false;
 	}
 }

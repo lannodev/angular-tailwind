@@ -18,6 +18,7 @@ export class MenuService implements OnDestroy {
     private router: Router
   ) {
 
+    /** Set dynamic menu */
     this._pagesMenu$.next(Menu.pages);
 
     let sub = this.router.events.subscribe((event) => {
@@ -40,23 +41,19 @@ export class MenuService implements OnDestroy {
         })
       }
     })
+
     this.subscription.add(sub);
   }
 
   get showSideBar$() { return this._showSidebar$.asObservable(); }
-  set showSideBar(value: boolean) { this._showSidebar$.next(value); }
-
-  get showMobileMenu$() { return this._showSidebar$.asObservable(); }
-  set showMobileMenu(value: boolean) { this._showMobileMenu$.next(value); }
-
+  get showMobileMenu$() { return this._showMobileMenu$.asObservable(); }
   get pagesMenu$() { return this._pagesMenu$.asObservable(); }
+
+  set showSideBar(value: boolean) { this._showSidebar$.next(value); }
+  set showMobileMenu(value: boolean) { this._showMobileMenu$.next(value); }
 
   public toggleSidebar() {
     this._showSidebar$.next(!this._showSidebar$.value);
-  }
-
-  public toggleMobileMenu() {
-    this._showMobileMenu$.next(!this._showMobileMenu$.value);
   }
 
   public toggleMenu(menu: any) {
