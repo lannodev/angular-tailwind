@@ -1,4 +1,4 @@
-<div class="ml-3">
+<div class="relative ml-3">
 	<!-- Profile Button -->
 	<button
 		(click)="toggleMenu()"
@@ -16,8 +16,12 @@
 	</button>
 	<!-- Dropdown -->
 	<div
-		[ngClass]="isMenuOpen ? 'animate-fade-in-up' : 'hidden'"
-		class="absolute right-0 mt-2 w-60 origin-top-right rounded-md bg-white py-4 shadow-custom ring-1 ring-transparent ring-opacity-5 transition-all ease-in focus:outline-none dark:bg-night-600">
+		[ngClass]="
+			isMenuOpen
+				? 'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200'
+				: 'pointer-events-none scale-95 opacity-0 duration-100 ease-in'
+		"
+		class="absolute right-0 mt-2 w-60 origin-top-right transform rounded-md bg-white py-4 shadow-custom ring-1 ring-transparent ring-opacity-5 transition focus:outline-none dark:bg-night-600">
 		<div class="flext-row flex items-center px-4 pb-4">
 			<div class="w-10 shrink-0">
 				<img class="rounded-md" src="https://avatars.githubusercontent.com/u/12519008?v=4" alt="" />
