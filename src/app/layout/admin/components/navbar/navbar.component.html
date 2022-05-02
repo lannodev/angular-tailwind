@@ -1,17 +1,8 @@
 <div class="relative bg-white dark:bg-night-700">
 	<div class="mx-auto px-4">
-		<div class="flex items-center justify-between py-2.5 md:justify-start md:space-x-10">
-			<div class="flex justify-start lg:hidden">
-				<a href="#">
-					<span class="sr-only">Workflow</span>
-					<img
-						class="h-8 w-auto sm:h-10"
-						src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-						alt="" />
-				</a>
-			</div>
+		<div class="flex items-center justify-between py-2.5 md:justify-start">
 			<!-- Mobile Navigation Menu Button-->
-			<div class="-my-2 -mr-2 md:hidden">
+			<div class="sm:order-1 md:hidden">
 				<button
 					(click)="toggleMobileMenu()"
 					type="button"
@@ -35,8 +26,16 @@
 				</button>
 			</div>
 
+			<!-- Logo -->
+			<div class="flex items-center justify-start sm:order-2 lg:hidden">
+				<a class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
+					<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5 text-red'"> </svg-icon>
+				</a>
+				<b class="hidden pl-3 text-sm font-bold dark:text-night-50 sm:block"> Finance </b>
+			</div>
+
 			<!-- Desktop Menu -->
-			<nav class="hidden space-x-10 md:flex">
+			<nav class="hidden space-x-10 sm:order-3 md:flex">
 				<div class="relative">
 					<!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
 					<button
@@ -412,7 +411,7 @@
 			</nav>
 
 			<!-- Profile menu -->
-			<div class="items-center justify-end md:flex md:flex-1 lg:w-0">
+			<div class="items-center justify-end sm:order-4 md:flex md:flex-1 lg:w-0">
 				<app-profile-menu></app-profile-menu>
 			</div>
 		</div>
