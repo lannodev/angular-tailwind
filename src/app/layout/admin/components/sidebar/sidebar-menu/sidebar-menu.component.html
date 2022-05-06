@@ -17,27 +17,36 @@
 					class="pointer-events-none absolute m-2">
 					<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</div>
+
+				<!-- Condition -->
+				<ng-container
+					[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
+					[ngTemplateOutletContext]="{ item: item }">
+				</ng-container>
+
 				<!-- Workaround:: Enable routerLink -->
-				<div
-					*ngIf="!item.children"
-					routerLink="{{ item.route }}"
-					class="flex h-9 cursor-pointer items-center justify-start rounded text-gray-600 hover:bg-gray-100 dark:text-night-100 dark:hover:bg-night-600">
-					<a
-						routerLinkActive="text-primary-500"
-						class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none">
-						{{ item.label }}
-					</a>
-				</div>
+				<ng-template #parentMenu let-item="item">
+					<div
+						routerLink="{{ item.route }}"
+						class="flex h-9 cursor-pointer items-center justify-start rounded text-gray-600 hover:bg-gray-100 dark:text-night-100 dark:hover:bg-night-600">
+						<a
+							routerLinkActive="text-primary-500"
+							class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none">
+							{{ item.label }}
+						</a>
+					</div>
+				</ng-template>
 
 				<!-- Workaround:: Disable routerLink -->
-				<div
-					*ngIf="item.children"
-					class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
-					<a
-						class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
-						{{ item.label }}
-					</a>
-				</div>
+				<ng-template #childMenu let-item="item">
+					<div
+						class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
+						<a
+							class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
+							{{ item.label }}
+						</a>
+					</div>
+				</ng-template>
 
 				<!-- Arrow Icon -->
 				<button
