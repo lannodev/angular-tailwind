@@ -1,6 +1,7 @@
-<ul class="flex space-x-2">
-	<li (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu$ | async">
-		<a
+<nav class="flex space-x-2">
+	<div (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu$ | async">
+		<!-- Button -->
+		<button
 			(click)="toggleMenu(menu)"
 			[ngClass]="
 				menu.selected || menu.active
@@ -9,255 +10,61 @@
 			"
 			class="cursor-pointer rounded-md px-3 py-2 text-sm font-medium">
 			{{ menu.group }}
-		</a>
-
+		</button>
 		<!-- Dropdown  -->
 		<div
-			[ngClass]="menu.selected ? 'animate-fade-in-up' : 'hidden'"
-			class="absolute top-10 min-w-[200px] origin-top-left rounded-md bg-white py-4 shadow-custom transition-all duration-200 dark:bg-night-600">
+			[ngClass]="
+				menu.selected
+					? 'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200'
+					: 'pointer-events-none scale-95 opacity-0 duration-100 ease-in'
+			"
+			class="absolute top-10 min-w-[200px] origin-top-left rounded-md bg-white py-4 shadow-custom transition dark:bg-night-600">
 			<ul>
 				<li
-					*ngFor="let items of menu.items"
+					*ngFor="let item of menu.items"
 					class="group relative px-2 text-xs font-semibold text-gray-600 dark:text-night-200">
 					<div
-						[routerLink]="items.route"
 						(click)="toggleMenu(menu)"
-						class="flex cursor-pointer justify-between rounded-md px-3 py-2 group-hover:bg-gray-100 group-hover:text-primary-500 dark:group-hover:bg-night-500">
-						<div class="flex items-center">
-							<!-- Icon -->
-							<div class="pointer-events-none mr-3 text-gray-400 dark:text-night-400">
-								<svg-icon src="{{ items.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
-							</div>
-
-							<a>{{ items.label }}</a>
+						class="flex cursor-pointer justify-between rounded-md group-hover:bg-gray-100 group-hover:text-primary-500 dark:group-hover:bg-night-500">
+						<!-- Icon -->
+						<div class="pointer-events-none absolute top-2 left-4 text-gray-400 dark:text-night-400">
+							<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 						</div>
 
+						<!-- Condition -->
+						<ng-container
+							[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
+							[ngTemplateOutletContext]="{ item: item }">
+						</ng-container>
+
+						<!-- Parent Menu -->
+						<ng-template #parentMenu let-item="item">
+							<a
+								[routerLink]="item.route"
+								routerLinkActive="text-primary-500"
+								[routerLinkActiveOptions]="{ exact: true }"
+								class="flex w-full items-center px-2.5 py-2.5">
+								<a class="ml-7">{{ item.label }}</a>
+							</a>
+						</ng-template>
+
+						<!-- Child Menu -->
+						<ng-template #childMenu let-item="item">
+							<div class="flex w-full items-center px-2.5 py-2.5">
+								<a class="ml-7">{{ item.label }}</a>
+							</div>
+						</ng-template>
+
 						<!-- Arrow Icon -->
-						<button *ngIf="items.children" class="text-gray-400 dark:text-night-400">
+						<button *ngIf="item.children" class="absolute right-3 top-2 text-gray-400 dark:text-night-400">
 							<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
 						</button>
 					</div>
 
 					<!-- Submenu Dropdown -->
-					<ul
-						*ngIf="items.children"
-						class="absolute top-0 -right-[200px] min-w-[200px] origin-top-left scale-0 rounded-md bg-white px-4 py-4 shadow-custom transition-all duration-200 group-hover:scale-100 dark:bg-night-600">
-						<!-- List of submenu -->
-						<li
-							*ngFor="let children of items.children"
-							[routerLink]="children.route"
-							(click)="toggleMenu(menu)"
-							class="relative block cursor-pointer rounded-md px-3 py-2 hover:bg-gray-100 hover:text-primary-500 dark:hover:bg-night-500">
-							{{ children.label }}
-						</li>
-					</ul>
+					<app-navbar-submenu [submenu]="item"></app-navbar-submenu>
 				</li>
 			</ul>
-		</div>
-	</li>
-</ul>
-
-<nav class="hidden space-x-10 sm:order-3 md:flex" style="display: none">
-	<div class="relative">
-		<!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-		<button
-			type="button"
-			class="group inline-flex items-center rounded-md bg-white text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-			aria-expanded="false">
-			<span>Solutions</span>
-			<!-- Heroicon name: solid/chevron-down
-				Item active: "text-gray-600", Item inactive: "text-gray-400"-->
-			<svg
-				class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 20 20"
-				fill="currentColor"
-				aria-hidden="true">
-				<path
-					fill-rule="evenodd"
-					d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-					clip-rule="evenodd" />
-			</svg>
-		</button>
-
-		<!--
-  'Solutions' flyout menu, show/hide based on flyout menu state.
-
-  Entering: "transition ease-out duration-200"
-	From: "opacity-0 translate-y-1"
-	To: "opacity-100 translate-y-0"
-  Leaving: "transition ease-in duration-150"
-	From: "opacity-100 translate-y-0"
-	To: "opacity-0 translate-y-1"
--->
-		<div
-			class="absolute z-10 -ml-4 mt-3 hidden w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2">
-			<div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-				<div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-					<a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
-						<!-- Heroicon name: outline/chart-bar -->
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-indigo-600"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							aria-hidden="true">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-						</svg>
-						<div class="ml-4">
-							<p class="text-base font-medium text-gray-900">Analytics</p>
-							<p class="mt-1 text-sm text-gray-500">
-								Get a better understanding of where your traffic is coming from.
-							</p>
-						</div>
-					</a>
-
-					<a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
-						<!-- Heroicon name: outline/cursor-click -->
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-indigo-600"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							aria-hidden="true">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-						</svg>
-						<div class="ml-4">
-							<p class="text-base font-medium text-gray-900">Engagement</p>
-							<p class="mt-1 text-sm text-gray-500">
-								Speak directly to your customers in a more meaningful way.
-							</p>
-						</div>
-					</a>
-
-					<a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
-						<!-- Heroicon name: outline/shield-check -->
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-indigo-600"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							aria-hidden="true">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-						</svg>
-						<div class="ml-4">
-							<p class="text-base font-medium text-gray-900">Security</p>
-							<p class="mt-1 text-sm text-gray-500">Your customers&#039; data will be safe and secure.</p>
-						</div>
-					</a>
-
-					<a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
-						<!-- Heroicon name: outline/view-grid -->
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-indigo-600"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							aria-hidden="true">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-						</svg>
-						<div class="ml-4">
-							<p class="text-base font-medium text-gray-900">Integrations</p>
-							<p class="mt-1 text-sm text-gray-500">
-								Connect with third-party tools that you&#039;re already using.
-							</p>
-						</div>
-					</a>
-
-					<a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
-						<!-- Heroicon name: outline/refresh -->
-						<svg
-							class="h-6 w-6 flex-shrink-0 text-indigo-600"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							aria-hidden="true">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-						</svg>
-						<div class="ml-4">
-							<p class="text-base font-medium text-gray-900">Automations</p>
-							<p class="mt-1 text-sm text-gray-500">
-								Build strategic funnels that will drive your customers to convert
-							</p>
-						</div>
-					</a>
-				</div>
-				<div class="space-y-6 bg-gray-50 px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-					<div class="flow-root">
-						<a
-							href="#"
-							class="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100">
-							<!-- Heroicon name: outline/play -->
-							<svg
-								class="h-6 w-6 flex-shrink-0 text-gray-400"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								aria-hidden="true">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span class="ml-3">Watch Demo</span>
-						</a>
-					</div>
-
-					<div class="flow-root">
-						<a
-							href="#"
-							class="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100">
-							<!-- Heroicon name: outline/phone -->
-							<svg
-								class="h-6 w-6 flex-shrink-0 text-gray-400"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								aria-hidden="true">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-							</svg>
-							<span class="ml-3">Contact Sales</span>
-						</a>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </nav>

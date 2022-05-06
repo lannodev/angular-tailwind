@@ -13,7 +13,8 @@ import { ProfileMenuComponent } from './components/navbar/profile-menu/profile-m
 import { NavbarMenuComponent } from './components/navbar/navbar-menu/navbar-menu.component'
 import { SharedModule } from 'src/app/shared/shared.module'
 import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile-menu/navbar-mobile-menu.component';
-import { SidebarSubmenuComponent } from './components/sidebar/sidebar-submenu/sidebar-submenu.component'
+import { SidebarSubmenuComponent } from './components/sidebar/sidebar-submenu/sidebar-submenu.component';
+import { NavbarSubmenuComponent } from './components/navbar/navbar-submenu/navbar-submenu.component'
 
 const routes: Routes = [
 	{
@@ -34,6 +35,7 @@ const routes: Routes = [
 		NavbarMenuComponent,
 		NavbarMobileMenuComponent,
   SidebarSubmenuComponent,
+  NavbarSubmenuComponent,
 	],
 	imports: [
 		CommonModule,
