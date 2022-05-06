@@ -1,8 +1,8 @@
 <ul
 	*ngIf="submenu.children"
-	class="absolute top-0 -right-[200px] min-w-[200px] origin-top-left scale-95 animate-fade-out-down rounded-md bg-white px-4 py-4 opacity-0 shadow-custom transition duration-100 group-hover:scale-100 group-hover:animate-fade-in-up group-hover:opacity-100 group-hover:duration-200 dark:bg-night-600">
+	class="absolute top-0 left-[100%] min-w-[200px] origin-top-left scale-95 animate-fade-out-down rounded-md bg-white py-4 opacity-0 shadow-custom transition duration-100 group-hover:scale-100 group-hover:animate-fade-in-up group-hover:opacity-100 group-hover:duration-200 dark:bg-night-600">
 	<!-- List of submenu -->
-	<li *ngFor="let sub of submenu.children">
+	<li *ngFor="let sub of submenu.children" class="relative px-4">
 		<div class="flex rounded hover:bg-gray-100 dark:hover:bg-night-600">
 			<!-- Condition -->
 			<ng-container
@@ -16,14 +16,14 @@
 					[routerLink]="sub.route"
 					routerLinkActive="text-primary-500"
 					[routerLinkActiveOptions]="{ exact: true }"
-					class="inline-block w-full px-4 py-2 text-xs font-semibold">
+					class="inline-block w-full px-3 py-2.5 text-xs font-semibold">
 					{{ sub.label }}
 				</a>
 			</ng-template>
 
 			<!-- Child Menu -->
 			<ng-template #childMenu let-sub="sub">
-				<a class="inline-block w-full cursor-pointer px-4 py-2 text-xs font-semibold">
+				<a class="inline-block w-full cursor-pointer px-3 py-2.5 text-xs font-semibold">
 					{{ sub.label }}
 				</a>
 				<button class="flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
