@@ -1,8 +1,12 @@
 <ul
 	*ngIf="submenu.children"
-	class="absolute top-0 left-[100%] min-w-[200px] origin-top-left scale-95 animate-fade-out-down rounded-md bg-white py-4 opacity-0 shadow-custom transition duration-100 group-hover:scale-100 group-hover:animate-fade-in-up group-hover:opacity-100 group-hover:duration-200 dark:bg-night-600">
+	class="pointer-events-none absolute top-0 left-[100%] min-w-[200px] origin-top-left rounded-md bg-white py-4 opacity-0 shadow-custom transition duration-200 dark:bg-night-600">
 	<!-- List of submenu -->
-	<li *ngFor="let sub of submenu.children" class="relative px-4">
+	<li
+		*ngFor="let sub of submenu.children"
+		class="relative px-4"
+		(mouseenter)="mouseEnter($event)"
+		(mouseleave)="mouseLeave($event)">
 		<div class="flex rounded hover:bg-gray-100 dark:hover:bg-night-600">
 			<!-- Condition -->
 			<ng-container

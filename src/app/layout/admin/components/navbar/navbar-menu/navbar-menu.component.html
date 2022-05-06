@@ -22,6 +22,8 @@
 			<ul>
 				<li
 					*ngFor="let item of menu.items"
+					(mouseenter)="mouseEnter($event)"
+					(mouseleave)="mouseLeave($event)"
 					class="group relative px-2 text-xs font-semibold text-gray-600 dark:text-night-200">
 					<div
 						(click)="toggleMenu(menu)"
