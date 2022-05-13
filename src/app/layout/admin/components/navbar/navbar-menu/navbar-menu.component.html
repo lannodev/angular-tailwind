@@ -1,4 +1,4 @@
-<nav class="flex space-x-2">
+<nav class="flex space-x-2" style="display: none">
 	<div (clickOutside)="menu.selected = false" class="relative" *ngFor="let menu of pagesMenu$ | async">
 		<!-- Button -->
 		<button
@@ -70,3 +70,82 @@
 		</div>
 	</div>
 </nav>
+
+<div class="dropdown relative inline-block" *ngFor="let menu of pagesMenu$ | async">
+	<!-- Button -->
+	<button
+		[ngClass]="
+			menu.selected || menu.active
+				? 'bg-primary-500 text-white'
+				: 'text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-600 '
+		"
+		class="mr-2 inline-flex rounded-md px-3 py-2 text-sm font-medium">
+		<span>{{ menu.group }}</span>
+	</button>
+	<!-- Dropdown  -->
+	<div class="dropdown-content absolute min-w-[200px]">
+		<ul class="mt-2 space-y-0.5 rounded-md bg-white py-3 px-3 shadow-custom dark:bg-night-600">
+			<li class="flex font-semibold text-gray-600 dark:text-night-200" *ngFor="let item of menu.items">
+				<!-- Condition -->
+				<ng-container
+					[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
+					[ngTemplateOutletContext]="{ item: item }">
+				</ng-container>
+
+				<!-- Child Menu -->
+				<ng-template #childMenu let-item="item">
+					<button
+						class="flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-500">
+						<div class="flex items-center justify-start">
+							<span class="mr-2 text-gray-400 dark:text-night-200" *ngIf="item.icon">
+								<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+							</span>
+							{{ item.label }}
+						</div>
+						<span>
+							<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+						</span>
+					</button>
+				</ng-template>
+
+				<!-- Parent Menu -->
+				<ng-template #parentMenu let-item="item">
+					<button
+						[routerLink]="item.route"
+						routerLinkActive="text-primary-500"
+						[routerLinkActiveOptions]="{ exact: true }"
+						class="flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-500">
+						<div class="flex items-center justify-start">
+							<span class="mr-2 text-gray-400 dark:text-night-200" *ngIf="item.icon">
+								<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+							</span>
+							{{ item.label }}
+						</div>
+					</button>
+				</ng-template>
+			</li>
+		</ul>
+	</div>
+	<ul class="absolute hidden min-w-max rounded-md bg-white pt-2 text-gray-700 dark:bg-night-600">
+		<li *ngFor="let item of menu.items">
+			<a class="whitespace-no-wrap block rounded-t bg-gray-200 py-2 px-4 hover:bg-gray-400"> {{ item.label }} </a>
+		</li>
+		<li>
+			<a class="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"> Option 2 </a>
+		</li>
+		<li class="dropdown">
+			<a class="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"> Option 3 🠞 </a>
+			<ul class="dropdown-content absolute ml-24 -mt-10 hidden pl-5 text-gray-700">
+				<li>
+					<a class="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"> Option 3-1 </a>
+				</li>
+				<li>
+					<a class="whitespace-no-wrap block bg-gray-200 py-2 px-4 hover:bg-gray-400"> Option 3-2 </a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a class="whitespace-no-wrap block rounded-b bg-gray-200 py-2 px-4 hover:bg-gray-400"> Option 4 </a>
+		</li>
+	</ul>
+</div>
