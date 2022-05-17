@@ -1,41 +1,48 @@
-<ul
-	*ngIf="submenu.children"
-	class="pointer-events-none absolute top-0 left-[100%] min-w-[200px] origin-top-left rounded-md bg-white py-4 opacity-0 shadow-custom transition duration-200 dark:bg-night-600">
-	<!-- List of submenu -->
-	<li
-		*ngFor="let sub of submenu.children"
-		class="relative px-4"
-		(mouseenter)="mouseEnter($event)"
-		(mouseleave)="mouseLeave($event)">
-		<div class="flex rounded hover:bg-gray-100 dark:hover:bg-night-600">
-			<!-- Condition -->
-			<ng-container
-				[ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
-				[ngTemplateOutletContext]="{ sub: sub }">
-			</ng-container>
+<ul class="rounded-md bg-white py-3 shadow-custom dark:bg-night-600">
+	<li class="flex font-semibold text-gray-600 dark:text-night-200" *ngFor="let item of submenu.children">
+		<!-- Condition -->
+		<ng-container
+			[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
+			[ngTemplateOutletContext]="{ item: item }">
+		</ng-container>
 
-			<!-- Parent Menu -->
-			<ng-template #parentMenu let-sub="sub">
-				<a
-					[routerLink]="sub.route"
-					routerLinkActive="text-primary-500"
-					[routerLinkActiveOptions]="{ exact: true }"
-					class="inline-block w-full px-3 py-2.5 text-xs font-semibold">
-					{{ sub.label }}
-				</a>
-			</ng-template>
+		<!-- Parent Menu -->
+		<ng-template #parentMenu let-item="item">
+			<button
+				[routerLink]="item.route"
+				routerLinkActive="text-primary-500"
+				[routerLinkActiveOptions]="{ exact: true }"
+				class="mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-500">
+				<div class="flex items-center justify-start">
+					<span class="mr-2 text-gray-400 dark:text-night-200" *ngIf="item.icon">
+						<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+					</span>
+					<span class="ml-1">{{ item.label }}</span>
+				</div>
+			</button>
+		</ng-template>
 
-			<!-- Child Menu -->
-			<ng-template #childMenu let-sub="sub">
-				<a class="inline-block w-full cursor-pointer px-3 py-2.5 text-xs font-semibold">
-					{{ sub.label }}
-				</a>
-				<button class="flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
-					<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+		<!-- Child Menu -->
+		<ng-template #childMenu let-item="item">
+			<div class="dropdown relative flex w-full">
+				<button
+					class="mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-500">
+					<div class="flex items-center justify-start">
+						<span class="mr-2 text-gray-400 dark:text-night-200" *ngIf="item.icon">
+							<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+						</span>
+						<span class="ml-1">{{ item.label }}</span>
+					</div>
+					<span>
+						<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+					</span>
 				</button>
-			</ng-template>
-		</div>
-		<!-- Submenu items -->
-		<app-navbar-submenu [submenu]="sub"></app-navbar-submenu>
+				<!-- Submenu Dropdown -->
+				<div
+					class="dropdown-content absolute top-0 left-[100%] min-w-[200px] origin-top-left"
+					navbar-submenu
+					[submenu]="item"></div>
+			</div>
+		</ng-template>
 	</li>
 </ul>
