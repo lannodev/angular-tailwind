@@ -1,5 +1,5 @@
-<ul class="rounded-md bg-white py-3 shadow-custom dark:bg-night-600">
-	<li class="flex font-semibold text-gray-600 dark:text-night-200" *ngFor="let item of submenu.children">
+<ul class="mt-2 space-y-0.5 rounded-md bg-white py-3 shadow-custom dark:bg-night-600">
+	<li class="flex font-semibold text-gray-600 dark:text-night-200" *ngFor="let item of submenu">
 		<!-- Condition -->
 		<ng-container
 			[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
@@ -39,9 +39,9 @@
 				</button>
 				<!-- Submenu Dropdown -->
 				<div
-					class="dropdown-content absolute top-0 left-[100%] min-w-[200px] origin-top-left"
+					class="dropdown-content absolute top-0 min-w-[200px] origin-top-left"
 					navbar-submenu
-					[submenu]="item"></div>
+					[submenu]="item.children"></div>
 			</div>
 		</ng-template>
 	</li>

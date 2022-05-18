@@ -8,7 +8,7 @@ import { SubMenuItem } from 'src/app/shared/models/menu.model';
 })
 export class NavbarSubmenuComponent implements OnInit {
 
-  @Input() public submenu = <SubMenuItem>{};
+  @Input() public submenu = <SubMenuItem[]>{};
 
   constructor() { }
 

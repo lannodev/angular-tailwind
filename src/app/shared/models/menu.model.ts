@@ -8,8 +8,8 @@ export interface MenuItem {
 
 export interface SubMenuItem {
 	icon?: string
-	label: string
-	route: string | null
+	label?: string
+	route?: string | null
 	expanded?: boolean
 	active?: boolean
 	children?: Array<SubMenuItem>
