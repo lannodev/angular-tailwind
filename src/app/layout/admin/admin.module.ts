@@ -14,7 +14,8 @@ import { NavbarMenuComponent } from './components/navbar/navbar-menu/navbar-menu
 import { SharedModule } from 'src/app/shared/shared.module'
 import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile-menu/navbar-mobile-menu.component';
 import { SidebarSubmenuComponent } from './components/sidebar/sidebar-submenu/sidebar-submenu.component';
-import { NavbarSubmenuComponent } from './components/navbar/navbar-submenu/navbar-submenu.component'
+import { NavbarSubmenuComponent } from './components/navbar/navbar-submenu/navbar-submenu.component';
+import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component'
 
 const routes: Routes = [
 	{
@@ -36,6 +37,7 @@ const routes: Routes = [
 		NavbarMobileMenuComponent,
   SidebarSubmenuComponent,
   NavbarSubmenuComponent,
+  BottomNavbarComponent,
 	],
 	imports: [
 		CommonModule,

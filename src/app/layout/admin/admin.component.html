@@ -7,11 +7,14 @@
 		<app-navbar></app-navbar>
 
 		<!-- main content -->
-		<div class="m-5 flex lg:overflow-hidden">
+		<div class="overflow-auto">
 			<router-outlet></router-outlet>
 		</div>
-	</div>
 
-	<!-- footer -->
-	<app-footer></app-footer>
+		<!-- footer -->
+		<!-- <app-footer></app-footer> -->
+
+		<!-- Bottom bar -->
+		<app-bottom-navbar></app-bottom-navbar>
+	</div>
 </div>
