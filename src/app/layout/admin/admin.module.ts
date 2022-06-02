@@ -12,39 +12,39 @@ import { SidebarComponent } from './components/sidebar/sidebar.component'
 import { ProfileMenuComponent } from './components/navbar/profile-menu/profile-menu.component'
 import { NavbarMenuComponent } from './components/navbar/navbar-menu/navbar-menu.component'
 import { SharedModule } from 'src/app/shared/shared.module'
-import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile-menu/navbar-mobile-menu.component';
+import { NavbarMobileComponent } from './components/navbar/navbar-mobile/navbar-mobilecomponent';
 import { SidebarSubmenuComponent } from './components/sidebar/sidebar-submenu/sidebar-submenu.component';
 import { NavbarSubmenuComponent } from './components/navbar/navbar-submenu/navbar-submenu.component';
 import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component'
 
 const routes: Routes = [
-	{
-		path: '',
-		component: AdminComponent,
-		children: PagesRouting,
-	},
+    {
+        path: '',
+        component: AdminComponent,
+        children: PagesRouting,
+    },
 ]
 
 @NgModule({
-	declarations: [
-		AdminComponent,
-		FooterComponent,
-		SidebarComponent,
-		NavbarComponent,
-		SidebarMenuComponent,
-		ProfileMenuComponent,
-		NavbarMenuComponent,
-		NavbarMobileMenuComponent,
-  SidebarSubmenuComponent,
-  NavbarSubmenuComponent,
-  BottomNavbarComponent,
-	],
-	imports: [
-		CommonModule,
-		RouterModule.forChild(routes),
-		HttpClientModule,
-		AngularSvgIconModule.forRoot(),
-		SharedModule,
-	],
+    declarations: [
+        AdminComponent,
+        FooterComponent,
+        SidebarComponent,
+        NavbarComponent,
+        SidebarMenuComponent,
+        ProfileMenuComponent,
+        NavbarMenuComponent,
+        NavbarMobileComponent,
+        SidebarSubmenuComponent,
+        NavbarSubmenuComponent,
+        BottomNavbarComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(),
+        SharedModule,
+    ],
 })
-export class AdminModule {}
+export class AdminModule { }
