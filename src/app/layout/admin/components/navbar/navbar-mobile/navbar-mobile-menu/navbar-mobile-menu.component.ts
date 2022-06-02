@@ -24,6 +24,10 @@ export class NavbarMobileMenuComponent implements OnInit {
         this.menuService.toggleMenu(subMenu);
     }
 
+    public closeMenu() {
+        this.menuService.showMobileMenu = false;
+    }
+
     ngOnInit(): void { }
 
 }

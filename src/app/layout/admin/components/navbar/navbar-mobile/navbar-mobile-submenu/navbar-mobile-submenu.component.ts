@@ -30,4 +30,8 @@ export class NavbarMobileSubmenuComponent implements OnInit {
         })
     }
 
+    public closeMobileMenu() {
+        this.menuService.showMobileMenu = false;
+    }
+
 }

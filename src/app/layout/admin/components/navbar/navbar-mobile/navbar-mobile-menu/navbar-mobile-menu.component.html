@@ -29,6 +29,7 @@
 						class="flex h-9 cursor-pointer items-center justify-start rounded text-gray-600 hover:bg-gray-100 dark:text-night-100 dark:hover:bg-night-600">
 						<a
 							routerLinkActive="text-primary-500"
+							(click)="closeMenu()"
 							class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none">
 							{{ item.label }}
 						</a>

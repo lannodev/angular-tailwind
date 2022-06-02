@@ -13,6 +13,7 @@
 				<!-- Parent Menu -->
 				<ng-template #parentMenu let-sub="sub">
 					<a
+						(click)="closeMobileMenu()"
 						[routerLink]="sub.route"
 						routerLinkActive="text-primary-500"
 						[routerLinkActiveOptions]="{ exact: true }"
@@ -34,7 +35,7 @@
 				</ng-template>
 			</div>
 			<!-- Submenu items -->
-			<app-sidebar-submenu [submenu]="sub"></app-sidebar-submenu>
+			<app-navbar-mobile-submenu [submenu]="sub"></app-navbar-mobile-submenu>
 		</li>
 	</ul>
 </div>

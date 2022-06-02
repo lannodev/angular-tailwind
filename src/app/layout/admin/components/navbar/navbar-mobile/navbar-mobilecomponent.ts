@@ -9,7 +9,7 @@ import { MenuService } from '../../../services/menu.service'
     styleUrls: ['./navbar-mobile.component.scss'],
 })
 export class NavbarMobileComponent implements OnInit {
-    // @Input() pagesMenu: MenuItem[] = []
+
     public showMobileMenu$: Observable<boolean> = new Observable<boolean>();
 
     constructor(

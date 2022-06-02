@@ -19,10 +19,14 @@
 		<div class="px-5 pt-5 pb-6">
 			<div class="flex items-center justify-between">
 				<div>
-					<a
-						class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
-						<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
-					</a>
+					<!-- Logo -->
+					<div class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden">
+						<a
+							class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
+							<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5 text-red'"> </svg-icon>
+						</a>
+						<b class="pl-3 text-sm font-bold dark:text-night-50"> Finance </b>
+					</div>
 				</div>
 				<div class="-mr-2">
 					<button
