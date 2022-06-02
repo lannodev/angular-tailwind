@@ -53,6 +53,14 @@
 					class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
 					<svg-icon src="assets/icons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</button>
+
+				<!-- Tooltip -->
+				<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
+					<span
+						class="z-1 absolute left-12 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
+						{{ item.label }}
+					</span>
+				</div>
 			</div>
 
 			<!-- Submenu items -->
