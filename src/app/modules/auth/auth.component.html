@@ -1,0 +1,88 @@
+<div class="flex h-screen w-screen">
+	<div class="grow bg-primary-500"></div>
+	<div class="grid grow items-center justify-center bg-white">
+		<div class="flex flex-col items-center justify-center rounded-lg p-5 text-center">
+			<!-- logo -->
+			<div class="flex items-center justify-start">
+				<a class="flex items-center justify-center rounded bg-primary-500 p-2">
+					<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
+				</a>
+				<b class="text-md pl-3 font-bold text-gray-700"> Finance </b>
+			</div>
+
+			<!-- login form -->
+			<form class="mt-10 space-y-6">
+				<div>
+					<h2 class="text-3xl font-semibold text-gray-700">Hello Again!</h2>
+					<p class="text-sm text-gray-400">Some description about this login page here.</p>
+				</div>
+
+				<input type="hidden" name="remember" value="true" />
+				<div class="text-left">
+					<div class="mb-3">
+						<label for="email" class="block text-sm font-semibold">Email address</label>
+						<div class="mt-1">
+							<input
+								name="email"
+								type="email"
+								autocomplete="email"
+								placeholder="Email address"
+								class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500" />
+						</div>
+					</div>
+					<div>
+						<label for="password" class="block text-sm font-semibold">Password</label>
+						<div class="mt-1">
+							<input
+								name="password"
+								type="password"
+								autocomplete="current-password"
+								placeholder="Password"
+								class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500" />
+						</div>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-between">
+					<div class="flex items-center">
+						<input
+							id="remember-me"
+							name="remember-me"
+							type="checkbox"
+							class="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+						<label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+					</div>
+
+					<div class="text-sm">
+						<a href="#" class="font-medium text-primary-600 hover:text-primary-500">
+							Forgot your password?
+						</a>
+					</div>
+				</div>
+
+				<!-- Submit Button -->
+				<div>
+					<button
+						type="submit"
+						class="group relative flex w-full justify-center rounded-md border border-transparent bg-primary-600 py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-primary-700">
+						<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+							<svg
+								class="h-5 w-5 text-primary-500 group-hover:text-primary-400"
+								x-description="Heroicon name: solid/lock-closed"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								aria-hidden="true">
+								<path
+									fill-rule="evenodd"
+									d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						Sign in
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
