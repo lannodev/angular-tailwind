@@ -1,62 +1,52 @@
 <div class="flex h-screen w-screen">
 	<div class="grow bg-primary-500"></div>
-	<div class="grid grow items-center justify-center bg-white">
+	<div class="grid grow items-center justify-center bg-white dark:bg-night-700">
 		<div class="flex flex-col items-center justify-center rounded-lg p-5 text-center">
 			<!-- logo -->
 			<div class="flex items-center justify-start">
 				<a class="flex items-center justify-center rounded bg-primary-500 p-2">
 					<svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
 				</a>
-				<b class="text-md pl-3 font-bold text-gray-700"> Finance </b>
+				<b class="text-md pl-3 font-bold text-gray-700 dark:text-white"> Finance </b>
 			</div>
 
 			<!-- login form -->
 			<form class="mt-10 space-y-6">
-				<div>
-					<h2 class="text-3xl font-semibold text-gray-700">Hello Again!</h2>
-					<p class="text-sm text-gray-400">Some description about this login page here.</p>
+				<div class="space-y-1">
+					<h2 class="text-3xl font-semibold text-gray-700 dark:text-white">Hello Again!</h2>
+					<p class="text-sm text-gray-400 dark:text-night-200">
+						Some description about this login page here.
+					</p>
 				</div>
 
 				<input type="hidden" name="remember" value="true" />
-				<div class="text-left">
-					<div class="mb-3">
-						<label for="email" class="block text-sm font-semibold">Email address</label>
-						<div class="mt-1">
-							<input
-								name="email"
-								type="email"
-								autocomplete="email"
-								placeholder="Email address"
-								class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500" />
-						</div>
+				<div class="space-y-3 text-left">
+					<div class="relative">
+						<input type="text" id="email" class="peer block" placeholder=" " />
+						<label
+							for="email"
+							class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-primary-600 dark:bg-night-700 dark:text-night-200">
+							Email address
+						</label>
 					</div>
-					<div>
-						<label for="password" class="block text-sm font-semibold">Password</label>
-						<div class="mt-1">
-							<input
-								name="password"
-								type="password"
-								autocomplete="current-password"
-								placeholder="Password"
-								class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500" />
-						</div>
+					<div class="relative">
+						<input type="text" id="password" class="peer block" placeholder=" " />
+						<label
+							for="password"
+							class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-primary-600 dark:bg-night-700 dark:text-night-200">
+							Password
+						</label>
 					</div>
 				</div>
 
 				<div class="flex items-center justify-between">
 					<div class="flex items-center">
-						<input
-							id="remember-me"
-							name="remember-me"
-							type="checkbox"
-							class="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-						<label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+						<input id="remember-me" name="remember-me" type="checkbox" />
+						<label for="remember-me" class="ml-2 block text-sm text-gray-500"> Remember me </label>
 					</div>
 
 					<div class="text-sm">
-						<a href="#" class="font-medium text-primary-600 hover:text-primary-500">
-							Forgot your password?
-						</a>
+						<a class="font-medium text-primary-600 hover:text-primary-500"> Forgot your password? </a>
 					</div>
 				</div>
 

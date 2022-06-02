@@ -4,21 +4,44 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+	[type='text'],
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week'],
+	[multiple],
+	textarea,
+	select {
+		@apply w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10  focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-night-500 dark:bg-night-700 dark:text-night-400 dark:placeholder-night-200;
+	}
+
+	[type='checkbox'],
+	[type='radio'] {
+		@apply h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500 dark:border-night-500 dark:bg-night-700;
+	}
+}
+
 @layer components {
+	.dropdown-content {
+		@apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
+	}
 
-  .dropdown-content {
-    @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
-  }
-
-  .dropdown:hover>.dropdown-content {
-    @apply pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200 block;
-  }
-
+	.dropdown:hover > .dropdown-content {
+		@apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+	}
 }
 
 /** Scroll bar **/
 @supports selector(::-webkit-scrollbar) {
-  .supports-scrollbars\: pr-2 {
-    padding-right: .5rem;
-  }
+	.supports-scrollbars\: pr-2 {
+		padding-right: 0.5rem;
+	}
 }
