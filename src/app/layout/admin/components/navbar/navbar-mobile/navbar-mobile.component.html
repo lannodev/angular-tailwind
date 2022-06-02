@@ -15,9 +15,9 @@
 	"
 	class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
 	<div
-		class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:divide-night-600 dark:bg-night-700">
-		<div class="px-5 pt-5 pb-6">
-			<div class="flex items-center justify-between">
+		class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-night-700">
+		<div class="pt-5 pb-6">
+			<div class="flex items-center justify-between px-5">
 				<div>
 					<!-- Logo -->
 					<div class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden">
@@ -32,14 +32,15 @@
 					<button
 						(click)="toggleMobileMenu()"
 						type="button"
-						class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 dark:text-night-300 dark:hover:bg-night-600 dark:hover:text-night-200">
+						class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 hover:bg-gray-100 hover:text-gray-500 dark:text-night-300 dark:hover:bg-night-600 dark:hover:text-night-200">
 						<span class="sr-only">Close menu</span>
 						<!-- Heroicon name: outline/x -->
 						<svg-icon src="assets/icons/outline/x.svg"> [svgClass]="'h-6 w-6'"> </svg-icon>
 					</button>
 				</div>
 			</div>
-			<div class="max-h-[500px] overflow-y-auto">
+			<div
+				class="scrollbar-thumb-rounded scrollbar-track-rounded max-h-[500px] overflow-y-auto px-5 scrollbar-thin scrollbar-track-gray-50 scrollbar-thumb-gray-100 dark:scrollbar-thumb-night-500 dark:scrollbar-track-night-600">
 				<app-navbar-mobile-menu></app-navbar-mobile-menu>
 			</div>
 		</div>

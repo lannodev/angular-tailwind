@@ -13,25 +13,12 @@
   .dropdown:hover>.dropdown-content {
     @apply pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200 block;
   }
+
 }
 
 /** Scroll bar **/
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e4e4e4;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #fafafa;
-}
-
-::-webkit-scrollbar-track {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: inset 7px 10px 12px #f0f0f0;
+@supports selector(::-webkit-scrollbar) {
+  .supports-scrollbars\: pr-2 {
+    padding-right: .5rem;
+  }
 }
