@@ -12,7 +12,9 @@
 			<!-- Menu List -->
 			<div (click)="toggleMenu(item)" class="group relative text-gray-400 dark:text-night-400">
 				<!-- Icon -->
-				<div class="pointer-events-none absolute m-2">
+				<div
+					[ngClass]="item.active && !(showSideBar$ | async) ? 'text-primary-500' : ''"
+					class="pointer-events-none absolute m-2">
 					<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</div>
 
