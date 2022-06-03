@@ -20,7 +20,7 @@
 	[multiple],
 	textarea,
 	select {
-		@apply w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:z-10  focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-night-500 dark:bg-night-700 dark:text-night-400 dark:placeholder-night-200;
+		@apply w-full rounded-md border border-gray-300 px-3 py-3 text-xs placeholder-gray-400 focus:z-10  focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-night-500 dark:bg-night-700 dark:text-night-400 dark:placeholder-night-200;
 	}
 
 	[type='checkbox'],
