@@ -1,17 +1,141 @@
-<div class="flex flex-col px-5 py-5">
-	<div class="flex-auto space-y-6 rounded-lg bg-white px-5 py-6 dark:bg-night-700">
-		<div class="space-y-1">
-			<dt class="font-mono text-xs dark:text-night-200">font-display</dt>
-			<dd class="text-2xl font-extrabold leading-7 text-gray-900 dark:text-night-50" style="opacity: 1">
-				Poppins
-			</dd>
+<div class="mx-auto my-4 px-8 lg:container">
+	<!-- Navbar -->
+	<div class="mb-4 flex justify-between">
+		<div class="inline-block">
+			<h3 class="font-semibold text-gray-900 dark:text-white">Bidding Dashboard</h3>
+			<div class="space-x-1 text-xs font-medium text-gray-400 dark:text-night-300">
+				<a href="" class="hover:text-primary-500">Home</a>
+				<span> - Dashboards</span>
+			</div>
 		</div>
-		<div class="space-y-1">
-			<dt class="font-mono text-xs dark:text-night-200">font-body</dt>
-			<dd class="text-xs font-light text-gray-600 dark:text-night-200">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi ultrices non pharetra, eros enim. Habitant
-				suspendisse ultricies.
-			</dd>
+		<div class="inline-block space-x-4">
+			<button
+				class="flex-none rounded-md bg-white px-4 py-2.5 text-xs font-semibold text-gray-500 dark:bg-night-700 dark:text-night-200">
+				Manage Bids
+			</button>
+			<button
+				class="flex-none rounded-md bg-primary-500 px-4 py-2.5 text-xs font-semibold text-white hover:bg-primary-600">
+				Manage Bids
+			</button>
 		</div>
+	</div>
+	<!-- end navbar -->
+
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+		<!-- Card -->
+		<div class="flex flex-col rounded-lg bg-white p-8 dark:bg-night-700 sm:flex-row md:col-span-2">
+			<!-- image -->
+			<div
+				class="min-h-[200px] w-full flex-1 cursor-pointer rounded-md bg-[url('https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-42.jpg')] bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
+			<!-- Details  -->
+			<div class="ml-6 mt-4 flex flex-1 flex-col justify-between md:mt-0">
+				<div>
+					<small class="font-semibold text-gray-400 dark:text-night-300">NFT ID: 34356776</small>
+					<h2 class="text-2xl font-semibold text-gray-800 dark:text-night-50">California Art</h2>
+				</div>
+
+				<div class="flex justify-between">
+					<!-- Avatar -->
+					<div class="flex items-center space-x-2">
+						<img
+							class="mx-auto block h-6 rounded-full sm:mx-0 sm:shrink-0"
+							src="https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-3.jpg"
+							alt="creator face" />
+						<div class="flex flex-col">
+							<small class="text-xs text-gray-400 dark:text-night-300">Creator</small>
+							<a
+								href=""
+								class="text-xs font-semibold text-gray-900 hover:text-primary-500 dark:text-night-100">
+								Robert Fox
+							</a>
+						</div>
+					</div>
+
+					<!-- Avatar -->
+					<div class="flex items-center space-x-2">
+						<img
+							class="mx-auto block h-6 rounded-full sm:mx-0 sm:shrink-0"
+							src="https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-13.jpg"
+							alt="Woman's Face" />
+						<div class="flex flex-col">
+							<small class="text-xs text-gray-400 dark:text-night-300">Instant Price</small>
+							<a
+								href=""
+								class="text-xs font-semibold text-gray-900 hover:text-primary-500 dark:text-night-100">
+								4.2 ETH
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="rounded-md border border-dashed border-gray-300 p-4 text-center dark:border-night-400">
+					<small class="text-gray-400 dark:text-night-300">Last Bid</small>
+					<h1 class="text-3xl font-semibold text-gray-900 dark:text-night-50">2.48 ETH</h1>
+					<span class="text-lg font-semibold text-gray-500 dark:text-night-300">$6,047.84</span>
+					<div class="mt-3 text-xs text-gray-400 dark:text-night-300">Ending in</div>
+					<div class="font-semibold text-gray-500 dark:text-night-200">06h 52m 47s</div>
+				</div>
+
+				<div class="flex items-center justify-between">
+					<button
+						class="flex-none rounded-md bg-primary-500 px-4 py-2.5 text-xs font-semibold text-white hover:bg-primary-600">
+						Place a Bid
+					</button>
+					<button
+						class="flex-none rounded-md bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-500 dark:bg-night-500 dark:text-night-200">
+						View Item
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- end Card -->
+		<!-- Card -->
+		<div class="flex flex-col rounded-lg bg-white p-8 dark:bg-night-700">
+			<!-- Image -->
+			<div
+				class="h-[240px] cursor-pointer rounded-md bg-[url('https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-39.jpg')] bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
+			<!-- Description  -->
+			<h2 class="text-md mt-6 font-semibold text-gray-900 dark:text-night-50">Wavy Curved Art</h2>
+			<div class="flex items-end justify-between text-sm font-semibold text-gray-400 dark:text-night-300">
+				Last Bid: 1.07 ETH
+				<span>$2,630</span>
+			</div>
+			<!-- Buttons -->
+			<div class="mt-6 flex items-center justify-between">
+				<button
+					class="flex-none rounded-md bg-primary-500 px-4 py-2.5 text-xs font-semibold text-white hover:bg-primary-600">
+					Place a Bid
+				</button>
+				<button
+					class="flex-none rounded-md bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-500 dark:bg-night-500 dark:text-night-200">
+					View Item
+				</button>
+			</div>
+		</div>
+		<!-- end Card -->
+		<!-- Card -->
+		<div class="flex flex-col rounded-lg bg-white p-8 dark:bg-night-700">
+			<!-- Image -->
+			<div
+				class="h-[240px] cursor-pointer rounded-md bg-[url('https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-47.jpg')] bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
+			<!-- Description  -->
+			<h2 class="text-md mt-6 font-semibold text-gray-900 dark:text-night-50">Happy Kitty Art</h2>
+			<div class="flex items-end justify-between text-sm font-semibold text-gray-400 dark:text-night-300">
+				Last Bid: 7.83 ETH
+				<span>$17,035</span>
+			</div>
+			<!-- Buttons -->
+			<div class="mt-6 flex items-center justify-between">
+				<button
+					class="flex-none rounded-md bg-primary-500 px-4 py-2.5 text-xs font-semibold text-white hover:bg-primary-600">
+					Place a Bid
+				</button>
+				<button
+					class="flex-none rounded-md bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-500 dark:bg-night-500 dark:text-night-200">
+					View Item
+				</button>
+			</div>
+		</div>
+		<!-- end Card -->
 	</div>
 </div>
