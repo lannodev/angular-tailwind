@@ -21,7 +21,8 @@ I have created this project to learning more about Tailwind css using my favouri
 <b>The project is not finished yet!</b>
 
 <p>
-  <img alt="Preview" src="src/assets/preview/demo.gif">
+  <img alt="Preview" src="src/assets/preview/dark.png">
+  <img alt="Preview" src="src/assets/preview/light.png">
 </p>
 
 #### Versions
@@ -30,7 +31,7 @@ I have created this project to learning more about Tailwind css using my favouri
 #### Features
   * [X] Sidebar
   * [x] Dark Theme
-  * [ ] Navbar
+  * [x] Navbar
   * [ ] Footer
   * [ ] Auth Module
   * [ ] User Module
