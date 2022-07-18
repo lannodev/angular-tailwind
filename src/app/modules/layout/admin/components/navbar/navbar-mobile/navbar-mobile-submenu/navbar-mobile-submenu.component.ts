@@ -1,37 +1,37 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/modules/layout/admin/services/menu.service';
-import { SubMenuItem } from 'src/app/shared/models/menu.model';
+import { SubMenuItem } from 'src/app/core/models/menu.model';
 
 @Component({
-    selector: 'app-navbar-mobile-submenu',
-    templateUrl: './navbar-mobile-submenu.component.html',
-    styleUrls: ['./navbar-mobile-submenu.component.scss']
+  selector: 'app-navbar-mobile-submenu',
+  templateUrl: './navbar-mobile-submenu.component.html',
+  styleUrls: ['./navbar-mobile-submenu.component.scss']
 })
 export class NavbarMobileSubmenuComponent implements OnInit {
 
-    @Input() public submenu = <SubMenuItem>{};
+  @Input() public submenu = <SubMenuItem>{};
 
-    constructor(
-        private menuService: MenuService
-    ) {
-    }
+  constructor(
+    private menuService: MenuService
+  ) {
+  }
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+  }
 
-    public toggleMenu(menu: any) {
-        this.menuService.toggleSubMenu(menu);
-    }
+  public toggleMenu(menu: any) {
+    this.menuService.toggleSubMenu(menu);
+  }
 
-    private collapse(items: Array<any>) {
-        items.forEach((item) => {
-            item.expanded = false;
-            if (item.children) this.collapse(item.children);
-        })
-    }
+  private collapse(items: Array<any>) {
+    items.forEach((item) => {
+      item.expanded = false;
+      if (item.children) this.collapse(item.children);
+    })
+  }
 
-    public closeMobileMenu() {
-        this.menuService.showMobileMenu = false;
-    }
+  public closeMobileMenu() {
+    this.menuService.showMobileMenu = false;
+  }
 
 }

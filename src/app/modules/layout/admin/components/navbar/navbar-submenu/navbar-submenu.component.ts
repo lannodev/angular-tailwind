@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SubMenuItem } from 'src/app/shared/models/menu.model';
+import { SubMenuItem } from 'src/app/core/models/menu.model';
 
 @Component({
   selector: 'div[navbar-submenu]',
