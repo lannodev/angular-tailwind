@@ -6,12 +6,16 @@ import { BiddingComponent } from './pages/bidding/bidding.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
+import { BiddingSingleCardComponent } from './components/bidding-single-card/bidding-single-card.component';
+import { BiddingDualCardComponent } from './components/bidding-dual-card/bidding-dual-card.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    BiddingComponent
+    BiddingComponent,
+    BiddingSingleCardComponent,
+    BiddingDualCardComponent,
   ],
   imports: [
     CommonModule,
