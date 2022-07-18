@@ -19,7 +19,8 @@ export class BiddingComponent implements OnInit {
         price: 6047.84,
         ending_in: "06h 52m 47s",
         last_bid: 2.48,
-        image: "./assets/images/img-01.jpg"
+        image: "./assets/images/img-01.jpg",
+        avatar: "./assets/avatars/avt-01.jpg"
       },
       {
         id: 34356772,

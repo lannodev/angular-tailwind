@@ -18,11 +18,10 @@
 
 For me, the best strategies for learning new skills is to practice. 
 I have created this project to learning more about Tailwind css using my favourite framework (Angular). I have to tell you, Tailwind it is amazing!
-<b>The project is not finished yet!</b>
+<b><img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" width="14"/> The project is not finished yet!</b>
 
 <p>
-  <img alt="Preview" src="src/assets/preview/dark.png">
-  <img alt="Preview" src="src/assets/preview/light.png">
+  <img alt="Preview" src="src/assets/preview/preview.png">
 </p>
 
 #### Versions
@@ -35,8 +34,7 @@ I have created this project to learning more about Tailwind css using my favouri
   * [ ] Footer
   * [ ] Auth Module
   * [ ] User Module
-  * [ ] Profile Page
-  * [ ] Dashboard Page
+  * [ ] Dashboard Module
 
 #### Disclaimer
 The Tailwind name and logos are trademarks of Tailwind Labs Inc.
