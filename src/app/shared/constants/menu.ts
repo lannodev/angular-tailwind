@@ -6,31 +6,30 @@ export class Menu {
       group: 'Base',
       separator: false,
       items: [
+        // {
+        //   icon: 'assets/icons/outline/chart-pie.svg',
+        //   label: 'Bidding',
+        //   route: '/dashboard',
+        // },
         {
           icon: 'assets/icons/outline/chart-pie.svg',
-          label: 'Bidding',
-          route: '/dashboard',
-        },
-        {
-          icon: 'assets/icons/outline/bookmark.svg',
-          label: 'Books',
-          route: '/books',
+          label: 'Dashboards',
+          route: '/dashboards',
           children: [
-            {
-              label: 'Anime', route: '/books/anime', children: [
-                { label: 'Dragronball', route: '/books/anime/dragonball' },
-                {
-                  label: 'Naruto', route: '/books/anime/naruto', children: [
-                    { label: 'Naruto 1', route: '/books/anime/naruto/1' },
-                    { label: 'Naruto 2', route: '/books/anime/naruto/2' },
-                    { label: 'Naruto 3', route: '/books/anime/naruto/3' },
-                  ]
-                },
+            // {
+            //   label: 'Anime', route: '/books/anime', children: [
+            //     { label: 'Dragronball', route: '/books/anime/dragonball' },
+            //     {
+            //       label: 'Naruto', route: '/books/anime/naruto', children: [
+            //         { label: 'Naruto 1', route: '/books/anime/naruto/1' },
+            //         { label: 'Naruto 2', route: '/books/anime/naruto/2' },
+            //         { label: 'Naruto 3', route: '/books/anime/naruto/3' },
+            //       ]
+            //     },
 
-              ],
-            },
-            { label: 'Downloads', route: '/books/download' },
-            { label: 'Trash', route: '/books/trash' },
+            //   ],
+            // },
+            { label: 'Bidding', route: '/dashboards/bidding' }
           ],
         },
       ],
