@@ -17,7 +17,8 @@ import { SidebarMenuComponent } from './components/sidebar/sidebar-menu/sidebar-
 import { SidebarSubmenuComponent } from './components/sidebar/sidebar-submenu/sidebar-submenu.component'
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarMobileMenuComponent } from './components/navbar/navbar-mobile/navbar-mobile-menu/navbar-mobile-menu.component';
-import { NavbarMobileSubmenuComponent } from './components/navbar/navbar-mobile/navbar-mobile-submenu/navbar-mobile-submenu.component'
+import { NavbarMobileSubmenuComponent } from './components/navbar/navbar-mobile/navbar-mobile-submenu/navbar-mobile-submenu.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component'
 
 const routes: Routes = [
     {
@@ -42,6 +43,7 @@ const routes: Routes = [
         BottomNavbarComponent,
         NavbarMobileMenuComponent,
         NavbarMobileSubmenuComponent,
+        ToolbarComponent,
     ],
     imports: [
         CommonModule,

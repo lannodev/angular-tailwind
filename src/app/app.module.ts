@@ -6,9 +6,9 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent],
-    imports: [BrowserModule, AppRoutingModule, SharedModule],
-    providers: [],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent, DashboardComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
