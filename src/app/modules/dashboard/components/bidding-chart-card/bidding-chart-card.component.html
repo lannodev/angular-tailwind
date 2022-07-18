@@ -1,14 +1,26 @@
-<apx-chart
-	[series]="chartOptions.series!"
-	[chart]="chartOptions.chart!"
-	[legend]="chartOptions.legend!"
-	[dataLabels]="chartOptions.dataLabels!"
-	[fill]="chartOptions.fill!"
-	[stroke]="chartOptions.stroke!"
-	[xaxis]="chartOptions.xaxis!"
-	[yaxis]="chartOptions.yaxis!"
-	[states]="chartOptions.states!"
-	[tooltip]="chartOptions.tooltip!"
-	[colors]="chartOptions.colors!"
-	[grid]="chartOptions.grid!"
-	[title]="chartOptions.title!"></apx-chart>
+<div class="flex flex-col rounded-lg bg-white p-8 dark:bg-night-700 sm:flex-row">
+	<!-- Title -->
+	<div class="mb-2 flex items-center space-x-1">
+		<span class="text-lg font-semibold dark:text-night-400">$</span>
+		<span class="text-4xl font-semibold dark:text-night-100">3,274.94</span>
+		<div class="rounded-md bg-primary-500/20 py-1 px-1 text-sm dark:text-primary-400">9.2%</div>
+	</div>
+	<!-- Chart -->
+	<div>
+		<apx-chart
+			[series]="chartOptions.series!"
+			[chart]="chartOptions.chart!"
+			[legend]="chartOptions.legend!"
+			[dataLabels]="chartOptions.dataLabels!"
+			[fill]="chartOptions.fill!"
+			[stroke]="chartOptions.stroke!"
+			[xaxis]="chartOptions.xaxis!"
+			[yaxis]="chartOptions.yaxis!"
+			[states]="chartOptions.states!"
+			[tooltip]="chartOptions.tooltip!"
+			[colors]="chartOptions.colors!"
+			[grid]="chartOptions.grid!"
+			[title]="chartOptions.title!"></apx-chart>
+	</div>
+	<!-- end Chart -->
+</div>
