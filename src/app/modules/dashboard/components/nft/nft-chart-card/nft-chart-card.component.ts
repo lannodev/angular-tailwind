@@ -4,10 +4,10 @@ import { ThemeService } from 'src/app/core/services/theme.service';
 import { ChartOptions } from '../../../models/chart-options';
 
 @Component({
-  selector: 'app-bidding-chart-card',
-  templateUrl: './bidding-chart-card.component.html'
+  selector: 'app-nft-chart-card',
+  templateUrl: './nft-chart-card.component.html'
 })
-export class BiddingChartCardComponent implements OnInit, OnDestroy {
+export class NftChartCardComponent implements OnInit, OnDestroy {
 
   public chartOptions: Partial<ChartOptions>;
   private subscription: Subscription = new Subscription();

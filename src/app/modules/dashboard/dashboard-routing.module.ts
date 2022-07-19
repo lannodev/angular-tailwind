@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { BiddingComponent } from './pages/bidding/bidding.component';
+import { NftComponent } from './pages/nft/nft.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
     children: [
-      { path: 'dashboards/bidding', component: BiddingComponent },
-      { path: '', redirectTo: 'dashboards/bidding', pathMatch: 'full' },
-      { path: '**', redirectTo: 'dashboards/bidding', pathMatch: 'full' },
+      { path: 'dashboards/nfts', component: NftComponent },
+      { path: '', redirectTo: 'dashboards/nfts', pathMatch: 'full' },
+      { path: '**', redirectTo: 'dashboards/nfts', pathMatch: 'full' },
       { path: '**', redirectTo: 'error/404' },
     ],
   },

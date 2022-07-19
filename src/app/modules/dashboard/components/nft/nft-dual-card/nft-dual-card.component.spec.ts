@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BiddingDualCardComponent } from './bidding-dual-card.component';
+import { BiddingDualCardComponent } from './nft-dual-card.component';
 
 describe('BiddingDualCardComponent', () => {
   let component: BiddingDualCardComponent;
@@ -8,9 +8,9 @@ describe('BiddingDualCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BiddingDualCardComponent ]
+      declarations: [BiddingDualCardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Bidding } from '../../models/bidding';
 
 @Component({
-  selector: 'app-bidding',
-  templateUrl: './bidding.component.html'
+  selector: 'app-nft',
+  templateUrl: './nft.component.html'
 })
-export class BiddingComponent implements OnInit {
+export class NftComponent implements OnInit {
 
   bidding: Array<Bidding>;
 

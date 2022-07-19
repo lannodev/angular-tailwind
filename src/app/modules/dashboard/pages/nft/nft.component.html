@@ -1,0 +1,12 @@
+<div class="mx-auto px-8 pb-8 lg:container">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+		<!-- Dual Card -->
+		<div nft-dual-card [bidding]="bidding[0]" class="md:col-span-2"></div>
+		<!-- end Dual Card -->
+		<!-- Single Card -->
+		<div nft-single-card [bidding]="bidding[1]"></div>
+		<div nft-single-card [bidding]="bidding[2]"></div>
+		<!-- end Single Card -->
+		<app-nft-chart-card></app-nft-chart-card>
+	</div>
+</div>

@@ -29,7 +29,7 @@ export class Menu {
 
             //   ],
             // },
-            { label: 'Bidding', route: '/dashboards/bidding' }
+            { label: 'Nfts', route: '/dashboards/nfts' }
           ],
         },
       ],
