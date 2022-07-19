@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Bidding } from '../../models/bidding';
+import { Bidding } from '../../../models/bidding';
 
 @Component({
   selector: '[bidding-single-card]',
