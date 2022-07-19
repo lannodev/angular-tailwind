@@ -6,10 +6,11 @@ import { BiddingComponent } from './pages/bidding/bidding.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
-import { BiddingSingleCardComponent } from './components/Bidding/bidding-single-card/bidding-single-card.component';
-import { BiddingDualCardComponent } from './components/Bidding/bidding-dual-card/bidding-dual-card.component';
+import { BiddingSingleCardComponent } from './components/bidding/bidding-single-card/bidding-single-card.component';
+import { BiddingDualCardComponent } from './components/bidding/bidding-dual-card/bidding-dual-card.component';
+import { BiddingChartCardComponent } from './components/bidding/bidding-chart-card/bidding-chart-card.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { BiddingChartCardComponent } from './components/Bidding/bidding-chart-card/bidding-chart-card.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BiddingChartCardComponent } from './components/Bidding/bidding-chart-ca
     DashboardRoutingModule,
     SharedModule,
     HttpClientModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    AngularSvgIconModule.forRoot(),
   ]
 })
 export class DashboardModule { }

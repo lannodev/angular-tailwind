@@ -1,55 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexTitleSubtitle,
-  ApexLegend,
-  ApexDataLabels,
-  ApexFill,
-  ApexStroke,
-  ApexYAxis,
-  ApexStates,
-  ApexTooltip,
-  ApexGrid,
-  ApexTheme,
-  ApexAnnotations,
-  ApexResponsive,
-  ApexPlotOptions,
-  ApexMarkers
-} from "ng-apexcharts";
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries
-  chart: ApexChart
-  legend: ApexLegend
-  dataLabels: ApexDataLabels
-  fill: ApexFill
-  stroke: ApexStroke
-  xaxis: ApexXAxis
-  yaxis: ApexYAxis | ApexYAxis[]
-  states: ApexStates
-  tooltip: ApexTooltip
-  colors: string[]
-  grid: ApexGrid
-  title: ApexTitleSubtitle
-  subtitle: ApexTitleSubtitle
-  theme: ApexTheme
-  annotations: ApexAnnotations
-  responsive: ApexResponsive[]
-  plotOptions: ApexPlotOptions
-  markers: ApexMarkers
-};
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ThemeService } from 'src/app/core/services/theme.service';
+import { ChartOptions } from '../../../models/chart-options';
 
 @Component({
   selector: 'app-bidding-chart-card',
   templateUrl: './bidding-chart-card.component.html'
 })
-export class BiddingChartCardComponent implements OnInit {
+export class BiddingChartCardComponent implements OnInit, OnDestroy {
 
   public chartOptions: Partial<ChartOptions>;
+  private subscription: Subscription = new Subscription();
 
-  constructor() {
+  constructor(
+    private themeService: ThemeService
+  ) {
 
     const labelColor = '#565674';
     const borderColor = '#323248';
@@ -63,12 +28,9 @@ export class BiddingChartCardComponent implements OnInit {
       chart: {
         fontFamily: 'inherit',
         type: 'area',
-        height: 200,
+        height: 150,
         toolbar: {
           show: false
-        },
-        zoom: {
-          enabled: false,
         },
         sparkline: {
           enabled: true,
@@ -79,7 +41,7 @@ export class BiddingChartCardComponent implements OnInit {
         show: false
       },
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       fill: {
         type: "gradient",
@@ -94,7 +56,7 @@ export class BiddingChartCardComponent implements OnInit {
         curve: 'smooth',
         show: true,
         width: 3,
-        colors: [baseColor]
+        colors: [baseColor] // line color
       },
       xaxis: {
         categories: ['10AM', '10.30AM', '11AM', '11.15AM', '11.30AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM'],
@@ -107,14 +69,15 @@ export class BiddingChartCardComponent implements OnInit {
         offsetX: 20,
         tickAmount: 4,
         labels: {
+          rotate: 0,
+          rotateAlways: false,
           show: false,
           style: {
             colors: labelColor,
-            fontSize: '12px',
-          },
+            fontSize: '12px'
+          }
         },
         crosshairs: {
-          show: true,
           position: 'front',
           stroke: {
             color: baseColor,
@@ -127,9 +90,9 @@ export class BiddingChartCardComponent implements OnInit {
           formatter: undefined,
           offsetY: 0,
           style: {
-            fontSize: '12px',
-          },
-        },
+            fontSize: '12px'
+          }
+        }
       },
       yaxis: {
         tickAmount: 4,
@@ -161,6 +124,7 @@ export class BiddingChartCardComponent implements OnInit {
         }
       },
       tooltip: {
+        theme: 'light',
         style: {
           fontSize: '12px'
         },
@@ -170,9 +134,9 @@ export class BiddingChartCardComponent implements OnInit {
           }
         }
       },
-      colors: [baseColor],
+      colors: [baseColor], //line gradient
       grid: {
-        borderColor: borderColor,
+        borderColor: borderColor, // lines color
         strokeDashArray: 3,
         yaxis: {
           lines: {
@@ -182,12 +146,21 @@ export class BiddingChartCardComponent implements OnInit {
       },
       markers: {
         strokeColors: baseColor,
-        strokeWidth: 3
-      }
+        strokeWidth: 3,
+
+      },
+
     };
   }
 
   ngOnInit(): void {
+    let sub = this.themeService.themeChanged.subscribe(theme => {
+      this.chartOptions.tooltip!.theme = theme;
+    });
+    this.subscription.add(sub);
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }
