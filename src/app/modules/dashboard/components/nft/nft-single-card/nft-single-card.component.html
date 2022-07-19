@@ -2,13 +2,13 @@
 <div class="flex h-[420px] flex-col rounded-lg bg-white p-8 dark:bg-night-700">
 	<!-- Image -->
 	<div
-		[ngStyle]="{ 'background-image': 'url(' + bidding.image + ')' }"
+		[ngStyle]="{ 'background-image': 'url(' + nft.image + ')' }"
 		class="h-[240px] cursor-pointer rounded-md bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
 	<!-- Description  -->
-	<h2 class="text-md mt-6 font-semibold text-gray-900 dark:text-night-50">{{ bidding.title }}</h2>
+	<h2 class="text-md mt-6 font-semibold text-gray-900 dark:text-night-50">{{ nft.title }}</h2>
 	<div class="flex items-end justify-between text-sm font-semibold text-gray-400 dark:text-night-300">
-		Last Bid: {{ bidding.last_bid }} ETH
-		<span>{{ bidding.price | currency }}</span>
+		Last Bid: {{ nft.last_bid }} ETH
+		<span>{{ nft.price | currency }}</span>
 	</div>
 	<!-- Buttons -->
 	<div class="mt-6 flex items-center justify-between">

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { MenuItem } from 'src/app/core/models/menu.model'
 import { ThemeService } from 'src/app/core/services/theme.service'
-import packageJson from '../../../../../../../package.json'
+import packageJson from '../../../../../../package.json'
 import { MenuService } from '../../services/menu.service'
 
 @Component({

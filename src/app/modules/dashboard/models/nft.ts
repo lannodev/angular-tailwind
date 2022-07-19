@@ -1,4 +1,4 @@
-export interface Bidding {
+export interface Nft {
   id: number;
   title: string;
   last_bid?: number;

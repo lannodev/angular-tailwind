@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Bidding } from '../../../models/bidding';
+import { Nft } from '../../../models/nft';
 
 @Component({
   selector: '[nft-single-card]',
@@ -7,7 +7,7 @@ import { Bidding } from '../../../models/bidding';
 })
 export class NftSingleCardComponent implements OnInit {
 
-  @Input() bidding: Bidding = <Bidding>{};
+  @Input() nft: Nft = <Nft>{};
 
   constructor() { }
 

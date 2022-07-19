@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bidding } from '../../models/bidding';
+import { Nft } from '../../models/nft';
 
 @Component({
   selector: 'app-nft',
@@ -7,10 +7,10 @@ import { Bidding } from '../../models/bidding';
 })
 export class NftComponent implements OnInit {
 
-  bidding: Array<Bidding>;
+  nft: Array<Nft>;
 
   constructor() {
-    this.bidding = [
+    this.nft = [
       {
         id: 34356771,
         title: "Girls of the Cartoon Universe",

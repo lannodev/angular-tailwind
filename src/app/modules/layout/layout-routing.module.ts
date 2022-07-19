@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin.component';
+import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent,
-    loadChildren: () => import('../../dashboard/dashboard.module').then((m) => m.DashboardModule),
+    component: LayoutComponent,
+    loadChildren: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   { path: '**', redirectTo: 'error/404' },
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class LayoutRoutingModule { }
