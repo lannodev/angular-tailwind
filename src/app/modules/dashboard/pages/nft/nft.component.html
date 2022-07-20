@@ -1,4 +1,4 @@
-<div class="mx-auto px-8 py-4 lg:container">
+<div class="mx-auto px-4 py-4 sm:px-8 lg:container">
 	<!-- Header -->
 	<app-nft-header></app-nft-header>
 	<!-- end Header -->
@@ -14,9 +14,9 @@
 		<div nft-single-card [nft]="nft[2]"></div>
 		<!-- end Single Card -->
 		<!-- Single Card -->
-		<app-nft-chart-card></app-nft-chart-card>
+		<div nft-chart-card class="md:col-span-2 xl:col-span-1"></div>
 		<!-- end Single Card -->
 		<!-- Auctions Table -->
-		<div nft-auctions-table class="md:col-span-3"></div>
+		<div nft-auctions-table class="md:col-span-2 xl:col-span-3"></div>
 	</div>
 </div>

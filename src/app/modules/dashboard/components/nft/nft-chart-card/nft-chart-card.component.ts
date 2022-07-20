@@ -4,7 +4,7 @@ import { ThemeService } from 'src/app/core/services/theme.service';
 import { ChartOptions } from '../../../models/chart-options';
 
 @Component({
-  selector: 'app-nft-chart-card',
+  selector: '[nft-chart-card]',
   templateUrl: './nft-chart-card.component.html'
 })
 export class NftChartCardComponent implements OnInit, OnDestroy {
