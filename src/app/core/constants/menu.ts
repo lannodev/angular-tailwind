@@ -6,15 +6,10 @@ export class Menu {
       group: 'Base',
       separator: false,
       items: [
-        // {
-        //   icon: 'assets/icons/outline/chart-pie.svg',
-        //   label: 'Bidding',
-        //   route: '/dashboard',
-        // },
         {
           icon: 'assets/icons/outline/chart-pie.svg',
-          label: 'Dashboards',
-          route: '/dashboards',
+          label: 'Dashboard',
+          route: '/dashboard',
           children: [
             // {
             //   label: 'Anime', route: '/books/anime', children: [
@@ -29,7 +24,7 @@ export class Menu {
 
             //   ],
             // },
-            { label: 'Nfts', route: '/dashboards/nfts' }
+            { label: 'Nfts', route: '/dashboard/nfts' }
           ],
         },
       ],
