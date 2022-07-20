@@ -12,6 +12,9 @@ import { NftChartCardComponent } from './components/nft/nft-chart-card/nft-chart
 
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NftHeaderComponent } from './components/nft/nft-header/nft-header.component';
+import { NftAuctionsTableComponent } from './components/nft/nft-auctions-table/nft-auctions-table.component';
+import { NftAuctionsTableItemComponent } from './components/nft/nft-auctions-table-item/nft-auctions-table-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     NftSingleCardComponent,
     NftDualCardComponent,
     NftChartCardComponent,
+    NftHeaderComponent,
+    NftAuctionsTableComponent,
+    NftAuctionsTableItemComponent,
   ],
   imports: [
     CommonModule,

@@ -1,24 +1,7 @@
 <div class="mx-auto px-8 py-4 lg:container">
-	<!-- Toolbar -->
-	<div class="mb-4 flex justify-between">
-		<div class="inline-block">
-			<h3 class="font-semibold text-gray-900 dark:text-white">NFTs Dashboard</h3>
-			<div class="space-x-1 text-xs font-medium text-gray-400 dark:text-night-300">
-				<a href="" class="hover:text-primary-500">Dashboards</a>
-				<span> - NFTs</span>
-			</div>
-		</div>
-		<div class="inline-block space-x-4">
-			<button
-				class="flex-none rounded-md bg-white px-4 py-2.5 text-xs font-semibold text-gray-500 hover:text-primary-500 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500">
-				Manage Bids
-			</button>
-			<button class="flex-none rounded-md bg-primary-500 px-4 py-2.5 text-xs font-semibold text-white hover:bg-primary-600">
-				Manage Bids
-			</button>
-		</div>
-	</div>
-	<!-- end Toolbar -->
+	<!-- Header -->
+	<app-nft-header></app-nft-header>
+	<!-- end Header -->
 
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
 		<!-- Dual Card -->
@@ -26,8 +9,14 @@
 		<!-- end Dual Card -->
 		<!-- Single Card -->
 		<div nft-single-card [nft]="nft[1]"></div>
+		<!-- end Single Card -->
+		<!-- Single Card -->
 		<div nft-single-card [nft]="nft[2]"></div>
 		<!-- end Single Card -->
+		<!-- Single Card -->
 		<app-nft-chart-card></app-nft-chart-card>
+		<!-- end Single Card -->
+		<!-- Auctions Table -->
+		<div nft-auctions-table class="md:col-span-3"></div>
 	</div>
 </div>
