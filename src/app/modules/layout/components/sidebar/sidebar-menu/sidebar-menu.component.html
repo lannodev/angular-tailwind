@@ -1,8 +1,6 @@
 <div class="pt-4" *ngFor="let menu of pagesMenu$ | async">
 	<div class="mx-1 mb-2 flex items-center justify-between">
-		<small
-			[ngClass]="{ hidden: !(showSideBar$ | async) }"
-			class="text-xs font-semibold text-gray-400 dark:text-night-200">
+		<small [ngClass]="{ hidden: !(showSideBar$ | async) }" class="text-xs font-semibold text-gray-400 dark:text-night-200">
 			{{ menu.group }}
 		</small>
 	</div>
@@ -12,16 +10,12 @@
 			<!-- Menu List -->
 			<div (click)="toggleMenu(item)" class="group relative text-gray-400 dark:text-night-400">
 				<!-- Icon -->
-				<div
-					[ngClass]="item.active && !(showSideBar$ | async) ? 'text-primary-500' : ''"
-					class="pointer-events-none absolute m-2">
+				<div [ngClass]="item.active && !(showSideBar$ | async) ? 'text-primary-500' : ''" class="pointer-events-none absolute m-2">
 					<svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
 				</div>
 
 				<!-- Condition -->
-				<ng-container
-					[ngTemplateOutlet]="item.children ? childMenu : parentMenu"
-					[ngTemplateOutletContext]="{ item: item }">
+				<ng-container [ngTemplateOutlet]="item.children ? childMenu : parentMenu" [ngTemplateOutletContext]="{ item: item }">
 				</ng-container>
 
 				<!-- Workaround:: Enable routerLink -->
@@ -39,10 +33,8 @@
 
 				<!-- Workaround:: Disable routerLink -->
 				<ng-template #childMenu let-item="item">
-					<div
-						class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
-						<a
-							class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
+					<div class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600">
+						<a class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
 							{{ item.label }}
 						</a>
 					</div>
@@ -59,7 +51,7 @@
 				<!-- Tooltip -->
 				<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
 					<span
-						class="z-1 absolute left-12 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
+						class="z-1 absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
 						{{ item.label }}
 					</span>
 				</div>

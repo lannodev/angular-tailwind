@@ -31,7 +31,6 @@
 
 	<div class="mx-4 my-4 space-y-1">
 		<!-- Dark Theme -->
-
 		<div
 			(click)="toggleTheme()"
 			class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
@@ -40,8 +39,7 @@
 				[svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
 			</svg-icon>
 
-			<a
-				class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
+			<a class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
 				{{ themeService.isDark ? 'Light Theme' : 'Dark Theme' }}
 			</a>
 
@@ -52,13 +50,12 @@
 				</span>
 			</div>
 		</div>
-
-		<div
-			class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
-			<svg-icon src="assets/icons/outline/logout.svg" [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
-			</svg-icon>
+		<!-- Sign out -->
+		<div class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
+			<svg-icon src="assets/icons/outline/logout.svg" [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'"> </svg-icon>
 
 			<a
+				routerLink="/auth"
 				class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
 				Sign out
 			</a>
@@ -70,19 +67,16 @@
 				</span>
 			</div>
 		</div>
-
-		<div
-			class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
-			<svg-icon
-				src="assets/icons/outline/information-circle.svg"
-				[svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
+		<!-- Version -->
+		<div class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
+			<svg-icon src="assets/icons/outline/information-circle.svg" [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
 			</svg-icon>
 
 			<a
+				target="_blank"
+				href="https://github.com/luciano-work/angular-tailwind"
 				class="ml-3 truncate text-[10px] font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
-				<span class="rounded-lg bg-yellow-400/10 px-2 font-semibold text-yellow-500"
-					>v{{ appJson.version }}</span
-				>
+				<span class="rounded-lg bg-yellow-400/10 px-2 font-semibold text-yellow-500">v{{ appJson.version }}</span>
 			</a>
 
 			<div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
