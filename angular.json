@@ -35,6 +35,9 @@
             ],
             "scripts": [
               "node_modules/apexcharts/dist/apexcharts.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "apexcharts"
             ]
           },
           "configurations": {
