@@ -8,6 +8,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { TwoStepsComponent } from './pages/two-steps/two-steps.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     AuthComponent,
     SignInComponent,
     SignUpComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    NewPasswordComponent,
+    TwoStepsComponent
   ],
   imports: [
     CommonModule,
