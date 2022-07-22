@@ -33,7 +33,7 @@ I have created this project to learning more about Tailwind css using my favouri
   * [x] Dark Theme
   * [x] Navbar
   * [ ] Footer
-  * [ ] Auth Module
+  * [x] Auth Module
   * [ ] User Module
   * [ ] Dashboard Module
 
