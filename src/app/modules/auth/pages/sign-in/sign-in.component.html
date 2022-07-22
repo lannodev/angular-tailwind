@@ -11,7 +11,7 @@
 	<button
 		type="submit"
 		routerLink="/dashboard"
-		class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-xs font-medium text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-gray-50 dark:border-night-500 dark:bg-night-700 dark:text-night-200 dark:hover:bg-night-600">
+		class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-gray-50 dark:border-night-500 dark:bg-night-700 dark:text-night-200 dark:hover:bg-night-600">
 		<svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
 		Log in with Google
 	</button>
@@ -43,7 +43,7 @@
 	<div class="flex items-center justify-between space-x-3">
 		<div class="flex items-center">
 			<input id="remember-me" name="remember-me" type="checkbox" />
-			<label for="remember-me" class="ml-2 block text-sm text-gray-500 dark:text-night-200"> Remember me </label>
+			<label for="remember-me" class="ml-2 block text-sm text-gray-400 dark:text-night-200"> Remember me </label>
 		</div>
 
 		<div class="text-sm">
@@ -52,12 +52,15 @@
 	</div>
 
 	<!-- Submit Button -->
-	<div>
-		<button
-			type="button"
-			routerLink="/dashboard/"
-			class="group relative flex w-full justify-center rounded-md border border-transparent bg-primary-500 py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-primary-400">
-			Sign in
-		</button>
+	<button
+		type="button"
+		routerLink="/dashboard"
+		class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-primary-500 py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-primary-400">
+		Sign in
+	</button>
+
+	<!-- Sign-up -->
+	<div class="text-sm text-gray-400 dark:text-night-200">
+		Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary-600 hover:text-primary-500">Sign up</a>
 	</div>
 </form>
