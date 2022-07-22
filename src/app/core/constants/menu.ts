@@ -11,22 +11,21 @@ export class Menu {
           label: 'Dashboard',
           route: '/dashboard',
           children: [
-            // {
-            //   label: 'Anime', route: '/books/anime', children: [
-            //     { label: 'Dragronball', route: '/books/anime/dragonball' },
-            //     {
-            //       label: 'Naruto', route: '/books/anime/naruto', children: [
-            //         { label: 'Naruto 1', route: '/books/anime/naruto/1' },
-            //         { label: 'Naruto 2', route: '/books/anime/naruto/2' },
-            //         { label: 'Naruto 3', route: '/books/anime/naruto/3' },
-            //       ]
-            //     },
-
-            //   ],
-            // },
             { label: 'Nfts', route: '/dashboard/nfts' }
           ],
         },
+        {
+          icon: 'assets/icons/outline/lock-closed.svg',
+          label: 'Auth',
+          route: '/auth',
+          children: [
+            { label: 'Sign up', route: '/auth/sign-up' },
+            { label: 'Sign in', route: '/auth/sign-in' },
+            { label: 'Forgot Password', route: '/auth/forgot-password' },
+            { label: 'New Password', route: '/auth/new-password' },
+            { label: 'Two Steps', route: '/auth/two-steps' },
+          ]
+        }
       ],
     },
     {
