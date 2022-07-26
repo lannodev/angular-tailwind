@@ -3,11 +3,9 @@
 	[ngClass]="{ hidden: !(showSideBar$ | async), 'max-h-screen': submenu.expanded }">
 	<ul class="flex flex-col border-l border-dashed border-gray-200 pl-2 text-night-200 dark:border-night-500">
 		<li *ngFor="let sub of submenu.children">
-			<div class="flex rounded hover:bg-gray-100 dark:hover:bg-night-600" (click)="toggleMenu(sub)">
+			<div class="flex rounded text-gray-400 hover:bg-gray-100 dark:text-night-300 dark:hover:bg-night-600" (click)="toggleMenu(sub)">
 				<!-- Condition -->
-				<ng-container
-					[ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
-					[ngTemplateOutletContext]="{ sub: sub }">
+				<ng-container [ngTemplateOutlet]="sub.children ? childMenu : parentMenu" [ngTemplateOutletContext]="{ sub: sub }">
 				</ng-container>
 
 				<!-- Parent Menu -->
