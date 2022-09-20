@@ -1,14 +1,34 @@
 {
   "name": "finance",
   "version": "0.1.0",
+  "description": "Angular & Tailwind CSS Admin Dashboard Starter Kit, Free and Open Source",
+  "homepage": "https://github.com/luciano-work/angular-tailwind#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciano-work/angular-tailwind.git"
+  },
+  "keywords": [
+    "angular",
+    "tailwind",
+    "starter-kit",
+    "tailwind-template",
+    "dark mode",
+    "open source"
+  ],
+  "author": "Luciano Oliveira <me@lanno.dev>",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "prettier": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
+    "prettier:verify": "prettier --config ./.prettierrc --check \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
+    "prettier:staged": "pretty-quick --staged",
     "prettier:check": "npx prettier . --check",
-    "prettier:write": "npx prettier . --write"
+    "prettier:write": "npx prettier . --write",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
