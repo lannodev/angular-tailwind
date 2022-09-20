@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core'
-import { BehaviorSubject } from 'rxjs'
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  public default = 'light'
-  public themeChanged: BehaviorSubject<string> = new BehaviorSubject(this.theme)
+  public default = 'light';
+  public themeChanged: BehaviorSubject<string> = new BehaviorSubject(this.theme);
 
-  constructor() { }
+  constructor() {}
 
   public get theme(): string {
-    return localStorage.getItem('theme') ?? this.default
+    return localStorage.getItem('theme') ?? this.default;
   }
 
   public set theme(value: string) {
@@ -20,6 +20,6 @@ export class ThemeService {
   }
 
   public get isDark(): boolean {
-    return this.theme == 'dark'
+    return this.theme == 'dark';
   }
 }

@@ -5,19 +5,15 @@ import { Menu } from 'src/app/core/constants/menu';
 import { MenuItem, SubMenuItem } from 'src/app/core/models/menu.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MenuService implements OnDestroy {
-
   private _showSidebar$ = new BehaviorSubject<boolean>(true);
   private _showMobileMenu$ = new BehaviorSubject<boolean>(false);
   public _pagesMenu$ = new BehaviorSubject<MenuItem[]>([]);
   private subscription = new Subscription();
 
-  constructor(
-    private router: Router
-  ) {
-
+  constructor(private router: Router) {
     /** Set dynamic menu */
     this._pagesMenu$.next(Menu.pages);
 
@@ -35,22 +31,32 @@ export class MenuService implements OnDestroy {
               if (subMenu.children) {
                 this.expand(subMenu.children);
               }
-            })
+            });
             menu.active = activeGroup;
-          })
-        })
+          });
+        });
       }
-    })
+    });
 
     this.subscription.add(sub);
   }
 
-  get showSideBar$() { return this._showSidebar$.asObservable(); }
-  get showMobileMenu$() { return this._showMobileMenu$.asObservable(); }
-  get pagesMenu$() { return this._pagesMenu$.asObservable(); }
+  get showSideBar$() {
+    return this._showSidebar$.asObservable();
+  }
+  get showMobileMenu$() {
+    return this._showMobileMenu$.asObservable();
+  }
+  get pagesMenu$() {
+    return this._pagesMenu$.asObservable();
+  }
 
-  set showSideBar(value: boolean) { this._showSidebar$.next(value); }
-  set showMobileMenu(value: boolean) { this._showMobileMenu$.next(value); }
+  set showSideBar(value: boolean) {
+    this._showSidebar$.next(value);
+  }
+  set showMobileMenu(value: boolean) {
+    this._showMobileMenu$.next(value);
+  }
 
   public toggleSidebar() {
     this._showSidebar$.next(!this._showSidebar$.value);
@@ -69,7 +75,7 @@ export class MenuService implements OnDestroy {
     items.forEach((item) => {
       item.expanded = this.isActive(item.route);
       if (item.children) this.expand(item.children);
-    })
+    });
   }
 
   private isActive(instruction: any): boolean {
@@ -77,12 +83,11 @@ export class MenuService implements OnDestroy {
       paths: 'subset',
       queryParams: 'subset',
       fragment: 'ignored',
-      matrixParams: 'ignored'
-    })
+      matrixParams: 'ignored',
+    });
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }

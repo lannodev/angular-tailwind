@@ -3,15 +3,12 @@ import { Nft } from '../../../models/nft';
 
 @Component({
   selector: '[nft-auctions-table-item]',
-  templateUrl: './nft-auctions-table-item.component.html'
+  templateUrl: './nft-auctions-table-item.component.html',
 })
 export class NftAuctionsTableItemComponent implements OnInit {
+  @Input() auction = <Nft>{};
 
-  @Input() auction = <Nft>{}
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

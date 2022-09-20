@@ -1,20 +1,17 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
 
 @Component({
-	selector: 'app-navbar',
-	templateUrl: './navbar.component.html',
-	styleUrls: ['./navbar.component.scss'],
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private menuService: MenuService) {}
 
-	constructor(
-		private menuService: MenuService
-	) { }
+  ngOnInit(): void {}
 
-	ngOnInit(): void { }
-
-	public toggleMobileMenu(): void {
-		this.menuService.showMobileMenu = true;
-	}
+  public toggleMobileMenu(): void {
+    this.menuService.showMobileMenu = true;
+  }
 }

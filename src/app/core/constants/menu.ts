@@ -1,4 +1,4 @@
-import { MenuItem } from '../models/menu.model'
+import { MenuItem } from '../models/menu.model';
 
 export class Menu {
   public static pages: MenuItem[] = [
@@ -10,9 +10,7 @@ export class Menu {
           icon: 'assets/icons/outline/chart-pie.svg',
           label: 'Dashboard',
           route: '/dashboard',
-          children: [
-            { label: 'Nfts', route: '/dashboard/nfts' }
-          ],
+          children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
@@ -24,8 +22,8 @@ export class Menu {
             { label: 'Forgot Password', route: '/auth/forgot-password' },
             { label: 'New Password', route: '/auth/new-password' },
             { label: 'Two Steps', route: '/auth/two-steps' },
-          ]
-        }
+          ],
+        },
       ],
     },
     {
@@ -75,5 +73,5 @@ export class Menu {
         },
       ],
     },
-  ]
+  ];
 }

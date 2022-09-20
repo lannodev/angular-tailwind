@@ -5,19 +5,14 @@ import { SubMenuItem } from 'src/app/core/models/menu.model';
 @Component({
   selector: 'app-navbar-mobile-submenu',
   templateUrl: './navbar-mobile-submenu.component.html',
-  styleUrls: ['./navbar-mobile-submenu.component.scss']
+  styleUrls: ['./navbar-mobile-submenu.component.scss'],
 })
 export class NavbarMobileSubmenuComponent implements OnInit {
-
   @Input() public submenu = <SubMenuItem>{};
 
-  constructor(
-    private menuService: MenuService
-  ) {
-  }
+  constructor(private menuService: MenuService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public toggleMenu(menu: any) {
     this.menuService.toggleSubMenu(menu);
@@ -27,11 +22,10 @@ export class NavbarMobileSubmenuComponent implements OnInit {
     items.forEach((item) => {
       item.expanded = false;
       if (item.children) this.collapse(item.children);
-    })
+    });
   }
 
   public closeMobileMenu() {
     this.menuService.showMobileMenu = false;
   }
-
 }

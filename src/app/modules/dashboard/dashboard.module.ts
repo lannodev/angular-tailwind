@@ -34,6 +34,6 @@ import { NftAuctionsTableItemComponent } from './components/nft/nft-auctions-tab
     HttpClientModule,
     NgApexchartsModule,
     AngularSvgIconModule.forRoot(),
-  ]
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

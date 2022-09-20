@@ -6,18 +6,15 @@ import { MenuItem, SubMenuItem } from 'src/app/core/models/menu.model';
 @Component({
   selector: 'app-navbar-mobile-menu',
   templateUrl: './navbar-mobile-menu.component.html',
-  styleUrls: ['./navbar-mobile-menu.component.scss']
+  styleUrls: ['./navbar-mobile-menu.component.scss'],
 })
 export class NavbarMobileMenuComponent implements OnInit {
-
   public pagesMenu$: Observable<MenuItem[]> = new Observable<MenuItem[]>();
   public showSideBar$: Observable<boolean> = new Observable<boolean>();
 
-  constructor(
-    private menuService: MenuService
-  ) {
+  constructor(private menuService: MenuService) {
     this.showSideBar$ = this.menuService.showSideBar$;
-    this.pagesMenu$ = this.menuService.pagesMenu$
+    this.pagesMenu$ = this.menuService.pagesMenu$;
   }
 
   public toggleMenu(subMenu: SubMenuItem) {
@@ -28,6 +25,5 @@ export class NavbarMobileMenuComponent implements OnInit {
     this.menuService.showMobileMenu = false;
   }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 }

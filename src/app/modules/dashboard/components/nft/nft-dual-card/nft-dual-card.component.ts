@@ -6,12 +6,9 @@ import { Nft } from '../../../models/nft';
   templateUrl: './nft-dual-card.component.html',
 })
 export class NftDualCardComponent implements OnInit {
-
   @Input() nft: Nft = <Nft>{};
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

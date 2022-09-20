@@ -8,9 +8,8 @@ describe('SidebarSubmenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarSubmenuComponent ]
-    })
-    .compileComponents();
+      declarations: [SidebarSubmenuComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

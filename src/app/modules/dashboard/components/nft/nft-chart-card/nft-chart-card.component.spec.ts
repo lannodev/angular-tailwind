@@ -8,9 +8,8 @@ describe('NftChartCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NftChartCardComponent]
-    })
-      .compileComponents();
+      declarations: [NftChartCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

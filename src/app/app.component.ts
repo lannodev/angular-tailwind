@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { ThemeService } from './core/services/theme.service'
+import { Component } from '@angular/core';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { ThemeService } from './core/services/theme.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'finance'
+  title = 'finance';
 
-  constructor(public themeService: ThemeService) { }
+  constructor(public themeService: ThemeService) {}
 }

@@ -11,7 +11,6 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
 import { TwoStepsComponent } from './pages/two-steps/two-steps.component';
 
-
 @NgModule({
   declarations: [
     AuthComponent,
@@ -19,13 +18,8 @@ import { TwoStepsComponent } from './pages/two-steps/two-steps.component';
     SignUpComponent,
     ForgotPasswordComponent,
     NewPasswordComponent,
-    TwoStepsComponent
+    TwoStepsComponent,
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    HttpClientModule,
-    AngularSvgIconModule.forRoot(),
-  ]
+  imports: [CommonModule, AuthRoutingModule, HttpClientModule, AngularSvgIconModule.forRoot()],
 })
-export class AuthModule { }
+export class AuthModule {}
