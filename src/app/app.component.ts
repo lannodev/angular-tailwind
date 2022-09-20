@@ -7,7 +7,7 @@ import { ThemeService } from './core/services/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'finance';
+  title = 'Angular Tailwind';
 
-  constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService) { }
 }
