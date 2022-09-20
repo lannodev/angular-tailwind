@@ -26,8 +26,6 @@
     "prettier": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
     "prettier:verify": "prettier --config ./.prettierrc --check \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
     "prettier:staged": "pretty-quick --staged",
-    "prettier:check": "npx prettier . --check",
-    "prettier:write": "npx prettier . --write",
     "lint": "ng lint"
   },
   "private": true,
