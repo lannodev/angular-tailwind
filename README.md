@@ -21,6 +21,8 @@ I have created this project to learning more about Tailwind css using my favouri
 
 <b><img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" width="14"/> The project is not finished yet!</b>
 
+See [Demo](https://) page.
+
 <p>
   <img alt="Preview" src="src/assets/preview/preview.png">
 </p>
