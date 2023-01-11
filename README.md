@@ -28,7 +28,7 @@ See [Demo](https://angular-tailwind-six.vercel.app) page.
 </p>
 
 #### Versions
-<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 14-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 3-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
+<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 15-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 3-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
 
 #### Features
   * [X] Sidebar
