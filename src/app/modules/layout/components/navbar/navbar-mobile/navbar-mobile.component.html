@@ -13,7 +13,7 @@
       ? 'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200'
       : 'pointer-events-none scale-95 opacity-0 duration-100 ease-out'
   "
-  class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+  class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden z-10">
   <div
     class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-night-700">
     <div class="pt-5 pb-6">
@@ -22,7 +22,7 @@
           <!-- Logo -->
           <div class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden">
             <a class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
-              <svg-icon src="assets/icons/logo.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
+              <svg-icon src="assets/icons/logo.svg"> </svg-icon>
             </a>
             <b class="pl-3 text-sm font-bold dark:text-night-50"> Angular Tailwind </b>
           </div>
@@ -34,7 +34,7 @@
             class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 hover:bg-gray-100 hover:text-gray-500 dark:text-night-300 dark:hover:bg-night-600 dark:hover:text-night-200">
             <span class="sr-only">Close menu</span>
             <!-- Heroicon name: outline/x -->
-            <svg-icon src="assets/icons/outline/x.svg"> [svgClass]="'h-6 w-6'"> </svg-icon>
+            <svg-icon src="assets/icons/outline/x.svg"> </svg-icon>
           </button>
         </div>
       </div>
