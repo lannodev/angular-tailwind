@@ -27,7 +27,7 @@ export class Menu {
       ],
     },
     {
-      group: 'Colaboration',
+      group: 'Collaboration',
       separator: true,
       items: [
         {
