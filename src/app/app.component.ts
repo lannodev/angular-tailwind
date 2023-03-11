@@ -9,5 +9,5 @@ import { ThemeService } from './core/services/theme.service';
 export class AppComponent {
   title = 'Angular Tailwind';
 
-  constructor(public themeService: ThemeService) { }
+  constructor(public themeService: ThemeService) {}
 }
