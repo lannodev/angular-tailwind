@@ -16,7 +16,7 @@
         (click)="toggleSidebar()"
         class="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded text-gray-400 transition-all duration-200 focus:outline-none hover:text-gray-500 dark:text-night-400 dark:hover:text-night-300"
         [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }">
-        <svg-icon src="assets/icons/solid/chevron-double-left.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
+        <svg-icon src="assets/icons/heroicons/solid/chevron-double-left.svg"> [svgClass]="'h-5 w-5'"> </svg-icon>
       </button>
     </div>
 
@@ -35,7 +35,9 @@
       (click)="toggleTheme()"
       class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
       <svg-icon
-        [src]="themeService.isDark ? 'assets/icons/outline/sun.svg' : 'assets/icons/outline/moon.svg'"
+        [src]="
+          themeService.isDark ? 'assets/icons/heroicons/outline/sun.svg' : 'assets/icons/heroicons/outline/moon.svg'
+        "
         [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
       </svg-icon>
 
@@ -53,7 +55,9 @@
     <!-- Sign out -->
     <div
       class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
-      <svg-icon src="assets/icons/outline/logout.svg" [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
+      <svg-icon
+        src="assets/icons/heroicons/outline/logout.svg"
+        [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
       </svg-icon>
 
       <a
@@ -73,7 +77,7 @@
     <div
       class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
       <svg-icon
-        src="assets/icons/outline/information-circle.svg"
+        src="assets/icons/heroicons/outline/information-circle.svg"
         [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
       </svg-icon>
 

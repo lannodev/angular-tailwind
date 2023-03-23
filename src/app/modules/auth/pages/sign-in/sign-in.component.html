@@ -59,7 +59,11 @@
           class="absolute top-2.5 right-5 cursor-pointer text-gray-400 dark:text-night-300"
           (click)="togglePasswordTextType()">
           <svg-icon
-            [src]="!passwordTextType ? 'assets/icons/outline/eye-off.svg' : 'assets/icons/outline/eye.svg'"
+            [src]="
+              !passwordTextType
+                ? 'assets/icons/heroicons/outline/eye-off.svg'
+                : 'assets/icons/heroicons/outline/eye.svg'
+            "
             [svgClass]="'h-5 w-5'">
           </svg-icon>
         </span>
