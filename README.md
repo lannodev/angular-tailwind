@@ -34,10 +34,10 @@ See [Demo](https://angular-tailwind-six.vercel.app) page.
   * [X] Sidebar
   * [x] Dark Theme
   * [x] Navbar
-  * [ ] Footer
+  * [x] Footer
   * [x] Auth Module
-  * [ ] User Module
   * [x] Dashboard Module
+  * [ ] User Module
   * [ ] Guards
 
 #### Commands
