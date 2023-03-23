@@ -17,6 +17,8 @@ import { NftAuctionsTableComponent } from './components/nft/nft-auctions-table/n
 import { NftAuctionsTableItemComponent } from './components/nft/nft-auctions-table-item/nft-auctions-table-item.component';
 import { PodcastComponent } from './pages/podcast/podcast.component';
 import { PodcastHeaderComponent } from './components/podcast/podcast-header/podcast-header.component';
+import { PodcastCardBannerComponent } from './components/podcast/podcast-card-banner/podcast-card-banner.component';
+import { PodcastPlayerComponent } from './components/podcast/podcast-player/podcast-player.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { PodcastHeaderComponent } from './components/podcast/podcast-header/podc
     NftAuctionsTableItemComponent,
     PodcastComponent,
     PodcastHeaderComponent,
+    PodcastCardBannerComponent,
+    PodcastPlayerComponent,
   ],
   imports: [
     CommonModule,

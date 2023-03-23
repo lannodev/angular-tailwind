@@ -3,29 +3,9 @@
   <app-podcast-header></app-podcast-header>
   <!-- Content -->
   <div class="grid grid-cols-3 gap-4">
-    <!-- Card 1 -->
-    <div
-      class="col-span-2 flex h-[300px] flex-grow flex-col rounded-lg bg-black bg-no-repeat"
-      style="
-        background-image: url('https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-62.jpg');
-      ">
-      <div class="flex flex-col justify-between p-10">
-        <div class="mb-20 pt-0">
-          <h3 class="mb-4 text-5xl font-medium text-white">Utah Case</h3>
-          <span class="fs-4 d-block lh-0 mb-8 font-semibold text-white">with Kristin Watson</span>
-          <div class="flex items-center">
-            <div class="mr-6 flex items-center">
-              <!--Icon-->
-              <a class="mr-2 rounded-full bg-green-500 p-1">
-                <svg-icon src="assets/icons/heroicons/solid/play.svg" [svgClass]="'h-3 w-3'"></svg-icon>
-              </a>
-              <!--Info-->
-              <span class="fw-semibold fs-6 text-white">70,000+ plays</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col bg-yellow-200">dsa</div>
+    <!-- Card Banner -->
+    <app-podcast-card-banner class="col-span-2"></app-podcast-card-banner>
+    <!-- Player -->
+    <app-podcast-player></app-podcast-player>
   </div>
 </div>
