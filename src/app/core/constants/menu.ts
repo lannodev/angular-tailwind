@@ -10,7 +10,10 @@ export class Menu {
           icon: 'assets/icons/outline/chart-pie.svg',
           label: 'Dashboard',
           route: '/dashboard',
-          children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
+          children: [
+            { label: 'Nfts', route: '/dashboard/nfts' },
+            { label: 'Podcast', route: '/dashboard/podcast' },
+          ],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
