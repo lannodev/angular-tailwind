@@ -7,7 +7,7 @@ import { ThemeService } from './core/services/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular Tailwind';
+  title = 'Makon UI';
 
   constructor(public themeService: ThemeService) {}
 }

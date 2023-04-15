@@ -6,7 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
 
-import { NgApexchartsModule } from 'ng-apexcharts';
+
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
@@ -18,7 +18,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     DashboardRoutingModule,
     SharedModule,
     HttpClientModule,
-    NgApexchartsModule,
     AngularSvgIconModule.forRoot(),
   ],
 })

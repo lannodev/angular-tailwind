@@ -45,6 +45,20 @@
 		padding-right: 0.5rem;
 	}
 }
-
-/** Plugins **/
-@import './assets/styles/apexchart.scss';
+.card{
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+  border-width: 1px;
+}
+.card, .dark .card {
+  --tw-bg-opacity: 1;
+}
+.card {
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  border-radius: 0.5rem;
+}
+.card-border, .dark .card-border {
+  --tw-border-opacity: 1;
+}
+.card-body {
+  padding: 1.25rem;
+}

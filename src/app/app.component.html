@@ -1,3 +1,25 @@
-<div [ngClass]="{ dark: this.themeService.isDark }">
-  <router-outlet></router-outlet>
-</div>
+
+<tui-root>
+  <!-- content of your app -->
+  <div [ngClass]="{ dark: this.themeService.isDark }">
+    <router-outlet></router-outlet>
+  </div>
+  <!--
+     If you need, you can add something between Taiga portal layers:
+    -->
+  <ng-container ngProjectAs="tuiOverContent">
+    <!-- Content over app content -->
+  </ng-container>
+  <ng-container ngProjectAs="tuiOverDialogs">
+    <!-- Content over dialogs -->
+  </ng-container>
+  <ng-container ngProjectAs="tuiOverAlerts">
+    <!-- Content over alerts -->
+  </ng-container>
+  <ng-container ngProjectAs="tuiOverPortals">
+    <!-- Content over dropdowns -->
+  </ng-container>
+  <ng-container ngProjectAs="tuiOverHints">
+    <!-- Content over hints -->
+  </ng-container>
+</tui-root>

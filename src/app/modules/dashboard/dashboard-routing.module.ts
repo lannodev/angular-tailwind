@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    loadChildren: () => import('./project/project.module').then((m) => m.ProjectModule),
   },
   { path: '**', redirectTo: 'error/404' },
 ];
