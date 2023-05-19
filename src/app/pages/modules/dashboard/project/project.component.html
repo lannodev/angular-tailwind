@@ -9,7 +9,16 @@
         <div class="card card-border bg-white border-blue-500 border-2">
           <div class="card-body">
             CHART
-
+            <div id="chart">
+              <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [legend]="chartOptions.legend"
+                [dataLabels]="chartOptions.dataLabels"
+                [colors]="chartOptions.colors"
+                [plotOptions]="chartOptions.plotOptions"
+              ></apx-chart>
+            </div>
           </div>
         </div>
         <div class="card card-border">
@@ -20,6 +29,51 @@
                 All</button>
             </div>
             <div class="overflow-x-auto">
+              <table tuiTable class="table-default table-hover"  [columns]="tableColumns">
+                <thead>
+                  <tr tuiThGroup>
+                    <th tuiTh [resizable]="true">
+                      TASK ID
+                    </th>
+                    <th tuiTh>
+                      SUBJECT
+                    </th>
+                    <th tuiTh>
+                      PRIORITY
+                    </th>
+                    <th tuiTh>
+                      ASSIGNEES
+                    </th>
+                  </tr>
+                </thead>
+                <tbody tuiTbody [data]="tableData">
+                  <tr *ngFor="let item of tableData" tuiTr>
+                    <td *tuiCell="'TASK ID'" tuiTd>
+                      {{ item.taskId  }}
+                    </td>
+                    <td *tuiCell="'SUBJECT'" tuiTd>
+                      {{ item.subject  }}
+                    </td>
+                    <td *tuiCell="'PRIORITY'" tuiTd>
+                      {{ item.priority }}
+                    </td>
+                    <td *tuiCell="'ASSIGNEES'" tuiTd>
+                      {{ item.imgUrl}}
+
+                      <div class="avatar-group avatar-group-chained"><span class="tooltip-wrapper"><span
+                        class="avatar avatar-circle  cursor-pointer"
+                        style="width: 30px; height: 30px; min-width: 30px; line-height: 30px; font-size: 12px;"><img
+                          class="avatar-img avatar-circle" src="/img/avatars/thumb-1.jpg"
+                          loading="lazy"></span></span><span class="tooltip-wrapper"><span
+                        class="avatar avatar-circle  cursor-pointer"
+                        style="width: 30px; height: 30px; min-width: 30px; line-height: 30px; font-size: 12px;"><img
+                          class="avatar-img avatar-circle" src="/img/avatars/thumb-2.jpg"
+                          loading="lazy"></span></span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
               <table class="table-default table-hover">
                 <thead class="">
                   <tr class="">
@@ -408,157 +462,11 @@
               <div class="mx-auto max-w-[420px]">
                 <div class="picker-view">
                   <div class="day-picker">
-                    <div class="picker-header flex items-center justify-between mb-2">
-                      <div><button class="picker-header-label hover:text-indigo-600" tabindex="0">Apr</button><button
-                          class="picker-header-label hover:text-indigo-600" tabindex="0">2023</button></div>
-                      <div class="flex items-center rtl:flex-row-reverse"><button
-                          class="button bg-transparent border border-transparent hover:bg-gray-50 dark:hover:bg-gray-600 active:bg-gray-100 dark:active:bg-gray-500 dark:active:border-gray-500 text-gray-600 dark:text-gray-100 radius-round h-9 w-9 inline-flex items-center justify-center text-lg"
-                          type="button"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                            viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                              clip-rule="evenodd"></path>
-                          </svg></button><button
-                          class="button bg-transparent border border-transparent hover:bg-gray-50 dark:hover:bg-gray-600 active:bg-gray-100 dark:active:bg-gray-500 dark:active:border-gray-500 text-gray-600 dark:text-gray-100 radius-round h-9 w-9 inline-flex items-center justify-center text-lg"
-                          type="button"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                            viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                              clip-rule="evenodd"></path>
-                          </svg></button></div>
-                    </div>
-                    <table class="picker-table" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Mo</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Tu</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">We</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Th</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Fr</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Sa</span></th>
-                          <th class="week-day-cell"><span class="week-day-cell-content">Su</span></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="date-picker-week-cell">
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-other-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>27</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-other-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>28</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-other-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>29</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-other-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>30</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-other-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>31</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="0"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>1</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>2</span></button></td>
-                        </tr>
-                        <tr class="date-picker-week-cell">
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>3</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>4</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>5</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>6</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>7</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>8</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>9</span></button></td>
-                        </tr>
-                        <tr class="date-picker-week-cell">
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>10</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>11</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>12</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>13</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>14</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content border border-indigo-600 date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base text-indigo-600"
-                              style="height: 48px;"><span
-                                class="relative flex justify-center items-center w-full h-full">15<span
-                                  class="badge-dot h-1 w-1 absolute bottom-1"></span></span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>16</span></button></td>
-                        </tr>
-                        <tr class="date-picker-week-cell">
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>17</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>18</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>19</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>20</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>21</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>22</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>23</span></button></td>
-                        </tr>
-                        <tr class="date-picker-week-cell">
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>24</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>25</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>26</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>27</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>28</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>29</span></button></td>
-                          <td class="date-picker-cell"><button type="button" tabindex="-1"
-                              class="date-picker-cell-content date-picker-cell-weekend date-picker-cell-current-month date-picker-cell-hoverable rounded-lg text-base"
-                              style="height: 48px;"><span>30</span></button></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <tui-calendar
+                      [value]="selectedDay"
+                      (dayClick)="onDayClick($event)"
+                    ></tui-calendar>
+                    <div *ngIf="selectedDay">Chosen date: {{ selectedDay }}</div>
                   </div>
                 </div>
               </div>

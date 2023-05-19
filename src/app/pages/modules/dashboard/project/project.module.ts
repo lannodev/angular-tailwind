@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { TuiCalendarModule } from '@taiga-ui/core';
+import { TuiTableModule } from '@taiga-ui/addon-table';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { ProjectComponent } from './project.component';
   ],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    NgApexchartsModule,
+    TuiCalendarModule,
+    TuiTableModule
   ]
 })
 export class ProjectModule { }
