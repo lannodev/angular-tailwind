@@ -20,6 +20,7 @@ import { PodcastHeaderComponent } from './components/podcast/podcast-header/podc
 import { PodcastCardBannerComponent } from './components/podcast/podcast-card-banner/podcast-card-banner.component';
 import { PodcastPlayerComponent } from './components/podcast/podcast-player/podcast-player.component';
 import { PodcastCardItemComponent } from './components/podcast/podcast-card-item/podcast-card-item.component';
+import { PodcastListComponent } from './components/podcast/podcast-list/podcast-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PodcastCardItemComponent } from './components/podcast/podcast-card-item
     PodcastCardBannerComponent,
     PodcastPlayerComponent,
     PodcastCardItemComponent,
+    PodcastListComponent,
   ],
   imports: [
     CommonModule,

@@ -6,13 +6,16 @@
     <!-- Card Banner -->
     <app-podcast-card-banner class="col-span-2"></app-podcast-card-banner>
     <!-- Player -->
-    <!-- <app-podcast-player></app-podcast-player> -->
+    <app-podcast-player></app-podcast-player>
   </div>
   <div class="row mt-8">
-    <h3 class="text-sm font-semibold uppercase">Continue Listening</h3>
-    <div class="mt-4 grid grid-cols-4 gap-4">
-      <app-podcast-card-item *ngFor="let podcast of podcasts" [title]="podcast.title" [subtitle]="podcast.subtitle" [image]="podcast.image"/>
-      
+    <h3 class="text-sm font-semibold uppercase dark:text-white">Continue Listening</h3>
+    <div class="grid mt-4 gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+      <app-podcast-card-item *ngFor="let podcast of listening" [title]="podcast.title" [subtitle]="podcast.subtitle" [image]="podcast.image"/>
     </div>
+  </div>
+  <div class="row mt-8">
+    <h3 class="text-sm font-semibold uppercase dark:text-white">List of Podcast</h3>
+    <app-podcast-list></app-podcast-list>
   </div>
 </div>
