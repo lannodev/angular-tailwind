@@ -2,11 +2,11 @@
   <!-- Header -->
   <app-podcast-header></app-podcast-header>
   <!-- Content -->
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
     <!-- Card Banner -->
     <app-podcast-card-banner class="col-span-2"></app-podcast-card-banner>
     <!-- Player -->
-    <app-podcast-player></app-podcast-player>
+    <app-podcast-player class="col-span-2 lg:col-span-1"></app-podcast-player>
   </div>
   <div class="row mt-8">
     <h3 class="text-sm font-semibold uppercase dark:text-white">Continue Listening</h3>
@@ -16,6 +16,6 @@
   </div>
   <div class="row mt-8">
     <h3 class="text-sm font-semibold uppercase dark:text-white">List of Podcast</h3>
-    <app-podcast-list></app-podcast-list>
+    <!-- <app-podcast-list></app-podcast-list> -->
   </div>
 </div>
