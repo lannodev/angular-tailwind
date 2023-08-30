@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'src/app/core/models/menu.model';
 import { MenuService } from '../../../services/menu.service';
 
@@ -9,14 +8,10 @@ import { MenuService } from '../../../services/menu.service';
   styleUrls: ['./navbar-menu.component.scss'],
 })
 export class NavbarMenuComponent implements OnInit {
-  public pagesMenu$: Observable<MenuItem[]> = new Observable<MenuItem[]>();
-
   private showMenuClass = ['scale-100', 'animate-fade-in-up', 'opacity-100', 'pointer-events-auto'];
   private hideMenuClass = ['scale-95', 'animate-fade-out-down', 'opacity-0', 'pointer-events-none'];
 
-  constructor(private menuService: MenuService) {
-    this.pagesMenu$ = this.menuService.pagesMenu$;
-  }
+  constructor(public menuService: MenuService) {}
 
   ngOnInit(): void {}
 

@@ -1,4 +1,4 @@
-<div class="pt-4" *ngFor="let menu of pagesMenu$ | async">
+<div class="pt-4" *ngFor="let menu of menuService.pagesMenu">
   <div class="mx-1 mb-2 flex items-center justify-between">
     <small class="text-xs font-semibold text-gray-400 dark:text-night-200">
       {{ menu.group }}
@@ -11,7 +11,7 @@
       <div (click)="toggleMenu(item)" class="group relative text-gray-400 dark:text-night-400">
         <!-- Icon -->
         <div
-          [ngClass]="item.active && !(showSideBar$ | async) ? 'text-primary-500' : ''"
+          [ngClass]="item.active && !menuService.showSideBar ? 'text-primary-500' : ''"
           class="pointer-events-none absolute m-2">
           <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
         </div>
@@ -50,7 +50,7 @@
         <!-- Arrow Icon -->
         <button
           *ngIf="item.children"
-          [ngClass]="{ hidden: !(showSideBar$ | async), 'rotate-90': item.expanded }"
+          [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': item.expanded }"
           class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
           <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
         </button>

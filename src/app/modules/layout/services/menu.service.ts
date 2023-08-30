@@ -1,6 +1,6 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Menu } from 'src/app/core/constants/menu';
 import { MenuItem, SubMenuItem } from 'src/app/core/models/menu.model';
 
@@ -8,58 +8,55 @@ import { MenuItem, SubMenuItem } from 'src/app/core/models/menu.model';
   providedIn: 'root',
 })
 export class MenuService implements OnDestroy {
-  private _showSidebar$ = new BehaviorSubject<boolean>(true);
-  private _showMobileMenu$ = new BehaviorSubject<boolean>(false);
-  public _pagesMenu$ = new BehaviorSubject<MenuItem[]>([]);
-  private subscription = new Subscription();
+  private _showSidebar = signal(true);
+  private _showMobileMenu = signal(false);
+  private _pagesMenu = signal<MenuItem[]>([]);
+  private _subscription = new Subscription();
 
   constructor(private router: Router) {
     /** Set dynamic menu */
-    this._pagesMenu$.next(Menu.pages);
+    this._pagesMenu.set(Menu.pages);
 
     let sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         /** Expand menu base on active route */
-        this._pagesMenu$.forEach((menuItem) => {
-          menuItem.forEach((menu) => {
-            let activeGroup = false;
-            menu.items.forEach((subMenu) => {
-              const active = this.isActive(subMenu.route);
-              subMenu.expanded = active;
-              subMenu.active = active;
-              if (active) activeGroup = true;
-              if (subMenu.children) {
-                this.expand(subMenu.children);
-              }
-            });
-            menu.active = activeGroup;
+        this._pagesMenu().forEach((menu) => {
+          let activeGroup = false;
+          menu.items.forEach((subMenu) => {
+            const active = this.isActive(subMenu.route);
+            subMenu.expanded = active;
+            subMenu.active = active;
+            if (active) activeGroup = true;
+            if (subMenu.children) {
+              this.expand(subMenu.children);
+            }
           });
+          menu.active = activeGroup;
         });
       }
     });
-
-    this.subscription.add(sub);
+    this._subscription.add(sub);
   }
 
-  get showSideBar$() {
-    return this._showSidebar$.asObservable();
+  get showSideBar() {
+    return this._showSidebar();
   }
-  get showMobileMenu$() {
-    return this._showMobileMenu$.asObservable();
+  get showMobileMenu() {
+    return this._showMobileMenu();
   }
-  get pagesMenu$() {
-    return this._pagesMenu$.asObservable();
+  get pagesMenu() {
+    return this._pagesMenu();
   }
 
   set showSideBar(value: boolean) {
-    this._showSidebar$.next(value);
+    this._showSidebar.set(value);
   }
   set showMobileMenu(value: boolean) {
-    this._showMobileMenu$.next(value);
+    this._showMobileMenu.set(value);
   }
 
   public toggleSidebar() {
-    this._showSidebar$.next(!this._showSidebar$.value);
+    this._showSidebar.set(!this._showSidebar());
   }
 
   public toggleMenu(menu: any) {
@@ -88,6 +85,6 @@ export class MenuService implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this._subscription.unsubscribe();
   }
 }

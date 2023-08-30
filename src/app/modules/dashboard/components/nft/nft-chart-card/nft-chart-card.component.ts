@@ -9,7 +9,6 @@ import { ChartOptions } from '../../../../../shared/models/chart-options';
 })
 export class NftChartCardComponent implements OnInit, OnDestroy {
   public chartOptions: Partial<ChartOptions>;
-  private subscription: Subscription = new Subscription();
 
   constructor(private themeService: ThemeService) {
     const baseColor = '#7239ea';
@@ -106,7 +105,5 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

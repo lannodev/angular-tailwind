@@ -1,7 +1,7 @@
-<div class="pt-4" *ngFor="let menu of pagesMenu$ | async">
+<div class="pt-4" *ngFor="let menu of menuService.pagesMenu">
   <div class="mx-1 mb-2 flex items-center justify-between">
     <small
-      [ngClass]="{ hidden: !(showSideBar$ | async) }"
+      [ngClass]="{ hidden: !menuService.showSideBar }"
       class="text-xs font-semibold text-gray-400 dark:text-night-200">
       {{ menu.group }}
     </small>
@@ -13,7 +13,7 @@
       <div (click)="toggleMenu(item)" class="group relative text-gray-400 dark:text-night-400">
         <!-- Icon -->
         <div
-          [ngClass]="item.active && !(showSideBar$ | async) ? 'text-primary-500' : ''"
+          [ngClass]="item.active && !menuService.showSideBar ? 'text-primary-500' : ''"
           class="pointer-events-none absolute m-2">
           <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
         </div>
@@ -51,13 +51,13 @@
         <!-- Arrow Icon -->
         <button
           *ngIf="item.children"
-          [ngClass]="{ hidden: !(showSideBar$ | async), 'rotate-90': item.expanded }"
+          [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': item.expanded }"
           class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-gray-400 transition-all duration-500 dark:text-night-400">
           <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
         </button>
 
         <!-- Tooltip -->
-        <div class="fixed w-full" *ngIf="!(showSideBar$ | async)">
+        <div class="fixed w-full" *ngIf="!menuService.showSideBar">
           <span
             class="z-1 absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
             {{ item.label }}

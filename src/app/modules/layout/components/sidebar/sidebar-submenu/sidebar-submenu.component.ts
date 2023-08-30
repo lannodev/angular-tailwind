@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 import { SubMenuItem } from 'src/app/core/models/menu.model';
 import { MenuService } from '../../../services/menu.service';
 
@@ -10,11 +9,8 @@ import { MenuService } from '../../../services/menu.service';
 })
 export class SidebarSubmenuComponent implements OnInit {
   @Input() public submenu = <SubMenuItem>{};
-  public showSideBar$: Observable<boolean> = new Observable<boolean>();
 
-  constructor(private menuService: MenuService) {
-    this.showSideBar$ = this.menuService.showSideBar$;
-  }
+  constructor(public menuService: MenuService) {}
 
   ngOnInit(): void {}
 
