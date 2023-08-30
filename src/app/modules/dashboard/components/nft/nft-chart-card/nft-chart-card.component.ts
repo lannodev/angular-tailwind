@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription, timeout } from 'rxjs';
+import { Component, OnDestroy, OnInit, effect } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ThemeService } from 'src/app/core/services/theme.service';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
 
@@ -95,17 +95,16 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
       },
       colors: [baseColor], //line colors
     };
-  }
 
-  ngOnInit(): void {
-    /** Chand chart theme */
-    let sub = this.themeService.themeChanged.subscribe((theme) => {
+    effect(() => {
+      /** change chart theme */
       this.chartOptions.tooltip = {
-        theme: theme,
+        theme: this.themeService.themeChanged(),
       };
     });
-    this.subscription.add(sub);
   }
+
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
