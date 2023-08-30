@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import { Injectable, signal } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   public default = 'light';
-  public themeChanged: BehaviorSubject<string> = new BehaviorSubject(this.theme);
+  public themeChanged = signal(this.theme);
 
   constructor() {}
 
@@ -16,7 +14,7 @@ export class ThemeService {
 
   public set theme(value: string) {
     localStorage.setItem('theme', value);
-    this.themeChanged.next(value);
+    this.themeChanged.set(value);
   }
 
   public get isDark(): boolean {
