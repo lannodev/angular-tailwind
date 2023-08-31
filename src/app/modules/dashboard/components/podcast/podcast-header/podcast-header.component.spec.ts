@@ -8,8 +8,8 @@ describe('PodcastHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PodcastHeaderComponent ]
-    })
+    imports: [PodcastHeaderComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PodcastHeaderComponent);

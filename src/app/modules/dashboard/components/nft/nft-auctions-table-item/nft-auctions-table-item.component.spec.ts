@@ -8,8 +8,8 @@ describe('NftAuctionsTableItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NftAuctionsTableItemComponent],
-    }).compileComponents();
+    imports: [NftAuctionsTableItemComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

@@ -8,8 +8,8 @@ describe('LayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LayoutComponent],
-    }).compileComponents();
+    imports: [LayoutComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

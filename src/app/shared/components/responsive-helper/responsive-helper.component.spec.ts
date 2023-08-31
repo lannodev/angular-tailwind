@@ -8,8 +8,8 @@ describe('ResponsiveHelperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ResponsiveHelperComponent],
-    }).compileComponents();
+    imports: [ResponsiveHelperComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

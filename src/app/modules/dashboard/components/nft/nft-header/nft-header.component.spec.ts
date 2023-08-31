@@ -8,8 +8,8 @@ describe('NftHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NftHeaderComponent],
-    }).compileComponents();
+    imports: [NftHeaderComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

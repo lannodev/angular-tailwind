@@ -8,8 +8,8 @@ describe('NftSingleCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NftSingleCardComponent],
-    }).compileComponents();
+    imports: [NftSingleCardComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

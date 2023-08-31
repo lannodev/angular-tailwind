@@ -8,8 +8,8 @@ describe('NavbarMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavbarMenuComponent],
-    }).compileComponents();
+    imports: [NavbarMenuComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {

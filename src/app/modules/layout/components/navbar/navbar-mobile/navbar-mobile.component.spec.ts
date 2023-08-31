@@ -8,8 +8,8 @@ describe('NavbarMobileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavbarMobileComponent],
-    }).compileComponents();
+    imports: [NavbarMobileComponent],
+}).compileComponents();
   });
 
   beforeEach(() => {
