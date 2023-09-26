@@ -16,8 +16,7 @@
 
 #### Motivation
 
-For me, the best strategies for learning new skills is to practice.
-I have created this project to learning more about Tailwind css using my favourite framework (Angular). I have to tell you, Tailwind it is amazing!
+For me, the best strategy for learning new skills is to practice. I have created this project to learn more about Tailwind CSS using my favorite framework (Angular). I have to tell you, Tailwind is amazing!
 
 <b><img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" width="14"/> The project is not finished yet!</b>
 
