@@ -20,7 +20,7 @@ For me, the best strategy for learning new skills is to practice. I have created
 
 <b><img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" width="14"/> The project is not finished yet!</b>
 
-See [Demo](https://angular-tailwind-six.vercel.app) page.
+See [Demo](https://at.lanno.dev) page.
 
 <p>
   <img alt="Preview" src="src/assets/preview/preview.png">
