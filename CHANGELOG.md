@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-11-09
+
+### Changed
+
+- Upgrade angular version from 16 to 17
+
 ## [0.1.2] - 2023-10-24
 
 ### Fixed
 
 - Scroll to top when route change (#9)
-
-## [Unreleased]
 
 ## [0.1.1] - 2023-02-03
 
