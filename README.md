@@ -42,6 +42,8 @@ See [Demo](https://at.lanno.dev) page.
 - [x] Angular Signals
 - [ ] User Module
 - [ ] Guards
+- [ ] Tests E2E
+- [ ] Animations
 
 #### Commands
 

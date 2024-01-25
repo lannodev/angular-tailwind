@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   prefix: '',
@@ -96,12 +96,13 @@ module.exports = {
   },
   variants: {
     extend: {},
-    scrollbar: ['dark', 'rounded']
+    scrollbar: ['dark', 'rounded'],
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('tailwind-scrollbar')
+    require('tailwind-scrollbar'),
+    'prettier-plugin-tailwindcss',
   ],
-}
+};
