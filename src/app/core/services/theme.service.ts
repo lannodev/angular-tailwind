@@ -6,7 +6,9 @@ export class ThemeService {
   public default = 'light';
   public themeChanged = signal(this.theme);
 
-  constructor() {}
+  constructor() {
+    this.addThemeClass();
+  }
 
   public get theme(): string {
     return localStorage.getItem('theme') ?? this.default;
@@ -15,9 +17,14 @@ export class ThemeService {
   public set theme(value: string) {
     localStorage.setItem('theme', value);
     this.themeChanged.set(value);
+    this.addThemeClass();
   }
 
   public get isDark(): boolean {
     return this.theme == 'dark';
+  }
+
+  private addThemeClass() {
+    document.querySelector('html')!.className = this.theme;
   }
 }
