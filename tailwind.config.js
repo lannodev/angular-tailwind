@@ -64,19 +64,40 @@ module.exports = {
       boxShadow: {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',
       },
+      // colors: {
+      //   primary: colors.green,
+      //   night: {
+      //     50: '#e4e4eb',
+      //     100: '#bbbace',
+      //     200: '#8f8ead',
+      //     300: '#66658c',
+      //     400: '#4b4777',
+      //     500: '#302a62',
+      //     600: '#2b245b',
+      //     700: '#241c51',
+      //     800: '#1c1445',
+      //     900: '#130030',
+      //   },
+      // },
       colors: {
-        primary: colors.green,
-        night: {
-          50: '#e4e4eb',
-          100: '#bbbace',
-          200: '#8f8ead',
-          300: '#66658c',
-          400: '#4b4777',
-          500: '#302a62',
-          600: '#2b245b',
-          700: '#241c51',
-          800: '#1c1445',
-          900: '#130030',
+        border: 'hsl(var(--border))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
     },

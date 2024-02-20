@@ -1,22 +1,20 @@
 <!-- login form -->
 <form class="my-10 space-y-6" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="text-center">
-    <h2 class="mb-1 text-3xl font-semibold text-gray-700 dark:text-white">
-      Hello Again <span class="text-primary-500">!</span>
-    </h2>
-    <p class="text-sm text-gray-400 dark:text-night-200">Enter your credential to access your account.</p>
+    <h2 class="mb-1 text-3xl font-semibold text-foreground">Hello Again <span class="text-primary">!</span></h2>
+    <p class="dark:text-night-200 text-sm text-muted-foreground">Enter your credential to access your account.</p>
   </div>
   <button
     type="button"
     routerLink="/dashboard"
-    class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-gray-50 dark:border-night-500 dark:bg-night-700 dark:text-night-200 dark:hover:bg-night-600">
+    class="flex w-full items-center justify-center rounded-md border border-border bg-muted py-2 px-4 text-sm font-medium text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
     <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
     Log in with Google
   </button>
 
   <div
-    class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300 dark:before:border-night-500 dark:after:border-night-500">
-    <p class="mx-4 mb-0 text-center text-sm text-gray-400 dark:text-night-400">or</p>
+    class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
+    <p class="dark:text-night-400 mx-4 mb-0 text-center text-sm text-muted-foreground">or</p>
   </div>
 
   <div class="space-y-3 text-left">
@@ -31,7 +29,7 @@
           formControlName="email" />
         <label
           for="email"
-          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-500 dark:bg-night-700 dark:text-night-200">
+          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
           Email address
         </label>
       </div>
@@ -52,12 +50,10 @@
           formControlName="password" />
         <label
           for="password"
-          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-600 dark:bg-night-700 dark:text-night-200">
+          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
           Password
         </label>
-        <span
-          class="absolute top-2.5 right-5 cursor-pointer text-gray-400 dark:text-night-300"
-          (click)="togglePasswordTextType()">
+        <span class="absolute top-2.5 right-5 cursor-pointer text-muted-foreground" (click)="togglePasswordTextType()">
           <svg-icon
             [src]="
               !passwordTextType
@@ -77,11 +73,11 @@
   <div class="flex items-center justify-between space-x-3">
     <div class="flex items-center">
       <input id="remember-me" name="remember-me" type="checkbox" />
-      <label for="remember-me" class="ml-2 block text-sm text-gray-400 dark:text-night-200"> Remember me </label>
+      <label for="remember-me" class="ml-2 block text-sm text-muted-foreground"> Remember me </label>
     </div>
 
     <div class="text-sm">
-      <a routerLink="/auth/forgot-password" class="font-medium text-primary-500 hover:text-primary-400">
+      <a routerLink="/auth/forgot-password" class="hover:text-primary-400 font-medium text-primary">
         Forgot your password?
       </a>
     </div>
@@ -89,12 +85,12 @@
 
   <!-- Submit Button -->
   <button
-    class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-primary-500 py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-primary-400">
+    class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
     Sign in
   </button>
 
   <!-- Sign-up -->
-  <div class="text-sm text-gray-400 dark:text-night-200">
-    Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary-500 hover:text-primary-400">Sign up</a>
+  <div class="dark:text-night-200 text-sm text-muted-foreground">
+    Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary">Sign up</a>
   </div>
 </form>
