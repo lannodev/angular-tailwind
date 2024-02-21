@@ -23,7 +23,7 @@ For me, the best strategy for learning new skills is to practice. I have created
 See [Demo](https://at.lanno.dev) page.
 
 <p>
-  <img alt="Preview" src="src/assets/preview/preview.png">
+  <img alt="Preview" src="src/assets/preview/preview.gif">
 </p>
 
 #### Versions
@@ -40,6 +40,7 @@ See [Demo](https://at.lanno.dev) page.
 - [x] Dashboard Module
 - [x] Standalone components
 - [x] Angular Signals
+- [x] Multi Theme
 - [ ] User Module
 - [ ] Guards
 - [ ] Tests E2E
