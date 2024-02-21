@@ -1,30 +1,38 @@
 import { Injectable, signal } from '@angular/core';
+import { Theme } from '../models/theme.model';
+import { effect } from '@angular/core';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  public default = 'light';
-  public themeChanged = signal(this.theme);
+  public theme = signal<Theme>({ mode: 'dark', color: 'base' });
 
   constructor() {
-    this.addThemeClass();
+    this.loadTheme();
+    effect(() => {
+      this.setTheme();
+    });
   }
 
-  public get theme(): string {
-    return localStorage.getItem('theme') ?? this.default;
+  private loadTheme() {
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      this.theme.set(JSON.parse(theme));
+    }
   }
 
-  public set theme(value: string) {
-    localStorage.setItem('theme', value);
-    this.themeChanged.set(value);
-    this.addThemeClass();
+  private setTheme() {
+    localStorage.setItem('theme', JSON.stringify(this.theme()));
+    this.setThemeClass();
   }
 
   public get isDark(): boolean {
-    return this.theme == 'dark';
+    return this.theme().mode == 'dark';
   }
 
-  private addThemeClass() {
-    document.querySelector('html')!.className = this.theme;
+  private setThemeClass() {
+    document.querySelector('html')!.className = this.theme().mode;
+    document.querySelector('html')!.setAttribute('data-theme', this.theme().color);
   }
 }

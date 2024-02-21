@@ -32,56 +32,19 @@
   </div>
 
   <div class="mx-4 my-4 space-y-1">
-    <!-- Dark Theme -->
-    <div
-      (click)="toggleTheme()"
-      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 text-muted-foreground hover:bg-card hover:text-foreground">
-      <svg-icon
-        [src]="
-          themeService.isDark ? 'assets/icons/heroicons/outline/sun.svg' : 'assets/icons/heroicons/outline/moon.svg'
-        "
-        [svgClass]="'h-5 w-5 text-muted-foreground/50'">
-      </svg-icon>
-
-      <a class="ml-3 truncate text-xs font-semibold tracking-wide focus:outline-none">
-        {{ themeService.isDark ? 'Light Theme' : 'Dark Theme' }}
-      </a>
-
-      <div class="fixed w-full" *ngIf="!menuService.showSideBar">
-        <span
-          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-foreground p-2 text-xs font-bold text-background shadow-md transition-all duration-200 group-hover:scale-100">
-          Theme
-        </span>
-      </div>
-    </div>
-    <!-- Sign out -->
-    <div
-      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 text-muted-foreground hover:bg-card hover:text-foreground">
-      <svg-icon src="assets/icons/heroicons/outline/logout.svg" [svgClass]="'h-5 w-5 text-muted-foreground/50'">
-      </svg-icon>
-
-      <a routerLink="/auth" class="ml-3 truncate text-xs font-semibold tracking-wide focus:outline-none"> Sign out </a>
-
-      <div class="fixed w-full" *ngIf="!menuService.showSideBar">
-        <span
-          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-foreground p-2 text-xs font-bold text-background shadow-md transition-all duration-200 group-hover:scale-100">
-          Sign out
-        </span>
-      </div>
-    </div>
     <!-- Version -->
-    <div class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-card">
+    <a
+      target="_blank"
+      href="https://github.com/luciano-work/angular-tailwind"
+      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-card">
       <svg-icon
         src="assets/icons/heroicons/outline/information-circle.svg"
         [svgClass]="'h-5 w-5 text-muted-foreground/50'">
       </svg-icon>
 
-      <a
-        target="_blank"
-        href="https://github.com/luciano-work/angular-tailwind"
-        class="ml-3 truncate text-[10px] font-semibold tracking-wide focus:outline-none">
+      <div class="ml-3 truncate text-[10px] font-semibold tracking-wide focus:outline-none">
         <span class="rounded-lg bg-primary/10 px-2 font-semibold text-primary">v{{ appJson.version }}</span>
-      </a>
+      </div>
 
       <div class="fixed w-full" *ngIf="!menuService.showSideBar">
         <span
@@ -89,6 +52,6 @@
           v{{ appJson.version }}
         </span>
       </div>
-    </div>
+    </a>
   </div>
 </nav>
