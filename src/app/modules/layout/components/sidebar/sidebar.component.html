@@ -5,7 +5,9 @@
     <!-- Logo -->
     <div class="relative h-10">
       <div class="flex items-center" *ngIf="menuService.showSideBar">
-        <a class="flex items-center justify-center rounded bg-primary p-2 focus:outline-none focus:ring-1">
+        <a
+          (click)="toggleSidebar()"
+          class="flex cursor-pointer items-center justify-center rounded bg-primary p-2 focus:outline-none focus:ring-1">
           <svg-icon src="assets/icons/logo.svg"> </svg-icon>
         </a>
         <b class="ml-1 pl-2 text-sm font-bold text-foreground">
@@ -78,7 +80,7 @@
         target="_blank"
         href="https://github.com/luciano-work/angular-tailwind"
         class="ml-3 truncate text-[10px] font-semibold tracking-wide focus:outline-none">
-        <span class="rounded-lg bg-yellow-400/10 px-2 font-semibold text-yellow-500">v{{ appJson.version }}</span>
+        <span class="rounded-lg bg-primary/10 px-2 font-semibold text-primary">v{{ appJson.version }}</span>
       </a>
 
       <div class="fixed w-full" *ngIf="!menuService.showSideBar">
