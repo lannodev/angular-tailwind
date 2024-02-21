@@ -1,22 +1,23 @@
 <!-- Card -->
-<div class="dark:bg-night-700 flex h-[420px] flex-col rounded-lg bg-white p-8">
+<div class="flex h-[420px] flex-col rounded-lg bg-background p-8">
   <!-- Image -->
   <div
     [ngStyle]="{ 'background-image': 'url(' + nft.image + ')' }"
     class="h-[240px] cursor-pointer rounded-md bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
   <!-- Description  -->
-  <h2 class="text-md dark:text-night-50 mt-6 font-semibold text-gray-900">{{ nft.title }}</h2>
-  <div class="dark:text-night-300 flex items-end justify-between text-sm font-semibold text-gray-400">
+  <h2 class="text-md mt-6 font-semibold text-foreground">{{ nft.title }}</h2>
+  <div class="dflex items-end justify-between text-sm font-semibold text-muted-foreground">
     Last Bid: {{ nft.last_bid }} ETH
     <span>{{ nft.price | currency }}</span>
   </div>
   <!-- Buttons -->
   <div class="mt-6 flex items-center justify-between">
-    <button class="hover:bg-primary-600 flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-white">
+    <button
+      class="hover:bg-primary-600 flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
       Place a Bid
     </button>
     <button
-      class="dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 flex-none rounded-md bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-500 hover:bg-gray-200">
+      class="lex-none rounded-md bg-card px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
       View Item
     </button>
   </div>
