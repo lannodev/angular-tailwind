@@ -3,8 +3,8 @@
   <button
     [ngClass]="
       menu.selected || menu.active
-        ? 'bg-primary text-white'
-        : 'dark:text-night-200 dark:hover:bg-night-600 text-gray-600 hover:bg-gray-100 hover:text-primary '
+        ? 'bg-primary text-primary-foreground'
+        : 'text-muted-foreground/50 hover:bg-card hover:text-muted-foreground '
     "
     class="mr-2 inline-flex rounded-md px-3 py-2 text-sm font-medium">
     <span>{{ menu.group }}</span>

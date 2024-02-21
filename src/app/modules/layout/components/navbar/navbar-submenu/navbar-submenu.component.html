@@ -1,5 +1,5 @@
-<ul #submenuRef class="dark:bg-night-600 mt-2 space-y-0.5 rounded-md bg-white py-3 shadow-custom">
-  <li class="dark:text-night-200 flex font-semibold text-gray-600" *ngFor="let item of submenu">
+<ul #submenuRef class="mt-2 space-y-0.5 rounded-md bg-background py-3 shadow-custom">
+  <li class="flex font-semibold" *ngFor="let item of submenu">
     <!-- Condition -->
     <ng-container
       [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
@@ -12,9 +12,9 @@
         [routerLink]="item.route"
         routerLinkActive="text-primary"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="dark:text-night-200 dark:hover:bg-night-500 mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary">
+        class="mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-muted-foreground hover:bg-card hover:text-foreground">
         <div class="flex items-center justify-start">
-          <span class="dark:text-night-200 mr-2 text-gray-400" *ngIf="item.icon">
+          <span class="mr-2 text-muted-foreground/50" *ngIf="item.icon">
             <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
           </span>
           <span class="ml-1">{{ item.label }}</span>
@@ -26,15 +26,18 @@
     <ng-template #childMenu let-item="item">
       <div class="dropdown relative flex w-full">
         <button
-          class="dark:text-night-200 dark:hover:bg-night-500 mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-gray-600 hover:bg-gray-100 hover:text-primary">
+          class="mx-3 flex w-full items-center justify-between rounded-md py-2 px-2 text-xs font-semibold text-muted-foreground hover:bg-card hover:text-foreground">
           <div class="flex items-center justify-start">
-            <span class="dark:text-night-200 mr-2 text-gray-400" *ngIf="item.icon">
+            <span class="mr-2 text-muted-foreground/50" *ngIf="item.icon">
               <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
             </span>
             <span class="ml-1">{{ item.label }}</span>
           </div>
           <span>
-            <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+            <svg-icon
+              src="assets/icons/heroicons/solid/chevron-right.svg"
+              [svgClass]="'h-5 w-5 text-text-muted-foreground/50'">
+            </svg-icon>
           </span>
         </button>
         <!-- Submenu Dropdown -->

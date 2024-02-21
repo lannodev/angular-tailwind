@@ -1,9 +1,9 @@
 <div
   class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
   [ngClass]="{ 'max-h-screen': submenu.expanded }">
-  <ul class="text-night-200 dark:border-night-500 flex flex-col border-l border-dashed border-gray-200 pl-2">
+  <ul class="flex flex-col border-l border-dashed border-border pl-2 text-muted-foreground">
     <li *ngFor="let sub of submenu.children">
-      <div class="dark:hover:bg-night-600 flex rounded hover:bg-gray-100" (click)="toggleMenu(sub)">
+      <div class="flex rounded hover:bg-card hover:text-foreground" (click)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
@@ -29,7 +29,7 @@
           </a>
           <button
             [ngClass]="{ 'rotate-90': sub.expanded }"
-            class="dark:text-night-400 flex items-center p-1 text-gray-400 transition-all duration-500">
+            class="flex items-center p-1 text-muted-foreground transition-all duration-500">
             <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
           </button>
         </ng-template>
