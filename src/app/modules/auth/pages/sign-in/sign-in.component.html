@@ -2,7 +2,7 @@
 <form class="my-10 space-y-6" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="text-center">
     <h2 class="mb-1 text-3xl font-semibold text-foreground">Hello Again <span class="text-primary">!</span></h2>
-    <p class="dark:text-night-200 text-sm text-muted-foreground">Enter your credential to access your account.</p>
+    <p class="text-sm text-muted-foreground">Enter your credential to access your account.</p>
   </div>
   <button
     type="button"
@@ -14,7 +14,7 @@
 
   <div
     class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
-    <p class="dark:text-night-400 mx-4 mb-0 text-center text-sm text-muted-foreground">or</p>
+    <p class="mx-4 mb-0 text-center text-sm text-muted-foreground">or</p>
   </div>
 
   <div class="space-y-3 text-left">
@@ -90,7 +90,7 @@
   </button>
 
   <!-- Sign-up -->
-  <div class="dark:text-night-200 text-sm text-muted-foreground">
+  <div class="text-sm text-muted-foreground">
     Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary">Sign up</a>
   </div>
 </form>
