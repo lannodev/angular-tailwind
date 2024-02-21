@@ -1,4 +1,4 @@
-<div class="dark:bg-night-700 group relative isolate w-full rounded-md bg-white p-4 text-gray-200">
+<div class="dark:bg-night-700 group relative isolate w-full rounded-md bg-background p-4">
   <div class="h-full">
     <div class="relative mb-4">
       <div class="relative pb-[100%]">
@@ -15,7 +15,13 @@
           <button class="inline-block cursor-pointer rounded-full text-center">
             <span class="flex rounded-full bg-primary p-2">
               <span aria-hidden="true">
-                <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24">
+                <svg
+                  role="img"
+                  class="fill-primary-foreground"
+                  height="24"
+                  width="24"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24">
                   <path
                     d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
                 </svg>
@@ -25,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="dark:text-night-50 truncate text-sm font-semibold text-black">{{ title }}</div>
-    <div class="dark:text-night-300 truncate text-xs text-gray-500">{{ subtitle }}</div>
+    <div class="truncate text-sm font-semibold text-foreground">{{ title }}</div>
+    <div class="truncate text-xs text-muted-foreground">{{ subtitle }}</div>
   </div>
 </div>
