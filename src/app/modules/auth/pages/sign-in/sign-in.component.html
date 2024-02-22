@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div class="flex items-center justify-between space-x-3">
+  <div class="mb-2 flex items-center justify-between space-x-3">
     <div class="flex items-center">
       <input id="remember-me" name="remember-me" type="checkbox" />
       <label for="remember-me" class="ml-2 block text-sm text-muted-foreground"> Remember me </label>
@@ -84,12 +84,9 @@
   </div>
 
   <!-- Submit Button -->
-  <button
-    class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-    Sign in
-  </button>
-
-  <app-button impact="none" tone="success">Sign in</app-button>
+  <div>
+    <app-button full impact="bold" tone="default" shape="rounded" size="medium">Sign in</app-button>
+  </div>
 
   <!-- Sign-up -->
   <div class="text-sm text-muted-foreground">

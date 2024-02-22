@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cx } from '../../utils/ckassnames';
 
@@ -16,58 +16,58 @@ type ButtonProps = {
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
-export class ButtonComponent {
-  @Input() impact: ButtonProps['impact'] = 'bold';
-  @Input() size: ButtonProps['size'] = 'medium';
-  @Input() shape: ButtonProps['shape'] = 'rounded';
-  @Input() tone: ButtonProps['tone'] = 'default';
+export class ButtonComponent implements OnInit {
+  impact = input<ButtonProps['impact']>('none');
+  size = input<ButtonProps['size']>('medium');
+  shape = input<ButtonProps['shape']>('rounded');
+  tone = input<ButtonProps['tone']>('default');
+  full = input(false, {
+    transform: (value: boolean | string) => (typeof value === 'string' ? value === '' : value),
+  });
 
-  // impact = input<ButtonProps['impact']>('none') as () => ButtonProps['impact'];
-  // size = input<ButtonProps['size']>('medium') as () => ButtonProps['size'];
-  // shape = input<ButtonProps['shape']>('rounded') as () => ButtonProps['shape'];
-  // tone = input<ButtonProps['tone']>('default') as () => ButtonProps['tone'];
-
-  public classes: string;
+  public classes: string = '';
 
   baseClasses =
     'font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-px disabled:pointer-events-none disabled:opacity-50';
 
   impactClasses: Record<ButtonProps['tone'], Record<ButtonProps['impact'], string>> = {
     default: {
-      bold: 'bg-indigo-500 text-white shadow-md hover:bg-indigo-600 focus-visible:ring-indigo-500',
-      light: 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 focus-visible:ring-indigo-500',
-      none: 'bg-transparent text-indigo-700 hover:bg-indigo-50 focus-visible:ring-indigo-500',
+      bold: 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 focus-visible:ring-primary',
+      light: 'bg-primary/20 text-primary hover:bg-primary/30 focus-visible:ring-primary',
+      none: 'bg-transparent text-primary hover:bg-primary/10 focus-visible:ring-primary',
     },
     danger: {
-      bold: 'bg-red-500 text-white shadow-md hover:bg-red-600 focus-visible:ring-red-500',
-      light: 'bg-red-100 text-red-700 hover:bg-red-200 focus-visible:ring-red-500',
-      none: 'bg-transparent text-red-700 hover:bg-red-50 focus-visible:ring-red-500',
+      bold: 'bg-destructive text-white shadow-md hover:bg-destructive/90 focus-visible:ring-destructive',
+      light: 'bg-destructive/20 text-destructive hover:bg-destructive/30 focus-visible:ring-destructive',
+      none: 'bg-transparent text-destructive hover:bg-destructive/10 focus-visible:ring-destructive',
     },
     success: {
       bold: 'bg-green-500 text-white shadow-md hover:bg-green-600 focus-visible:ring-green-500',
-      light: 'bg-green-100 text-green-700 hover:bg-green-200 focus-visible:ring-green-500',
-      none: 'bg-transparent text-green-700 hover:bg-green-50 focus-visible:ring-green-500',
+      light: 'bg-green-500/20 text-green-600 hover:bg-green-500/30 focus-visible:ring-green-500',
+      none: 'bg-transparent text-green-600 hover:bg-green-500/10 focus-visible:ring-green-500',
     },
   };
 
   sizeClasses: Record<ButtonProps['size'], string> = {
-    small: 'px-3 py-1 text-sm',
-    medium: 'px-5 py-2 text-base',
+    small: 'px-3 py-1 text-xs',
+    medium: 'px-5 py-2 text-sm',
     large: 'px-7 py-2.5 text-lg',
   };
 
   shapeClasses: Record<ButtonProps['shape'], string> = {
     square: 'rounded-none',
-    rounded: 'rounded',
+    rounded: 'rounded-lg',
     pill: 'rounded-full',
   };
 
-  constructor() {
+  constructor() {}
+  ngOnInit(): void {
     this.classes = cx(
       this.baseClasses,
-      this.impactClasses[this.tone][this.impact],
-      this.sizeClasses[this.size],
-      this.shapeClasses[this.shape],
+      this.impactClasses[this.tone()][this.impact()],
+      this.sizeClasses[this.size()],
+      this.shapeClasses[this.shape()],
+      this.full() ? 'w-full' : '',
     );
   }
 }
