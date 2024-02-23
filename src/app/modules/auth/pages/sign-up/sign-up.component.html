@@ -4,13 +4,12 @@
     <p class="text-sm text-muted-foreground">Let's get started with your 30 day free trial</p>
   </div>
 
-  <button
-    type="button"
-    routerLink="/dashboard"
-    class="flex w-full items-center justify-center rounded-md border border-border bg-muted py-2 px-4 text-sm font-medium text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-    <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
-    Log in with Google
-  </button>
+  <div routerLink="/dashboard">
+    <app-button full impact="bold" tone="light" shape="rounded" size="medium">
+      <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
+      Sign Up with Google
+    </app-button>
+  </div>
 
   <div
     class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
@@ -59,25 +58,23 @@
   </div>
 
   <div class="flex items-center justify-between space-x-3">
-    <div class="flex items-center">
+    <div class="flex items-center gap-1">
       <input id="accept-term" name="accept-term" type="checkbox" />
-      <label for="accept-term" class="ml-2 block text-sm text-muted-foreground">
-        I Accept the
-        <a class="hover:text-primary-400 font-medium text-primary"> Terms </a>
-      </label>
+      <label for="accept-term" class="ml-2 block text-sm text-muted-foreground"> I Accept the </label>
+      <app-button impact="none" tone="primary" shape="rounded" size="small"> Terms </app-button>
     </div>
   </div>
 
   <!-- Submit Button -->
-  <button
-    type="button"
-    routerLink="/dashboard"
-    class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-    Sign up
-  </button>
+  <div>
+    <app-button full impact="bold" tone="primary" shape="rounded" size="medium">Sign up</app-button>
+  </div>
 
   <!-- Sign-up -->
-  <div class="text-sm text-muted-foreground">
-    Already have an Account? <a routerLink="/auth/sign-in" class="text-primary">Sign in</a>
+  <div class="flex items-center text-sm text-muted-foreground">
+    Already have an Account?
+    <app-button routerLink="/auth/sign-in" impact="none" tone="primary" shape="rounded" size="small">
+      Sign in
+    </app-button>
   </div>
 </form>

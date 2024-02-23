@@ -6,7 +6,7 @@ type ButtonProps = {
   impact: 'bold' | 'light' | 'none';
   size: 'small' | 'medium' | 'large';
   shape: 'square' | 'rounded' | 'pill';
-  tone: 'default' | 'danger' | 'success';
+  tone: 'primary' | 'danger' | 'success' | 'warning' | 'info' | 'light';
 };
 
 @Component({
@@ -20,7 +20,7 @@ export class ButtonComponent implements OnInit {
   impact = input<ButtonProps['impact']>('none');
   size = input<ButtonProps['size']>('medium');
   shape = input<ButtonProps['shape']>('rounded');
-  tone = input<ButtonProps['tone']>('default');
+  tone = input<ButtonProps['tone']>('primary');
   full = input(false, {
     transform: (value: boolean | string) => (typeof value === 'string' ? value === '' : value),
   });
@@ -28,10 +28,10 @@ export class ButtonComponent implements OnInit {
   public classes: string = '';
 
   baseClasses =
-    'font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-px disabled:pointer-events-none disabled:opacity-50';
+    'font-semibold focus-visible:outline-none flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-px disabled:pointer-events-none disabled:opacity-50';
 
   impactClasses: Record<ButtonProps['tone'], Record<ButtonProps['impact'], string>> = {
-    default: {
+    primary: {
       bold: 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 focus-visible:ring-primary',
       light: 'bg-primary/20 text-primary hover:bg-primary/30 focus-visible:ring-primary',
       none: 'bg-transparent text-primary hover:bg-primary/10 focus-visible:ring-primary',
@@ -42,9 +42,24 @@ export class ButtonComponent implements OnInit {
       none: 'bg-transparent text-destructive hover:bg-destructive/10 focus-visible:ring-destructive',
     },
     success: {
-      bold: 'bg-green-500 text-white shadow-md hover:bg-green-600 focus-visible:ring-green-500',
+      bold: 'bg-green-500 text-green-950 shadow-md hover:bg-green-600 focus-visible:ring-green-500',
       light: 'bg-green-500/20 text-green-600 hover:bg-green-500/30 focus-visible:ring-green-500',
       none: 'bg-transparent text-green-600 hover:bg-green-500/10 focus-visible:ring-green-500',
+    },
+    warning: {
+      bold: 'bg-yellow-500 text-yellow-950 shadow-md hover:bg-yellow-600 focus-visible:ring-yellow-500',
+      light: 'bg-yellow-500/20 text-yellow-600 hover:bg-yellow-500/30 focus-visible:ring-yellow-500',
+      none: 'bg-transparent text-yellow-600 hover:bg-yellow-500/10 focus-visible:ring-yellow-500',
+    },
+    info: {
+      bold: 'bg-violet-500 text-white shadow-md hover:bg-violet-600 focus-visible:ring-violet-500',
+      light: 'bg-violet-500/20 text-violet-600 hover:bg-violet-500/30 focus-visible:ring-violet-500',
+      none: 'bg-transparent text-violet-600 hover:bg-violet-500/10 focus-visible:ring-violet-500',
+    },
+    light: {
+      bold: 'bg-muted text-muted-foreground shadow-md hover:bg-muted/90 focus-visible:ring-muted',
+      light: 'bg-muted/20 text-muted-foreground hover:bg-muted focus-visible:ring-muted',
+      none: 'bg-transparent text-muted-foreground hover:bg-muted focus-visible:ring-muted',
     },
   };
 

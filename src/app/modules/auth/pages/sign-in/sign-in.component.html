@@ -4,13 +4,13 @@
     <h2 class="mb-1 text-3xl font-semibold text-foreground">Hello Again <span class="text-primary">!</span></h2>
     <p class="text-sm text-muted-foreground">Enter your credential to access your account.</p>
   </div>
-  <button
-    type="button"
-    routerLink="/dashboard"
-    class="flex w-full items-center justify-center rounded-md border border-border bg-muted py-2 px-4 text-sm font-medium text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-    <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
-    Log in with Google
-  </button>
+
+  <div routerLink="/dashboard">
+    <app-button full impact="bold" tone="light" shape="rounded" size="medium">
+      <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
+      Log in with Google
+    </app-button>
+  </div>
 
   <div
     class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
@@ -76,20 +76,21 @@
       <label for="remember-me" class="ml-2 block text-sm text-muted-foreground"> Remember me </label>
     </div>
 
-    <div class="text-sm">
-      <a routerLink="/auth/forgot-password" class="hover:text-primary-400 font-medium text-primary">
-        Forgot your password?
-      </a>
-    </div>
+    <app-button routerLink="/auth/forgot-password" impact="none" tone="primary" shape="rounded" size="small">
+      Forgot your password?
+    </app-button>
   </div>
 
   <!-- Submit Button -->
   <div>
-    <app-button full impact="bold" tone="default" shape="rounded" size="medium">Sign in</app-button>
+    <app-button full impact="bold" tone="primary" shape="rounded" size="medium">Sign in</app-button>
   </div>
 
   <!-- Sign-up -->
-  <div class="text-sm text-muted-foreground">
-    Not a Member yet? <a routerLink="/auth/sign-up" class="text-primary">Sign up</a>
+  <div class="flex items-center text-sm text-muted-foreground">
+    Not a Member yet?
+    <app-button routerLink="/auth/sign-up" impact="none" tone="primary" shape="rounded" size="small">
+      Sign up
+    </app-button>
   </div>
 </form>
