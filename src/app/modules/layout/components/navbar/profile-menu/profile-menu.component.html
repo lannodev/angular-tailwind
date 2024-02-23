@@ -11,6 +11,7 @@
   </button>
   <!-- Dropdown -->
   <div
+   *ngIf="isMenuOpen"
     [ngClass]="
       isMenuOpen
         ? 'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200'
