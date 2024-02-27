@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2024-02-27
+
+### Fixed
+
+- profile menu z-index
+- podcast music play button
+
 ## [0.4.0] - 2024-02-22
 
 ### Added
