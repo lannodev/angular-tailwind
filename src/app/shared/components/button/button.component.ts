@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cx } from '../../utils/ckassnames';
 
@@ -24,6 +24,8 @@ export class ButtonComponent implements OnInit {
   full = input(false, {
     transform: (value: boolean | string) => (typeof value === 'string' ? value === '' : value),
   });
+
+  @Output() buttonClick = new EventEmitter<void>();
 
   public classes: string = '';
 
@@ -76,6 +78,7 @@ export class ButtonComponent implements OnInit {
   };
 
   constructor() {}
+
   ngOnInit(): void {
     this.classes = cx(
       this.baseClasses,
@@ -84,5 +87,9 @@ export class ButtonComponent implements OnInit {
       this.shapeClasses[this.shape()],
       this.full() ? 'w-full' : '',
     );
+  }
+
+  onButtonClick() {
+    this.buttonClick.emit();
   }
 }
