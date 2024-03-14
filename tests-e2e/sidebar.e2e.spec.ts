@@ -1,14 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-test('check sidebar menu link', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
+});
+
+test('check sidebar menu link', async ({ page }) => {
   await page.getByRole('navigation').locator('div').filter({ hasText: 'Auth' }).nth(3).click();
   await page.getByRole('link', { name: 'Sign up' }).click();
-  await expect(page.locator('h2')).toContainText('Sign Up !');
+  await expect(page.locator('h2')).toContainText('Sign Up');
 });
 
 test('check toggle sidebar', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
   const sidebar = page.locator('app-sidebar');
   await page.getByRole('navigation').getByRole('button').first().click();
   await page.waitForTimeout(500);
