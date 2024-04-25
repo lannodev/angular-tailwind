@@ -78,6 +78,13 @@ See [Demo](https://at.lanno.dev) page.
 
 This project use [Hero Icons](https://heroicons.com/) and [Hero Patterns](https://heropatterns.com/)
 
+#### Sponsors ❤️
+
+Check out our awesome sponsors!
+
+[<img src="https://avatars.githubusercontent.com/u/19482926?v=4" width="50">](https://github.com/jhonnygarcia)
+[<img src="https://avatars.githubusercontent.com/u/44730111?v=4" width="50">](https://github.com/ramses-i)
+
 #### Disclaimer
 
 The Tailwind name and logos are trademarks of Tailwind Labs Inc.
