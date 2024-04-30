@@ -12,7 +12,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'nfts', pathMatch: 'full' },
       { path: 'nfts', component: NftComponent },
       { path: 'podcast', component: PodcastComponent },
-      { path: '**', redirectTo: 'error/404' },
+      { path: '**', redirectTo: 'errors/404' },
     ],
   },
 ];
@@ -21,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

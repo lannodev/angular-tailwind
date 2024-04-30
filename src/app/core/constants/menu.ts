@@ -12,7 +12,7 @@ export class Menu {
           route: '/dashboard',
           children: [
             { label: 'Nfts', route: '/dashboard/nfts' },
-            { label: 'Podcast', route: '/dashboard/podcast' },
+            // { label: 'Podcast', route: '/dashboard/podcast' },
           ],
         },
         {
@@ -25,6 +25,15 @@ export class Menu {
             { label: 'Forgot Password', route: '/auth/forgot-password' },
             { label: 'New Password', route: '/auth/new-password' },
             { label: 'Two Steps', route: '/auth/two-steps' },
+          ],
+        },
+        {
+          icon: 'assets/icons/heroicons/outline/shield-exclamation.svg',
+          label: 'Erros',
+          route: '/errors',
+          children: [
+            { label: '404', route: '/errors/404' },
+            { label: '500', route: '/errors/500' },
           ],
         },
       ],

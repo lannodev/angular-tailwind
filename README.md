@@ -76,7 +76,7 @@ See [Demo](https://at.lanno.dev) page.
 
 #### Icons and Patterns
 
-This project use [Hero Icons](https://heroicons.com/) and [Hero Patterns](https://heropatterns.com/)
+This project use [Hero Icons](https://heroicons.com/) , [Hero Patterns](https://heropatterns.com/) and [Popsys illustrations](https://popsy.co/)
 
 #### Sponsors ❤️
 

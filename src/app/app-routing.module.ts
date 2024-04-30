@@ -10,7 +10,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: '**', redirectTo: 'error/404' },
+  {
+    path: 'errors',
+    loadChildren: () => import('./modules/error/error.module').then((m) => m.ErrorModule),
+  },
+  { path: '**', redirectTo: 'errors/404' },
 ];
 
 @NgModule({
