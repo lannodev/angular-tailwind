@@ -85,6 +85,9 @@ Check out our awesome sponsors!
 [<img src="https://avatars.githubusercontent.com/u/19482926?v=4" width="50">](https://github.com/jhonnygarcia)
 [<img src="https://avatars.githubusercontent.com/u/44730111?v=4" width="50">](https://github.com/ramses-i)
 
+### Repo Activity
+![Alt](https://repobeats.axiom.co/api/embed/75671ffcba2d7e21fb5ceb8e32598fb8335cfa20.svg "Repobeats analytics image")
+
 #### Disclaimer
 
 The Tailwind name and logos are trademarks of Tailwind Labs Inc.
