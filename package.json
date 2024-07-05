@@ -1,12 +1,12 @@
 {
   "name": "angular-tailwind",
   "displayName": "Angular Tailwind",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Angular & Tailwind CSS Admin Dashboard Starter Kit, Free and Open Source",
-  "homepage": "https://github.com/luciano-work/angular-tailwind#readme",
+  "homepage": "https://github.com/lannodev/angular-tailwind#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luciano-work/angular-tailwind.git"
+    "url": "git+https://github.com/lannodev/angular-tailwind.git"
   },
   "keywords": [
     "angular",
