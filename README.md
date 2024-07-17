@@ -28,7 +28,7 @@ See [Demo](https://at.lanno.dev) page.
 
 #### Versions
 
-<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 17-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 3-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
+<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 18-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 3-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
 
 #### Features
 
@@ -86,7 +86,8 @@ Check out our awesome sponsors!
 [<img src="https://avatars.githubusercontent.com/u/44730111?v=4" width="50">](https://github.com/ramses-i)
 
 ### Repo Activity
-![Alt](https://repobeats.axiom.co/api/embed/75671ffcba2d7e21fb5ceb8e32598fb8335cfa20.svg "Repobeats analytics image")
+
+![Alt](https://repobeats.axiom.co/api/embed/75671ffcba2d7e21fb5ceb8e32598fb8335cfa20.svg 'Repobeats analytics image')
 
 #### Disclaimer
 
