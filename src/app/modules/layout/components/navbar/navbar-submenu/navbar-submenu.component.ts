@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { SubMenuItem } from 'src/app/core/models/menu.model';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { RouterLinkActive, RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, NgIf, AngularSvgIconModule],
 })
-export class NavbarSubmenuComponent implements OnInit {
+export class NavbarSubmenuComponent implements OnInit, AfterViewInit {
   @Input() public submenu = <SubMenuItem[]>{};
   @ViewChild('submenuRef') submenuRef: ElementRef<HTMLDivElement> | undefined;
 

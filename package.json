@@ -1,6 +1,6 @@
 {
   "name": "angular-tailwind",
-  "displayName": "Angular Tailwind",
+  "displayName": "CANVI",
   "version": "0.7.0",
   "description": "Angular & Tailwind CSS Admin Dashboard Starter Kit, Free and Open Source",
   "homepage": "https://github.com/lannodev/angular-tailwind#readme",
@@ -20,7 +20,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "dev": "ng serve --open",
+    "start": "ng serve --open --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

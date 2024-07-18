@@ -15,7 +15,7 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
   public chartOptions: Partial<ChartOptions>;
 
   constructor(private themeService: ThemeService) {
-    let baseColor = '#FFFFFF';
+    const baseColor = '#FFFFFF';
     const data = [2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3000, 3000, 3250, 3250];
     const categories = [
       '10AM',

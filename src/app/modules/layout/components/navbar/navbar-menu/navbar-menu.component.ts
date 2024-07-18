@@ -24,7 +24,7 @@ export class NavbarMenuComponent implements OnInit {
   }
 
   public mouseEnter(event: any): void {
-    let element = event.target.querySelector('app-navbar-submenu').children[0];
+    const element = event.target.querySelector('app-navbar-submenu').children[0];
     if (element) {
       this.hideMenuClass.forEach((c) => element.classList.remove(c));
       this.showMenuClass.forEach((c) => element.classList.add(c));
@@ -32,7 +32,7 @@ export class NavbarMenuComponent implements OnInit {
   }
 
   public mouseLeave(event: any): void {
-    let element = event.target.querySelector('app-navbar-submenu').children[0];
+    const element = event.target.querySelector('app-navbar-submenu').children[0];
     if (element) {
       this.showMenuClass.forEach((c) => element.classList.remove(c));
       this.hideMenuClass.forEach((c) => element.classList.add(c));

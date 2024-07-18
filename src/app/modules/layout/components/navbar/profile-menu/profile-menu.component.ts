@@ -82,7 +82,8 @@ export class ProfileMenuComponent implements OnInit {
     },
     {
       name: 'violet',
-      code: '#6d28d9',
+      // code: '#6d28d9',
+      code: '#323396',
     },
   ];
 

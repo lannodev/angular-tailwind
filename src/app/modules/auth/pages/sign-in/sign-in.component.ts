@@ -40,6 +40,7 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { email, password } = this.form.value;
 
     // stop here if form is invalid
