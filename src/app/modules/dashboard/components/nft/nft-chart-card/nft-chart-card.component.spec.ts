@@ -8,8 +8,8 @@ describe('NftChartCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [NftChartCardComponent],
-}).compileComponents();
+      imports: [NftChartCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

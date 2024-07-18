@@ -8,8 +8,8 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [SidebarComponent],
-}).compileComponents();
+      imports: [SidebarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

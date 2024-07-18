@@ -8,8 +8,8 @@ describe('BottomNavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [BottomNavbarComponent],
-}).compileComponents();
+      imports: [BottomNavbarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

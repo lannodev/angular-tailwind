@@ -6,16 +6,11 @@ import { NavbarMenuComponent } from './navbar-menu/navbar-menu.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss'],
-    standalone: true,
-    imports: [
-        AngularSvgIconModule,
-        NavbarMenuComponent,
-        ProfileMenuComponent,
-        NavbarMobileComponent,
-    ],
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
+  standalone: true,
+  imports: [AngularSvgIconModule, NavbarMenuComponent, ProfileMenuComponent, NavbarMobileComponent],
 })
 export class NavbarComponent implements OnInit {
   constructor(private menuService: MenuService) {}

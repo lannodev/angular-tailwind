@@ -1,0 +1,18 @@
+name: Continuos Integration
+
+on: pull_request
+
+jobs:
+  continuos-inegration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-versions: 22.
+      - name: run install, build and test
+        run: |
+          npm install
+          npm run build

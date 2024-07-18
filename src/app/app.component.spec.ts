@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [RouterTestingModule, AppComponent],
-}).compileComponents();
+      imports: [RouterTestingModule, AppComponent],
+    }).compileComponents();
   });
 
   it('should create the app', () => {

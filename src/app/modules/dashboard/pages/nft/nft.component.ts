@@ -7,16 +7,16 @@ import { NftDualCardComponent } from '../../components/nft/nft-dual-card/nft-dua
 import { NftHeaderComponent } from '../../components/nft/nft-header/nft-header.component';
 
 @Component({
-    selector: 'app-nft',
-    templateUrl: './nft.component.html',
-    standalone: true,
-    imports: [
-        NftHeaderComponent,
-        NftDualCardComponent,
-        NftSingleCardComponent,
-        NftChartCardComponent,
-        NftAuctionsTableComponent,
-    ],
+  selector: 'app-nft',
+  templateUrl: './nft.component.html',
+  standalone: true,
+  imports: [
+    NftHeaderComponent,
+    NftDualCardComponent,
+    NftSingleCardComponent,
+    NftChartCardComponent,
+    NftAuctionsTableComponent,
+  ],
 })
 export class NftComponent implements OnInit {
   nft: Array<Nft>;

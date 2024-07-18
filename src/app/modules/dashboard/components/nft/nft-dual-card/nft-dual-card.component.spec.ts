@@ -8,8 +8,8 @@ describe('BiddingDualCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [BiddingDualCardComponent],
-}).compileComponents();
+      imports: [BiddingDualCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
