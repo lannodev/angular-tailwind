@@ -2,6 +2,7 @@
     <img src="src/assets/preview/logo.png" width="150">
 </p>
 
+
 <p align="center">
     <a href="https://github.com/luciano-work/angular-tailwind/stargazers">
         <img height= "24" src="https://img.shields.io/github/stars/luciano-work/angular-tailwind?colorA=1e1e28&colorB=c9cbff&style=for-the-badge">
