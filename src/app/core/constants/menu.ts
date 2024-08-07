@@ -36,6 +36,12 @@ export class Menu {
             { label: '500', route: '/errors/500' },
           ],
         },
+        {
+          icon: 'assets/icons/heroicons/outline/cube.svg',
+          label: 'Components',
+          route: '/components',
+          children: [{ label: 'Table', route: '/components/table' }],
+        },
       ],
     },
     {
