@@ -28,7 +28,7 @@ export class Menu {
           ],
         },
         {
-          icon: 'assets/icons/heroicons/outline/shield-exclamation.svg',
+          icon: 'assets/icons/heroicons/outline/exclamation-triangle.svg',
           label: 'Erros',
           route: '/errors',
           children: [
