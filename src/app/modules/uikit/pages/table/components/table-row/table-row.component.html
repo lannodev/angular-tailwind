@@ -1,0 +1,42 @@
+<ng-container>
+  <td class="text-center">
+    <input
+      [(ngModel)]="user.selected"
+      class="checkbox checkbox-sm"
+      data-datatable-row-check="true"
+      type="checkbox"
+      value="28" />
+  </td>
+  <td>
+    <div class="flex items-center gap-2.5">
+      <img
+        alt="user avatar"
+        class="h-9 w-9 shrink-0 rounded-full"
+        src="https://avatar.iran.liara.run/public/boy?username={{ user.name }}" />
+      <div class="flex flex-col">
+        <a class="text-sm font-semibold text-foreground hover:text-primary" href="#"> {{ user.name }} </a>
+        <a class="text-xs font-medium text-muted-foreground/70 hover:text-primary" href="#">
+          {{ user.email }}
+        </a>
+      </div>
+    </div>
+  </td>
+  <td>{{ user.username }}</td>
+  <td class="space-x-1">
+    @for (hobbie of user.hobbies; track $index) {
+    <span class="rounded-[30px] bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-800">
+      {{ hobbie }}
+    </span>
+    }
+  </td>
+  <td>
+    {{ user.occupation }}
+  </td>
+  <td>{{ user.phone }}</td>
+  <td class="text-center">
+    <button
+      class="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-card hover:text-foreground">
+      <svg-icon src="./assets/icons/heroicons/outline/ellipsis-vertical.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+    </button>
+  </td>
+</ng-container>

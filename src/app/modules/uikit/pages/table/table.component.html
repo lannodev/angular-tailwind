@@ -1,1 +1,36 @@
-<p>table works!</p>
+<div class="mb-4 flex justify-between">
+  <div class="inline-block">
+    <h3 class="font-semibold text-foreground">Team Members</h3>
+    <div class="space-x-1 text-xs font-medium text-muted-foreground">
+      <a href="" class="hover:text-primary">All Members:</a>
+      <span class="text-foreground">49,053</span>
+    </div>
+  </div>
+  <div class="inline-block space-x-4">
+    <button
+      class="flex-none rounded-md bg-muted px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground">
+      Import CSV
+    </button>
+    <button class="flex-none rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground">
+      Add Member
+    </button>
+  </div>
+</div>
+
+<div class="flex min-w-full flex-col rounded-xl border border-muted/20 bg-background p-2">
+  <app-table-action></app-table-action>
+  <div class="overflow-x-auto">
+    <table
+      class="table w-full table-auto border-collapse border-0 text-left align-middle leading-5 text-muted-foreground">
+      <thead class="border border-muted/20 text-xs text-muted-foreground">
+        <tr app-table-header (onCheck)="toggleUsers($event)"></tr>
+      </thead>
+      <tbody>
+        @for (user of users(); track $index) {
+        <tr class="hover:bg-card/50" app-table-row [user]="user"></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <app-table-footer></app-table-footer>
+</div>

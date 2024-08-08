@@ -1,0 +1,9 @@
+th {
+  font-weight: 500;
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  vertical-align: middle;
+  @apply border-r border-b border-muted/20 bg-muted/5;
+}

@@ -1,0 +1,43 @@
+<div class="flex flex-wrap items-center justify-between gap-2 py-3 px-5 text-xs text-muted-foreground">
+  <div class="order-2 flex items-center gap-2 md:order-1">
+    Show
+    <select class="w-16 p-2">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="50">50</option>
+    </select>
+    per page
+  </div>
+  <div class="order-1 flex items-center gap-4 md:order-2">
+    <span>1-10 of 100</span>
+    <div class="inline-flex items-center gap-1">
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-sm disabled:opacity-50"
+        disabled>
+        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-left.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+      </button>
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md bg-muted-foreground/10 text-sm">
+        1
+      </button>
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-sm hover:bg-muted-foreground/10">
+        2
+      </button>
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-sm hover:bg-muted-foreground/10">
+        3
+      </button>
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-sm hover:bg-muted-foreground/10">
+        ...
+      </button>
+      <button
+        class="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md text-sm hover:bg-muted-foreground/10">
+        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-right.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+      </button>
+    </div>
+  </div>
+</div>
