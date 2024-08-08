@@ -7,6 +7,7 @@ import { TableHeaderComponent } from './components/table-header/table-header.com
 import { TableFooterComponent } from './components/table-footer/table-footer.component';
 import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableActionComponent } from './components/table-action/table-action.component';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-table',
@@ -26,8 +27,9 @@ export class TableComponent implements OnInit {
   users = signal<User[]>([]);
 
   constructor(private http: HttpClient) {
-    this.http.get<User[]>('https://freetestapi.com/api/v1/users?limit=8').subscribe((data) => {
-      this.users.set(data);
+    this.http.get<User[]>('https://freetestapi.com/api/v1/users?limit=8').subscribe({
+      next: (data) => this.users.set(data),
+      error: (error) => this.handleRequestError(error),
     });
   }
 
@@ -36,6 +38,19 @@ export class TableComponent implements OnInit {
       return users.map((user) => {
         return { ...user, selected: checked };
       });
+    });
+  }
+
+  private handleRequestError(error: any) {
+    const msg = 'An error occurred while fetching users';
+    toast.error(msg, {
+      position: 'bottom-right',
+      description: error.message,
+      action: {
+        label: 'Undo',
+        onClick: () => console.log('Action!'),
+      },
+      actionButtonStyle: 'background-color:#DC2626; color:white;',
     });
   }
 
