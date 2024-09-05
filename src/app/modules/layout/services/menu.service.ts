@@ -74,7 +74,7 @@ export class MenuService implements OnDestroy {
       if (item.children) this.expand(item.children);
     });
   }
-
+  
   private isActive(instruction: any): boolean {
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',

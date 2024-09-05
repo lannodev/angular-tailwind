@@ -3,6 +3,22 @@ import { MenuItem } from '../models/menu.model';
 export class Menu {
   public static pages: MenuItem[] = [
     {
+      group: 'Documents',
+      separator: false,
+      items: [
+        {
+          icon: 'assets/icons/heroicons/outline/documents.svg',
+          label: 'Contracts',
+          route: '/contracts',
+          children: [
+            {
+              label: 'Contracts', route: '/contracts/contracts',
+            }
+          ]
+        }
+      ]
+    },
+    {
       group: 'Base',
       separator: false,
       items: [
