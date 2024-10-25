@@ -8,6 +8,7 @@ import { TableFooterComponent } from './components/table-footer/table-footer.com
 import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableActionComponent } from './components/table-action/table-action.component';
 import { toast } from 'ngx-sonner';
+import { dummyData } from 'src/app/shared/dummy/user.dummy';
 
 @Component({
   selector: 'app-table',
@@ -29,7 +30,10 @@ export class TableComponent implements OnInit {
   constructor(private http: HttpClient) {
     this.http.get<User[]>('https://freetestapi.com/api/v1/users?limit=8').subscribe({
       next: (data) => this.users.set(data),
-      error: (error) => this.handleRequestError(error),
+      error: (error) => {
+        this.users.set(dummyData);
+        this.handleRequestError(error);
+      }
     });
   }
 
@@ -42,7 +46,7 @@ export class TableComponent implements OnInit {
   }
 
   private handleRequestError(error: any) {
-    const msg = 'An error occurred while fetching users';
+    const msg = 'An error occurred while fetching users. Loading dummy data as fallback.';
     toast.error(msg, {
       position: 'bottom-right',
       description: error.message,
