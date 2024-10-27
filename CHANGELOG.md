@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.1] - 2024-10-27
+
+### Fixed
+
+- menu display issue behind components #18
+
+### Added
+
+- error handling with dummy data fallback in user fetching #20
+
 ## [0.8.0] - 2024-08-08
 
 ### Added
