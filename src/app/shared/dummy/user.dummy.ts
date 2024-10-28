@@ -82,7 +82,7 @@ export const dummyData: User[] = [
     occupation: 'UI/UX Designer',
     hobbies: ['design', 'gardening', 'swimming'],
     selected: false,
-    status: 3,
+    status: 1,
     created_at: '2024-10-22T12:34:56Z',
   },
   {
@@ -96,7 +96,7 @@ export const dummyData: User[] = [
     occupation: 'Mobile Developer',
     hobbies: ['app development', 'traveling', 'reading'],
     selected: false,
-    status: 3,
+    status: 1,
     created_at: '2024-10-26T12:34:56Z',
   },
   {

@@ -7,6 +7,7 @@
           <svg-icon src="./assets/icons/heroicons/outline/magnifying-glass.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
         </div>
         <input
+          name="search"
           class="py-2 pl-8 pr-2"
           placeholder="Search users"
           type="text"
@@ -15,13 +16,13 @@
       </label>
     </div>
     <div class="flex flex-wrap gap-2.5">
-      <select class="w-28 p-2 text-muted-foreground" (change)="onStatusChange($event)">
+      <select name="status" class="w-28 p-2 text-muted-foreground" (change)="onStatusChange($event)">
         <option value="">All</option>
         <option value="1">Active</option>
         <option value="2">Disabled</option>
         <option value="3">Pending</option>
       </select>
-      <select class="w-28 p-2 text-muted-foreground" (change)="onOrderChange($event)">
+      <select name="order" class="w-28 p-2 text-muted-foreground" (change)="onOrderChange($event)">
         <option value="1">Newest</option>
         <option value="2">Oldest</option>
       </select>
