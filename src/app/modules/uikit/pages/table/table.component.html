@@ -27,7 +27,7 @@
         <tr app-table-header (onCheck)="toggleUsers($event)"></tr>
       </thead>
       <tbody>
-        @for (user of users(); track $index) {
+        @for (user of filteredUsers(); track $index) {
         <tr class="hover:bg-card/50" app-table-row [user]="user"></tr>
         } @empty {
         <tr>

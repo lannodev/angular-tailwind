@@ -29,7 +29,7 @@ export class Menu {
         },
         {
           icon: 'assets/icons/heroicons/outline/exclamation-triangle.svg',
-          label: 'Erros',
+          label: 'Errors',
           route: '/errors',
           children: [
             { label: '404', route: '/errors/404' },

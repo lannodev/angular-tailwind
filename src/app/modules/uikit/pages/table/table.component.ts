@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, computed, OnInit, signal } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { User } from './model/user.model';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableActionComponent } from './components/table-action/table-action.component';
 import { toast } from 'ngx-sonner';
 import { dummyData } from 'src/app/shared/dummy/user.dummy';
+import { TableFilterService } from 'src/app/core/services/table-filter.service';
 
 @Component({
   selector: 'app-table',
@@ -27,13 +28,13 @@ import { dummyData } from 'src/app/shared/dummy/user.dummy';
 export class TableComponent implements OnInit {
   users = signal<User[]>([]);
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private filterService: TableFilterService) {
     this.http.get<User[]>('https://freetestapi.com/api/v1/users?limit=8').subscribe({
       next: (data) => this.users.set(data),
       error: (error) => {
         this.users.set(dummyData);
         this.handleRequestError(error);
-      }
+      },
     });
   }
 
@@ -57,6 +58,46 @@ export class TableComponent implements OnInit {
       actionButtonStyle: 'background-color:#DC2626; color:white;',
     });
   }
+
+  filteredUsers = computed(() => {
+    const search = this.filterService.searchField().toLowerCase();
+    const status = this.filterService.statusField();
+    const order = this.filterService.orderField();
+
+    return (
+      this.users()
+        .filter(
+          (user) =>
+            user.name.toLowerCase().includes(search) ||
+            user.username.toLowerCase().includes(search) ||
+            user.email.toLowerCase().includes(search) ||
+            user.phone.includes(search),
+        )
+        .filter((user) => {
+          if (!status) return true; // No status filter applied
+          switch (status) {
+            case '1':
+              return user.status === 1; // Active
+            case '2':
+              return user.status === 2; // Disabled
+            case '3':
+              return user.status === 3; // Pending
+            default:
+              return true;
+          }
+        })
+        // Sort based on the order field
+        .sort((a, b) => {
+          const defaultNewest = !order || order === '1'; // Apply Newest if order is unset
+          if (defaultNewest) {
+            return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+          } else if (order === '2') {
+            return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+          }
+          return 0;
+        })
+    );
+  });
 
   ngOnInit() {}
 }
