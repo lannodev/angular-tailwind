@@ -9,4 +9,6 @@ export interface User {
   occupation: string;
   hobbies: string[];
   selected: boolean;
+  status: number;
+  created_at: string;
 }

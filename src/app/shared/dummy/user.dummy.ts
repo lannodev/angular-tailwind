@@ -1,4 +1,4 @@
-import { User } from "src/app/modules/uikit/pages/table/model/user.model";
+import { User } from 'src/app/modules/uikit/pages/table/model/user.model';
 
 export const dummyData: User[] = [
   {
@@ -12,6 +12,8 @@ export const dummyData: User[] = [
     occupation: 'Software Engineer',
     hobbies: ['coding', 'hiking', 'reading'],
     selected: false,
+    status: 1,
+    created_at: '2024-10-12T12:34:56Z',
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const dummyData: User[] = [
     occupation: 'Graphic Designer',
     hobbies: ['drawing', 'photography', 'travel'],
     selected: false,
+    status: 1,
+    created_at: '2024-10-14T12:34:56Z',
   },
   {
     id: 3,
@@ -36,6 +40,8 @@ export const dummyData: User[] = [
     occupation: 'Data Scientist',
     hobbies: ['data analysis', 'cycling', 'music'],
     selected: true,
+    status: 2,
+    created_at: '2024-10-16T12:34:56Z',
   },
   {
     id: 4,
@@ -48,6 +54,8 @@ export const dummyData: User[] = [
     occupation: 'Marketing Specialist',
     hobbies: ['writing', 'yoga', 'baking'],
     selected: false,
+    status: 2,
+    created_at: '2024-10-18T12:34:56Z',
   },
   {
     id: 5,
@@ -60,6 +68,8 @@ export const dummyData: User[] = [
     occupation: 'Product Manager',
     hobbies: ['innovation', 'gaming', 'finance'],
     selected: true,
+    status: 1,
+    created_at: '2024-10-20T12:34:56Z',
   },
   {
     id: 6,
@@ -72,6 +82,8 @@ export const dummyData: User[] = [
     occupation: 'UI/UX Designer',
     hobbies: ['design', 'gardening', 'swimming'],
     selected: false,
+    status: 1,
+    created_at: '2024-10-22T12:34:56Z',
   },
   {
     id: 7,
@@ -84,6 +96,8 @@ export const dummyData: User[] = [
     occupation: 'Mobile Developer',
     hobbies: ['app development', 'traveling', 'reading'],
     selected: false,
+    status: 1,
+    created_at: '2024-10-26T12:34:56Z',
   },
   {
     id: 8,
@@ -96,5 +110,7 @@ export const dummyData: User[] = [
     occupation: 'DevOps Engineer',
     hobbies: ['automation', 'gaming', 'blogging'],
     selected: true,
+    status: 3,
+    created_at: '2024-10-28T12:34:56Z',
   },
 ];
