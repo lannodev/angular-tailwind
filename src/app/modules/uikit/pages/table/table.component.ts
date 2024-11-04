@@ -64,39 +64,36 @@ export class TableComponent implements OnInit {
     const status = this.filterService.statusField();
     const order = this.filterService.orderField();
 
-    return (
-      this.users()
-        .filter(
-          (user) =>
-            user.name.toLowerCase().includes(search) ||
-            user.username.toLowerCase().includes(search) ||
-            user.email.toLowerCase().includes(search) ||
-            user.phone.includes(search),
-        )
-        .filter((user) => {
-          if (!status) return true; // No status filter applied
-          switch (status) {
-            case '1':
-              return user.status === 1; // Active
-            case '2':
-              return user.status === 2; // Disabled
-            case '3':
-              return user.status === 3; // Pending
-            default:
-              return true;
-          }
-        })
-        // Sort based on the order field
-        .sort((a, b) => {
-          const defaultNewest = !order || order === '1'; // Apply Newest if order is unset
-          if (defaultNewest) {
-            return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-          } else if (order === '2') {
-            return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
-          }
-          return 0;
-        })
-    );
+    return this.users()
+      .filter(
+        (user) =>
+          user.name.toLowerCase().includes(search) ||
+          user.username.toLowerCase().includes(search) ||
+          user.email.toLowerCase().includes(search) ||
+          user.phone.includes(search),
+      )
+      .filter((user) => {
+        if (!status) return true;
+        switch (status) {
+          case '1':
+            return user.status === 1;
+          case '2':
+            return user.status === 2;
+          case '3':
+            return user.status === 3;
+          default:
+            return true;
+        }
+      })
+      .sort((a, b) => {
+        const defaultNewest = !order || order === '1';
+        if (defaultNewest) {
+          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+        } else if (order === '2') {
+          return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+        }
+        return 0;
+      });
   });
 
   ngOnInit() {}
