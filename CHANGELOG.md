@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2024-10-27
+
+### Added
+
+- add table filters
+
+### Fixed
+
+- fix table component tests
+
 ## [0.8.1] - 2024-10-27
 
 ### Fixed
