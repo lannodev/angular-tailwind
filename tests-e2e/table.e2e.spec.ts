@@ -2,31 +2,26 @@ import { test, expect, Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/components/table', { waitUntil: 'networkidle' });
-  await page.getByRole('navigation').locator('div').filter({ hasText: 'Components' }).nth(3).click();
-  await page.getByRole('link', { name: 'Table' }).click();
 });
 
 async function checkTableRowCount(page: Page, filterSelector: string, value: string, expectedRowCount: number) {
   await page.locator(filterSelector).selectOption(value);
-
   await expect(page.locator('table tbody tr')).toHaveCount(expectedRowCount, { timeout: 5000 });
 }
 
 async function checkCellInRow(page: Page, cellContent: string, expectedRowIndex: number) {
-  const rows = await page.locator('table tbody tr');
+  const rows = page.locator('table tbody tr');
   const cellTexts = await rows.nth(expectedRowIndex).locator('td').allTextContents();
   expect(cellTexts).toContain(cellContent);
 }
 
 test('check user filter updates table', async ({ page }) => {
   await page.fill('input[name="search"]', 'john');
-
   await expect(page.locator('table tbody tr')).toHaveCount(2);
 });
 
 test('check user filter empty restores table', async ({ page }) => {
   await page.fill('input[name="search"]', '');
-
   await expect(page.locator('table tbody tr')).toHaveCount(8);
 });
 
@@ -45,12 +40,10 @@ test('check user status filter updates table', async ({ page }) => {
 
 test('check user order filter - newest first', async ({ page }) => {
   await page.locator('select[name="order"]').selectOption('1');
-
   await checkCellInRow(page, 'emmawilson', 0);
 });
 
 test('check user order filter - oldest first', async ({ page }) => {
   await page.locator('select[name="order"]').selectOption('2');
-
   await checkCellInRow(page, 'johndoe', 0);
 });
