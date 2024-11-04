@@ -9,7 +9,7 @@ import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableActionComponent } from './components/table-action/table-action.component';
 import { toast } from 'ngx-sonner';
 import { dummyData } from 'src/app/shared/dummy/user.dummy';
-import { TableFilterService } from 'src/app/core/services/table-filter.service';
+import { TableFilterService } from './services/table-filter.service';
 
 @Component({
   selector: 'app-table',
