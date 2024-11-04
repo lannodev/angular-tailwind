@@ -42,9 +42,9 @@ See [Demo](https://at.lanno.dev) page.
 - [x] Angular Signals
 - [x] Multi Theme
 - [x] Tests E2E
-- [ ] User Module
 - [ ] Guards
 - [ ] Animations
+- [ ] Jasmine to Jest
 
 #### Commands
 
