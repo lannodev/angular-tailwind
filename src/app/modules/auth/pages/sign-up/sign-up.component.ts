@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularSvgIconModule } from 'angular-svg-icon';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonComponent } from 'src/app/shared/components/button/button.component';
 
 @Component({

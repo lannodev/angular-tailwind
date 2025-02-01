@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../../model/user.model';
 import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { User } from '../../model/user.model';
 
 @Component({
   selector: '[app-table-row]',

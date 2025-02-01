@@ -1,10 +1,10 @@
+import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { SubMenuItem } from 'src/app/core/models/menu.model';
 import { MenuService } from 'src/app/modules/layout/services/menu.service';
 import { NavbarMobileSubmenuComponent } from '../navbar-mobile-submenu/navbar-mobile-submenu.component';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { AngularSvgIconModule } from 'angular-svg-icon';
-import { NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-navbar-mobile-menu',

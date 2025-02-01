@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { cx } from '../../utils/ckassnames';
 
 type ButtonProps = {
@@ -11,10 +11,10 @@ type ButtonProps = {
 };
 
 @Component({
-    selector: 'app-button',
-    imports: [CommonModule],
-    templateUrl: './button.component.html',
-    styleUrl: './button.component.scss'
+  selector: 'app-button',
+  imports: [CommonModule],
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent implements OnInit {
   impact = input<ButtonProps['impact']>('none');
