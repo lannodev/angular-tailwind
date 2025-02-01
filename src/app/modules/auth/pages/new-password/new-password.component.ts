@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from 'src/app/shared/components/button/button.component';
 
 @Component({
-    selector: 'app-new-password',
-    templateUrl: './new-password.component.html',
-    styleUrls: ['./new-password.component.scss'],
-    imports: [FormsModule, RouterLink, AngularSvgIconModule, ButtonComponent]
+  selector: 'app-new-password',
+  templateUrl: './new-password.component.html',
+  styleUrls: ['./new-password.component.css'],
+  imports: [FormsModule, RouterLink, AngularSvgIconModule, ButtonComponent],
 })
 export class NewPasswordComponent implements OnInit {
   constructor() {}

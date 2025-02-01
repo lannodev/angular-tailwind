@@ -6,17 +6,10 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 import { NgClass, NgFor, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-    selector: 'app-navbar-mobile-submenu',
-    templateUrl: './navbar-mobile-submenu.component.html',
-    styleUrls: ['./navbar-mobile-submenu.component.scss'],
-    imports: [
-        NgClass,
-        NgFor,
-        NgTemplateOutlet,
-        RouterLinkActive,
-        RouterLink,
-        AngularSvgIconModule,
-    ]
+  selector: 'app-navbar-mobile-submenu',
+  templateUrl: './navbar-mobile-submenu.component.html',
+  styleUrls: ['./navbar-mobile-submenu.component.css'],
+  imports: [NgClass, NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, AngularSvgIconModule],
 })
 export class NavbarMobileSubmenuComponent implements OnInit {
   @Input() public submenu = <SubMenuItem>{};

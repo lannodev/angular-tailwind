@@ -5,14 +5,10 @@ import { NavbarSubmenuComponent } from '../navbar-submenu/navbar-submenu.compone
 import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-navbar-menu',
-    templateUrl: './navbar-menu.component.html',
-    styleUrls: ['./navbar-menu.component.scss'],
-    imports: [
-        NgFor,
-        NgClass,
-        NavbarSubmenuComponent,
-    ]
+  selector: 'app-navbar-menu',
+  templateUrl: './navbar-menu.component.html',
+  styleUrls: ['./navbar-menu.component.css'],
+  imports: [NgFor, NgClass, NavbarSubmenuComponent],
 })
 export class NavbarMenuComponent implements OnInit {
   private showMenuClass = ['scale-100', 'animate-fade-in-up', 'opacity-100', 'pointer-events-auto'];
