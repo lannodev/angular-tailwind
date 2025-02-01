@@ -9,11 +9,10 @@ import { NgClass, NgIf } from '@angular/common';
 import { Theme } from 'src/app/core/models/theme.model';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
-  standalone: true,
-  imports: [NgClass, NgIf, AngularSvgIconModule, SidebarMenuComponent, RouterLink],
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss'],
+    imports: [NgClass, NgIf, AngularSvgIconModule, SidebarMenuComponent, RouterLink]
 })
 export class SidebarComponent implements OnInit {
   public appJson: any = packageJson;

@@ -6,8 +6,7 @@ import { NgIf } from '@angular/common';
     selector: 'app-responsive-helper',
     templateUrl: './responsive-helper.component.html',
     styleUrls: ['./responsive-helper.component.scss'],
-    standalone: true,
-    imports: [NgIf],
+    imports: [NgIf]
 })
 export class ResponsiveHelperComponent implements OnInit {
   public env: any = environment;

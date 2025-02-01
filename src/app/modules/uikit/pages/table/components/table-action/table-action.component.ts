@@ -3,11 +3,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { TableFilterService } from '../../services/table-filter.service';
 
 @Component({
-  selector: 'app-table-action',
-  standalone: true,
-  imports: [AngularSvgIconModule],
-  templateUrl: './table-action.component.html',
-  styleUrl: './table-action.component.scss',
+    selector: 'app-table-action',
+    imports: [AngularSvgIconModule],
+    templateUrl: './table-action.component.html',
+    styleUrl: './table-action.component.scss'
 })
 export class TableActionComponent {
   constructor(public filterService: TableFilterService) {}

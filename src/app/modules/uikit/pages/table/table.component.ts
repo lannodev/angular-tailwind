@@ -12,18 +12,17 @@ import { dummyData } from 'src/app/shared/dummy/user.dummy';
 import { TableFilterService } from './services/table-filter.service';
 
 @Component({
-  selector: 'app-table',
-  standalone: true,
-  imports: [
-    AngularSvgIconModule,
-    FormsModule,
-    TableHeaderComponent,
-    TableFooterComponent,
-    TableRowComponent,
-    TableActionComponent,
-  ],
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.scss',
+    selector: 'app-table',
+    imports: [
+        AngularSvgIconModule,
+        FormsModule,
+        TableHeaderComponent,
+        TableFooterComponent,
+        TableRowComponent,
+        TableActionComponent,
+    ],
+    templateUrl: './table.component.html',
+    styleUrl: './table.component.scss'
 })
 export class TableComponent implements OnInit {
   users = signal<User[]>([]);

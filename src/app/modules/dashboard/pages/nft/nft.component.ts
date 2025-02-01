@@ -9,14 +9,13 @@ import { NftHeaderComponent } from '../../components/nft/nft-header/nft-header.c
 @Component({
     selector: 'app-nft',
     templateUrl: './nft.component.html',
-    standalone: true,
     imports: [
         NftHeaderComponent,
         NftDualCardComponent,
         NftSingleCardComponent,
         NftChartCardComponent,
         NftAuctionsTableComponent,
-    ],
+    ]
 })
 export class NftComponent implements OnInit {
   nft: Array<Nft>;

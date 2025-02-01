@@ -4,11 +4,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonComponent } from 'src/app/shared/components/button/button.component';
 
 @Component({
-  selector: 'app-error404',
-  standalone: true,
-  imports: [AngularSvgIconModule, ButtonComponent],
-  templateUrl: './error404.component.html',
-  styleUrl: './error404.component.scss',
+    selector: 'app-error404',
+    imports: [AngularSvgIconModule, ButtonComponent],
+    templateUrl: './error404.component.html',
+    styleUrl: './error404.component.scss'
 })
 export class Error404Component {
   constructor(private router: Router) {}

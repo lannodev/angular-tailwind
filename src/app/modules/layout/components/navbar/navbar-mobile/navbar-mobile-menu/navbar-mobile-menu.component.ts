@@ -10,7 +10,6 @@ import { NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
     selector: 'app-navbar-mobile-menu',
     templateUrl: './navbar-mobile-menu.component.html',
     styleUrls: ['./navbar-mobile-menu.component.scss'],
-    standalone: true,
     imports: [
         NgFor,
         NgClass,
@@ -20,7 +19,7 @@ import { NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
         RouterLinkActive,
         NgIf,
         NavbarMobileSubmenuComponent,
-    ],
+    ]
 })
 export class NavbarMobileMenuComponent implements OnInit {
   constructor(public menuService: MenuService) {}

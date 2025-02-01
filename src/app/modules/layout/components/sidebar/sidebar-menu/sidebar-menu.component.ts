@@ -11,7 +11,6 @@ import { NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
     templateUrl: './sidebar-menu.component.html',
     styleUrls: ['./sidebar-menu.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [
         NgFor,
         NgClass,
@@ -21,7 +20,7 @@ import { NgFor, NgClass, NgTemplateOutlet, NgIf } from '@angular/common';
         RouterLinkActive,
         NgIf,
         SidebarSubmenuComponent,
-    ],
+    ]
 })
 export class SidebarMenuComponent implements OnInit {
   constructor(public menuService: MenuService) {}

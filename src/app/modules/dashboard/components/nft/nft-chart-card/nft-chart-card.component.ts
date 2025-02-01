@@ -6,10 +6,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: '[nft-chart-card]',
-  templateUrl: './nft-chart-card.component.html',
-  standalone: true,
-  imports: [AngularSvgIconModule, NgApexchartsModule],
+    selector: '[nft-chart-card]',
+    templateUrl: './nft-chart-card.component.html',
+    imports: [AngularSvgIconModule, NgApexchartsModule]
 })
 export class NftChartCardComponent implements OnInit, OnDestroy {
   public chartOptions: Partial<ChartOptions>;
