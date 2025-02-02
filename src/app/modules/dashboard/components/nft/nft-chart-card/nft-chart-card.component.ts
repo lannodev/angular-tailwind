@@ -1,14 +1,12 @@
 import { Component, OnDestroy, OnInit, effect } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { ThemeService } from 'src/app/core/services/theme.service';
 import { ChartOptions } from '../../../../../shared/models/chart-options';
-import { NgApexchartsModule } from 'ng-apexcharts';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: '[nft-chart-card]',
   templateUrl: './nft-chart-card.component.html',
-  standalone: true,
   imports: [AngularSvgIconModule, NgApexchartsModule],
 })
 export class NftChartCardComponent implements OnInit, OnDestroy {

@@ -1,32 +1,32 @@
 <td class="py-2 pr-2">
   <div class="flex items-center">
-    <img [src]="auction.image" class="mr-2 h-10 w-10 flex-none rounded-sm" alt="" />
+    <img [src]="auction.image" class="rounded-xs mr-2 h-10 w-10 flex-none" alt="" />
     <div class="flex flex-col justify-items-start">
-      <a href="#" class="mb-1 text-sm font-semibold text-foreground">{{ auction.title }}</a>
-      <span class="text-xs font-semibold text-muted-foreground/50">{{ auction.creator }}</span>
+      <a href="#" class="text-foreground mb-1 text-sm font-semibold">{{ auction.title }}</a>
+      <span class="text-muted-foreground/50 text-xs font-semibold">{{ auction.creator }}</span>
     </div>
   </div>
 </td>
 <td class="py-2 pl-2 text-right">
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.instant_price }} ETH</span>
+  <span class="text-muted-foreground text-sm font-semibold">{{ auction.instant_price }} ETH</span>
 </td>
 <td class="py-2 pl-2 text-right">
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.price | currency }}</span>
+  <span class="text-muted-foreground text-sm font-semibold">{{ auction.price | currency }}</span>
 </td>
 <td class="py-2 pl-2 text-right">
   <!-- <div class="ml-4 flex items-center justify-start">
 		<img [src]="auction.avatar" class="mr-3 h-8 w-8 rounded-b-md" alt="" />
 	</div> -->
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.last_bid }} ETH</span>
+  <span class="text-muted-foreground text-sm font-semibold">{{ auction.last_bid }} ETH</span>
 </td>
 <td class="py-2 pl-2 text-right">
-  <span class="text-sm font-semibold text-muted-foreground">{{ auction.ending_in }}</span>
+  <span class="text-muted-foreground text-sm font-semibold">{{ auction.ending_in }}</span>
 </td>
 <td class="py-2 pl-2 text-right">
   <div class="flex justify-end">
     <button
       href="#"
-      class="flex h-7 w-7 items-center justify-center rounded-md bg-card text-muted-foreground hover:bg-muted hover:text-foreground">
+      class="bg-card text-muted-foreground hover:bg-muted hover:text-foreground flex h-7 w-7 items-center justify-center rounded-md">
       <svg-icon src="assets/icons/heroicons/outline/arrow-sm-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
     </button>
   </div>

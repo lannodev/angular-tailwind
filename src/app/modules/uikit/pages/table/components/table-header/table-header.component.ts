@@ -3,10 +3,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: '[app-table-header]',
-  standalone: true,
   imports: [AngularSvgIconModule],
   templateUrl: './table-header.component.html',
-  styleUrl: './table-header.component.scss',
+  styleUrl: './table-header.component.css',
 })
 export class TableHeaderComponent {
   @Output() onCheck = new EventEmitter<boolean>();

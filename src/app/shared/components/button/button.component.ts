@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { cx } from '../../utils/ckassnames';
 
 type ButtonProps = {
@@ -12,7 +12,6 @@ type ButtonProps = {
 
 @Component({
   selector: 'app-button',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',

@@ -10,27 +10,27 @@
 <div
   [ngClass]="
     menuService.showMobileMenu
-      ? 'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200'
+      ? 'animate-fade-in-up pointer-events-auto scale-100 opacity-100 duration-200'
       : 'pointer-events-none scale-95 opacity-0 duration-100 ease-out'
   "
   class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden">
-  <div class="rounded-lg bg-background shadow-lg">
+  <div class="bg-background rounded-lg shadow-lg">
     <div class="pt-5 pb-6">
       <div class="flex items-center justify-between px-5">
         <div>
           <!-- Logo -->
           <div class="flex items-center justify-start sm:order-2 md:mr-10 lg:hidden">
-            <a class="flex items-center justify-center rounded bg-primary p-2 focus:outline-none focus:ring-1">
+            <a class="bg-primary flex items-center justify-center rounded-sm p-2 focus:outline-hidden focus:ring-1">
               <svg-icon src="assets/icons/logo.svg"> </svg-icon>
             </a>
-            <b class="pl-3 text-sm font-bold text-foreground"> Angular Tailwind </b>
+            <b class="text-foreground pl-3 text-sm font-bold"> Angular Tailwind </b>
           </div>
         </div>
         <div class="-mr-2">
           <button
             (click)="toggleMobileMenu()"
             type="button"
-            class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground transition-transform focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary hover:rotate-90 hover:bg-card hover:text-foreground">
+            class="text-muted-foreground focus:ring-primary hover:bg-card hover:text-foreground inline-flex items-center justify-center rounded-md p-2 transition-transform hover:rotate-90 focus:outline-hidden focus:ring-2 focus:ring-inset">
             <span class="sr-only">Close menu</span>
             <!-- Heroicon name: outline/x -->
             <svg-icon src="assets/icons/heroicons/outline/x.svg"> </svg-icon>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div
-        class="scrollbar-thumb-rounded scrollbar-track-rounded max-h-[500px] overflow-y-auto px-5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted">
+        class="scrollbar-thumb-rounded scrollbar-track-rounded scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted max-h-[500px] overflow-y-auto px-5">
         <app-navbar-mobile-menu></app-navbar-mobile-menu>
       </div>
     </div>

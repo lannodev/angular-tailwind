@@ -4,10 +4,9 @@ import { TableFilterService } from '../../services/table-filter.service';
 
 @Component({
   selector: 'app-table-action',
-  standalone: true,
   imports: [AngularSvgIconModule],
   templateUrl: './table-action.component.html',
-  styleUrl: './table-action.component.scss',
+  styleUrl: './table-action.component.css',
 })
 export class TableActionComponent {
   constructor(public filterService: TableFilterService) {}

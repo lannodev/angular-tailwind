@@ -1,6 +1,6 @@
 <div class="pt-4" *ngFor="let menu of menuService.pagesMenu">
   <div class="mx-1 mb-2 flex items-center justify-between">
-    <small class="text-xs font-semibold text-muted-foreground">
+    <small class="text-muted-foreground text-xs font-semibold">
       {{ menu.group }}
     </small>
   </div>
@@ -8,7 +8,7 @@
     <!-- List items -->
     <li *ngFor="let item of menu.items">
       <!-- Menu List -->
-      <div (click)="toggleMenu(item)" class="group relative text-muted-foreground hover:text-foreground">
+      <div (click)="toggleMenu(item)" class="text-muted-foreground hover:text-foreground group relative">
         <!-- Icon -->
         <div
           [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'"
@@ -26,11 +26,11 @@
         <ng-template #parentMenu let-item="item">
           <div
             routerLink="{{ item.route }}"
-            class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-card">
+            class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm">
             <a
               routerLinkActive="text-primary"
               (click)="closeMenu()"
-              class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none">
+              class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-hidden">
               {{ item.label }}
             </a>
           </div>
@@ -38,8 +38,8 @@
 
         <!-- Workaround:: Disable routerLink -->
         <ng-template #childMenu let-item="item">
-          <div class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-card">
-            <a class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none">
+          <div class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm">
+            <a class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-hidden">
               {{ item.label }}
             </a>
           </div>
@@ -49,7 +49,7 @@
         <button
           *ngIf="item.children"
           [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': item.expanded }"
-          class="pointer-events-none absolute top-1 right-0 flex items-center p-1 text-muted-foreground/50 transition-all duration-500">
+          class="text-muted-foreground/50 pointer-events-none absolute top-1 right-0 flex items-center p-1 transition-all duration-500">
           <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
         </button>
       </div>

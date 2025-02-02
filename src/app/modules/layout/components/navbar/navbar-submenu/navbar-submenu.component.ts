@@ -1,14 +1,13 @@
+import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { SubMenuItem } from 'src/app/core/models/menu.model';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { RouterLinkActive, RouterLink } from '@angular/router';
-import { NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
+import { SubMenuItem } from 'src/app/core/models/menu.model';
 
 @Component({
   selector: 'div[navbar-submenu]',
   templateUrl: './navbar-submenu.component.html',
-  styleUrls: ['./navbar-submenu.component.scss'],
-  standalone: true,
+  styleUrls: ['./navbar-submenu.component.css'],
   imports: [NgFor, NgTemplateOutlet, RouterLinkActive, RouterLink, NgIf, AngularSvgIconModule],
 })
 export class NavbarSubmenuComponent implements OnInit {
