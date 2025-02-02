@@ -1,59 +1,63 @@
 /** Apexchart **/
 .apexcharts-tooltip {
+
   /** Dark mode */
   &.apexcharts-theme-dark {
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.475rem;
     border: 0 !important;
-    background: hsl(var(--card)) !important;
-    color: hsl(var(--foreground));
+    background: var(--card) !important;
+    color: var(--foreground);
 
     .apexcharts-tooltip-title {
-      background: hsl(var(--card)) !important;
+      background: var(--card) !important;
       font-weight: 500;
-      color: hsl(var(--foreground));
-      border-bottom: 1px solid hsl(var(--border)) !important;
+      color: var(--foreground);
+      border-bottom: 1px solid var(--border) !important;
     }
   }
+
   .apexcharts-tooltip-title {
     padding: 0.5rem 1rem;
   }
 
   /** Light mode */
   &.apexcharts-theme-light {
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.475rem;
     border: 0 !important;
-    background: hsl(var(--card)) !important;
-    color: hsl(var(--foreground));
+    background: var(--background) !important;
+    color: var(--foreground);
 
     .apexcharts-tooltip-title {
-      background: hsl(var(--card)) !important;
+      background: var(--background) !important;
       font-weight: 500;
-      color: hsl(var(--foreground));
-      border-bottom: 1px solid hsl(var(--border)) !important;
+      color: var(--foreground);
+      border-bottom: 1px solid var(--border) !important;
     }
   }
+
   .apexcharts-tooltip-title {
     padding: 0.5rem 1rem;
   }
 }
 
 .apexcharts-xaxistooltip {
+
   /** Dark mode */
   &.apexcharts-theme-dark {
     border-radius: 0.475rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
     border: 0 !important;
-    background: hsl(var(--card)) !important;
-    color: hsl(var(--foreground));
+    background: var(--card) !important;
+    color: var(--foreground);
 
     &:before {
       border-bottom: 0 !important;
     }
 
     &:after {
-      border-bottom-color: hsl(var(--card)) !important;
+      border-bottom-color: var(--card) !important;
     }
   }
 
@@ -62,15 +66,15 @@
     border-radius: 0.475rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
     border: 0 !important;
-    background: hsl(var(--card)) !important;
-    color: hsl(var(--foreground));
+    background: var(--background) !important;
+    color: var(--foreground);
 
     &:before {
       border-bottom: 0 !important;
     }
 
     &:after {
-      border-bottom-color: hsl(var(--border)) !important;
+      border-bottom-color: var(--background) !important;
     }
   }
 }

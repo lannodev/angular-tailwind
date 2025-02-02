@@ -100,7 +100,6 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
     effect(() => {
       /** change chart theme */
       let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
-      primaryColor = this.HSLToHex(primaryColor);
       this.chartOptions.tooltip = {
         theme: this.themeService.theme().mode,
       };
@@ -108,31 +107,6 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
       this.chartOptions.stroke!.colors = [primaryColor];
       this.chartOptions.xaxis!.crosshairs!.stroke!.color = primaryColor;
     });
-  }
-
-  private HSLToHex(color: string): string {
-    const colorArray = color.split('%').join('').split(' ');
-    const colorHSL = colorArray.map(Number);
-    const hsl = {
-      h: colorHSL[0],
-      s: colorHSL[1],
-      l: colorHSL[2],
-    };
-
-    const { h, s, l } = hsl;
-
-    const hDecimal = l / 100;
-    const a = (s * Math.min(hDecimal, 1 - hDecimal)) / 100;
-    const f = (n: number) => {
-      const k = (n + h / 30) % 12;
-      const color = hDecimal - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-
-      // Convert to Hex and prefix with "0" if required
-      return Math.round(255 * color)
-        .toString(16)
-        .padStart(2, '0');
-    };
-    return `#${f(0)}${f(8)}${f(4)}`;
   }
 
   ngOnInit(): void {}

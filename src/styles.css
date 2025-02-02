@@ -26,21 +26,21 @@
 
   --shadow-custom: 0px 0px 50px 0px rgb(82 63 105 / 15%);
 
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-border: var(--border);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
 
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 
   @keyframes wiggle {
 
@@ -158,118 +158,118 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 210 40% 96%;
-    --card-foreground: 240 0% 0%;
-    --primary: 347 77% 50%;
-    --primary-foreground: 0 0% 100%;
-    --muted: 213 27% 84%;
-    --muted-foreground: 215 16% 47%;
-    --destructive: 350 100% 40%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
+    --background: #FFFFFF;
+    --foreground: #1C1613;
+    --card: #E2E8F0;
+    --card-foreground: #000000;
+    --primary: #E40046;
+    --primary-foreground: #FFFFFF;
+    --muted: #CBD5E1;
+    --muted-foreground: #697184;
+    --destructive: #CC0033;
+    --destructive-foreground: #FAFAFA;
+    --border: #D2D6DC;
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 14.9%;
-    --primary: 347 77% 50%;
-    --primary-foreground: 0 0% 100%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --destructive: 350 100% 40%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
+    --background: #0A0A0A;
+    --foreground: #F2F2F2;
+    --card: #121212;
+    --card-foreground: #262626;
+    --primary: #E40046;
+    --primary-foreground: #FFFFFF;
+    --muted: #262626;
+    --muted-foreground: #A3A3A3;
+    --destructive: #CC0033;
+    --destructive-foreground: #FAFAFA;
+    --border: #262626;
   }
 
   :root[data-theme='violet'] {
-    --primary: 262.1 83.3% 57.8%;
+    --primary: #2490FF;
   }
 
   .dark[data-theme='violet'] {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 222 47% 7%;
-    --card-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --destructive: 350 100% 40%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
+    --background: #060815;
+    --foreground: #F6F8FB;
+    --card: #0B0F1A;
+    --card-foreground: #F6F8FB;
+    --primary: #6244D7;
+    --primary-foreground: #F6F8FB;
+    --muted: #232B3D;
+    --muted-foreground: #A1A8BF;
+    --destructive: #CC0033;
+    --destructive-foreground: #F6F8FB;
+    --border: #232B3D;
   }
 
   :root[data-theme='red'] {
-    --primary: 350 100% 40%;
+    --primary: #CC0033;
   }
 
   .dark[data-theme='red'] {
-    --primary: 350 100% 40%;
-    --primary-foreground: 0 85.7% 97.3%;
+    --primary: #CC0033;
+    --primary-foreground: #FFF1F2;
   }
 
   :root[data-theme='blue'] {
-    --primary: 221.2 83.2% 53.3%;
+    --primary: #2563EB;
   }
 
   .dark[data-theme='blue'] {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 7%;
-    --card-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --destructive: 350 100% 40%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
+    --background: #070A1A;
+    --foreground: #F8FAFC;
+    --card: #0B0F1F;
+    --card-foreground: #F8FAFC;
+    --primary: #3B82F6;
+    --primary-foreground: #1C1F2B;
+    --muted: #1E293B;
+    --muted-foreground: #94A3B8;
+    --destructive: #CC0033;
+    --destructive-foreground: #F8FAFC;
+    --border: #1E293B;
   }
 
   :root[data-theme='orange'] {
-    --primary: 24.6 95% 53.1%;
+    --primary: #FF7A00;
   }
 
   .dark[data-theme='orange'] {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 24 10% 7%;
-    --card-foreground: 60 9.1% 97.8%;
-    --primary: 20.5 90.2% 48.2%;
-    --primary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --border: 12 6.5% 15.1%;
+    --background: #2D2A1D;
+    --foreground: #F2F9D3;
+    --card: #3C2B1E;
+    --card-foreground: #F2F9D3;
+    --primary: #9A4E26;
+    --primary-foreground: #F2F9D3;
+    --muted: #3F2F28;
+    --muted-foreground: #9E8A72;
+    --border: #3F2F28;
   }
 
   :root[data-theme='yellow'] {
-    --primary: 47.9 95.8% 53.1%;
+    --primary: #A7F300;
   }
 
   .dark[data-theme='yellow'] {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 24 10% 7%;
-    --card-foreground: 60 9.1% 97.8%;
-    --primary: 47.9 95.8% 53.1%;
-    --primary-foreground: 26 83.3% 14.1%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
+    --background: #2D2A1D;
+    --foreground: #F2F9D3;
+    --card: #3C2B1E;
+    --card-foreground: #F2F9D3;
+    --primary: #A7F300;
+    --primary-foreground: #4C2C15;
+    --muted: #3F2F28;
+    --muted-foreground: #9E8A72;
+    --destructive-foreground: #F2F9D3;
+    --border: #3F2F28;
   }
 
   :root[data-theme='green'] {
-    --primary: 142.1 76.2% 36.3%;
+    --primary: #3CBB3C;
   }
 
   .dark[data-theme='green'] {
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
+    --primary: #4CAF50;
+    --primary-foreground: #1E3A06;
   }
 
 }
