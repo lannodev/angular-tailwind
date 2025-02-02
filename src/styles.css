@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap') layer(base);
 
-@config '../tailwind.config.js';
-
 @import 'tailwindcss';
+
+/** Plugins **/
+@import './assets/styles/apexchart.scss';
 
 /* @plugin "@tailwindcss/forms"; */
 @plugin "@tailwindcss/typography";
@@ -10,6 +11,149 @@
 @plugin "tailwind-scrollbar";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-*: initial;
+  --font-poppins: Poppins, system-ui, sans-serif;
+  --font-nunito: Nunito Sans, sans-serif;
+
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-fade-in-down: fade-in-down 0.3s ease-out;
+  --animate-fade-out-down: fade-out-down 0.3s ease-out;
+  --animate-fade-in-up: fade-in-up 0.3s ease-out;
+  --animate-fade-out-up: fade-out-up 0.3s ease-out;
+
+  --shadow-custom: 0px 0px 50px 0px rgb(82 63 105 / 15%);
+
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  @keyframes wiggle {
+
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out-down {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out-up {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+}
+
+@utility container {
+  padding-inline: 1rem;
+
+  @media (width >=theme(--breakpoint-sm)) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >=theme(--breakpoint-lg)) {
+    padding-inline: 4rem;
+  }
+
+  @media (width >=theme(--breakpoint-xl)) {
+    padding-inline: 5rem;
+  }
+
+  @media (width >=theme(--breakpoint-2xl)) {
+    padding-inline: 6rem;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility dropdown-content {
+  @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
+
+  .dropdown:hover>& {
+    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+  }
+}
+
+@utility dropdown {
+  &:hover>.dropdown-content {
+    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+  }
+}
 
 @layer base {
   :root {
@@ -142,22 +286,12 @@
   [multiple],
   textarea,
   select {
-    @apply w-full rounded-md border border-border bg-background px-3 py-3 text-xs text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none focus:ring-primary;
+    @apply w-full rounded-md border border-border bg-background px-3 py-3 text-xs text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-hidden focus:ring-primary;
   }
 
   [type='checkbox'],
   [type='radio'] {
-    @apply h-4 w-4 rounded border-border bg-background text-primary focus:ring-2 focus:ring-primary;
-  }
-}
-
-@layer components {
-  .dropdown-content {
-    @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
-  }
-
-  .dropdown:hover>.dropdown-content {
-    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+    @apply h-4 w-4 rounded-sm border-border bg-background text-primary focus:ring-2 focus:ring-primary;
   }
 }
 
@@ -167,25 +301,3 @@
     padding-right: 0.5rem;
   }
 }
-
-/** Plugins **/
-@import './assets/styles/apexchart.scss';
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-/* @layer base {
-
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-} */
