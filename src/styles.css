@@ -4,7 +4,7 @@
 
 
 /** Plugins **/
-@import './assets/styles/apexchart.scss';
+@import './assets/styles/apexchart.css';
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
