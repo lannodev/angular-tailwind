@@ -1,11 +1,11 @@
 // const colors = require('tailwindcss/colors');
 
 module.exports = {
-  prefix: '',
-  mode: 'jit',
-  important: false,
-  content: ['./src/**/*.{html,ts}'],
-  darkMode: 'class',
+  // prefix: '',
+  // mode: 'jit',
+  // important: false,
+  // content: ['./src/**/*.{html,ts}'],
+  // darkMode: 'class',
   theme: {
     extend: {
       keyframes: {
