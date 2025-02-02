@@ -1,8 +1,8 @@
 <div class="flex flex-wrap items-center justify-between gap-2 py-3 px-5">
-  <h3 class="text-sm font-medium text-muted-foreground">Showing 08 of 100 users</h3>
+  <h3 class="text-muted-foreground text-sm font-medium">Showing 08 of 100 users</h3>
   <div class="flex flex-wrap gap-2">
     <div class="flex">
-      <label class="relative text-muted-foreground">
+      <label class="text-muted-foreground relative">
         <div class="absolute left-2.5 top-2.5">
           <svg-icon src="./assets/icons/heroicons/outline/magnifying-glass.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
         </div>
@@ -16,13 +16,13 @@
       </label>
     </div>
     <div class="flex flex-wrap gap-2.5">
-      <select name="status" class="w-28 p-2 text-muted-foreground" (change)="onStatusChange($event)">
+      <select name="status" class="text-muted-foreground w-28! p-2" (change)="onStatusChange($event)">
         <option value="">All</option>
         <option value="1">Active</option>
         <option value="2">Disabled</option>
         <option value="3">Pending</option>
       </select>
-      <select name="order" class="w-28 p-2 text-muted-foreground" (change)="onOrderChange($event)">
+      <select name="order" class="text-muted-foreground w-28! p-2" (change)="onOrderChange($event)">
         <option value="1">Newest</option>
         <option value="2">Oldest</option>
       </select>
