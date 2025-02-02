@@ -2,10 +2,11 @@
 
 @import 'tailwindcss';
 
+
 /** Plugins **/
 @import './assets/styles/apexchart.scss';
 
-/* @plugin "@tailwindcss/forms"; */
+@plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/aspect-ratio";
 @plugin "tailwind-scrollbar";
@@ -271,28 +272,6 @@
     --primary-foreground: 144.9 80.4% 10%;
   }
 
-  [type='text'],
-  [type='email'],
-  [type='url'],
-  [type='password'],
-  [type='number'],
-  [type='date'],
-  [type='datetime-local'],
-  [type='month'],
-  [type='search'],
-  [type='tel'],
-  [type='time'],
-  [type='week'],
-  [multiple],
-  textarea,
-  select {
-    @apply w-full rounded-md border border-border bg-background px-3 py-3 text-xs text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-hidden focus:ring-primary;
-  }
-
-  [type='checkbox'],
-  [type='radio'] {
-    @apply h-4 w-4 rounded-sm border-border bg-background text-primary focus:ring-2 focus:ring-primary;
-  }
 }
 
 /** Scroll bar **/
@@ -300,4 +279,28 @@
   .supports-scrollbars\: pr-2 {
     padding-right: 0.5rem;
   }
+}
+
+/** Custom Forms **/
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+  @apply w-full rounded-md border border-border bg-background text-xs text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-hidden focus:ring-primary;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  @apply h-4 w-4 rounded-sm border-border bg-background checked:border-primary checked:bg-primary indeterminate:border-primary indeterminate:bg-primary focus:ring-2 focus:ring-primary;
 }
