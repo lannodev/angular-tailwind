@@ -1,10 +1,9 @@
 @reference "../../../../../styles.css";
 
 .is__invalid-input {
-  border-color: #e11d48;
+  @apply border border-destructive focus:border-destructive focus:outline-hidden focus:ring-transparent;
 }
 
 .is__invalid-error {
-  color: #e11d48;
-  @apply px-1 pt-1 text-xs;
+  @apply px-1 pt-1 text-xs text-destructive;
 }

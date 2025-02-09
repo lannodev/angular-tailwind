@@ -1,8 +1,8 @@
 <!-- login form -->
 <form class="my-10 space-y-6" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="text-center">
-    <h2 class="mb-1 text-3xl font-semibold text-foreground">Hello Again <span class="text-primary">!</span></h2>
-    <p class="text-sm text-muted-foreground">Enter your credential to access your account.</p>
+    <h2 class="text-foreground mb-1 text-3xl font-semibold">Hello Again <span class="text-primary">!</span></h2>
+    <p class="text-muted-foreground text-sm">Enter your credential to access your account.</p>
   </div>
 
   <div routerLink="/dashboard">
@@ -13,8 +13,8 @@
   </div>
 
   <div
-    class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-muted after:mt-0.5 after:flex-1 after:border-t after:border-muted">
-    <p class="mx-4 mb-0 text-center text-sm text-muted-foreground">or</p>
+    class="before:border-muted after:border-muted my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t after:mt-0.5 after:flex-1 after:border-t">
+    <p class="text-muted-foreground mx-4 mb-0 text-center text-sm">or</p>
   </div>
 
   <div class="space-y-3 text-left">
@@ -29,7 +29,8 @@
           formControlName="email" />
         <label
           for="email"
-          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
+          [ngClass]="{ 'peer-focus:text-destructive!': submitted && f['email'].errors }"
+          class="bg-background text-muted-foreground peer-focus:text-primary absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform px-2 text-sm duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2">
           Email address
         </label>
       </div>
@@ -44,16 +45,17 @@
         <input
           [type]="passwordTextType ? 'text' : 'password'"
           id="password"
-          [ngClass]="{ 'is__invalid-input': submitted && f['email'].errors }"
+          [ngClass]="{ 'is__invalid-input': submitted && f['password'].errors }"
           class="peer block"
           placeholder=" "
           formControlName="password" />
         <label
           for="password"
-          class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-muted-foreground duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary">
+          [ngClass]="{ 'peer-focus:text-destructive!': submitted && f['password'].errors }"
+          class="bg-background text-muted-foreground peer-focus:text-primary absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform px-2 text-sm duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2">
           Password
         </label>
-        <span class="absolute top-2.5 right-5 cursor-pointer text-muted-foreground" (click)="togglePasswordTextType()">
+        <span class="text-muted-foreground absolute top-2.5 right-5 cursor-pointer" (click)="togglePasswordTextType()">
           <svg-icon
             [src]="
               !passwordTextType
@@ -73,7 +75,7 @@
   <div class="mb-2 flex items-center justify-between space-x-3">
     <div class="flex items-center">
       <input id="remember-me" name="remember-me" type="checkbox" />
-      <label for="remember-me" class="ml-2 block text-sm text-muted-foreground"> Remember me </label>
+      <label for="remember-me" class="text-muted-foreground ml-2 block text-sm"> Remember me </label>
     </div>
 
     <app-button routerLink="/auth/forgot-password" impact="none" tone="primary" shape="rounded" size="small">
@@ -87,7 +89,7 @@
   </div>
 
   <!-- Sign-up -->
-  <div class="flex items-center text-sm text-muted-foreground">
+  <div class="text-muted-foreground flex items-center text-sm">
     Not a Member yet?
     <app-button routerLink="/auth/sign-up" impact="none" tone="primary" shape="rounded" size="small">
       Sign up
