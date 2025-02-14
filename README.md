@@ -82,8 +82,9 @@ This project use [Hero Icons](https://heroicons.com/) , [Hero Patterns](https://
 
 Check out our awesome sponsors!
 
-[<img src="https://avatars.githubusercontent.com/u/19482926?v=4" width="50">](https://github.com/jhonnygarcia)
-[<img src="https://avatars.githubusercontent.com/u/44730111?v=4" width="50">](https://github.com/ramses-i)
+[<img src="https://avatars.githubusercontent.com/u/19482926?v=4" width="60">](https://github.com/jhonnygarcia)
+[<img src="https://avatars.githubusercontent.com/u/44730111?v=4" width="60">](https://github.com/ramses-i)
+[<img src="https://avatars.githubusercontent.com/u/67803716?v=4" width="60">](https://github.com/walteribanez555)
 
 ### Repo Activity
 
