@@ -12,7 +12,7 @@
   <!-- Dropdown -->
   <div
     [@openClose]="isOpen ? 'open' : 'closed'"
-    class="bg-background shadow-custom absolute right-0 z-20 mt-2 w-60 origin-top-right transform rounded-md py-4 ring-1 ring-transparent ring-opacity-5 transition focus:outline-hidden">
+    class="bg-background shadow-custom absolute ltr:right-0 rtl:left-0 z-20 mt-2 w-60 origin-top-right transform rounded-md py-4 ring-1 ring-transparent ring-opacity-5 transition focus:outline-hidden">
     <div class="flext-row flex items-center px-4 pb-4">
       <div class="w-10 shrink-0">
         <img class="rounded-md" src="https://avatars.githubusercontent.com/u/12519008?v=4" alt="" />
@@ -48,7 +48,7 @@
           class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
           <span
             [style.backgroundColor]="item.code"
-            class="mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-rose-500"></span>
+            class="me-1.5 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-rose-500"></span>
           <p class="capitalize">{{ item.name }}</p>
         </div>
         }
