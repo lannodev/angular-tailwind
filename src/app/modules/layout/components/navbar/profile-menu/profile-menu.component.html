@@ -83,12 +83,14 @@
           (click)="setDirection(item)"
           [ngClass]="{ 'border-muted-foreground bg-card': item == themeService.theme().direction }"
           class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-          <!-- <svg-icon
+          <svg-icon
             [src]="
-              item == 'light' ? 'assets/icons/heroicons/outline/sun.svg' : 'assets/icons/heroicons/outline/moon.svg'
+              item == 'ltr'
+                ? 'assets/icons/tablericons/text-direction-ltr.svg'
+                : 'assets/icons/tablericons/text-direction-rtl.svg'
             "
             [svgClass]="'h-5 mr-2 w-5 text-muted-foreground/50'">
-          </svg-icon> -->
+          </svg-icon>
           <p class="uppercase">{{ item }}</p>
         </div>
         }
