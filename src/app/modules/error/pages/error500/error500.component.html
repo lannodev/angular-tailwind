@@ -1,11 +1,10 @@
-<div
-  class="bg-background shadow-xs flex max-w-lg flex-col items-center justify-center gap-2 rounded-lg p-8 text-center">
+<div class="bg-background flex max-w-lg flex-col items-center justify-center gap-2 rounded-lg p-8 text-center">
+  <svg-icon src="assets/illustrations/500.svg" svgClass="w-[300px] h-[150px] text-muted-foreground"> </svg-icon>
   <h1 class="text-foreground text-4xl font-bold">Oops! Server Error</h1>
-  <p class="text-muted-foreground text-base">
+  <p class="text-muted-foreground text-sm">
     Please try again later. If the issue persists, feel free to contact us for assistance.
   </p>
   <app-button (buttonClick)="goToHomePage()" impact="bold" tone="primary" shape="rounded" size="medium">
     Homepage
   </app-button>
-  <svg-icon src="assets/illustrations/500.svg" svgClass="w-[300px] h-[300px] text-muted-foreground "> </svg-icon>
 </div>

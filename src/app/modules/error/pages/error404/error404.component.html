@@ -1,11 +1,8 @@
-<div
-  class="bg-background shadow-xs flex max-w-lg flex-col items-center justify-center gap-2 rounded-lg p-8 text-center">
-  <h1 class="text-foreground text-4xl font-bold">Oops!</h1>
-  <p class="text-muted-foreground text-base">
-    We can't find that page. You can go back to the previous page or go to the homepage.
-  </p>
+<div class="bg-background flex max-w-lg flex-col items-center justify-center gap-2 rounded-lg p-8 text-center">
+  <svg-icon src="assets/illustrations/404.svg" svgClass="w-[300px] h-[150px] text-muted-foreground"> </svg-icon>
+  <h1 class="text-foreground text-4xl font-bold">Booo!</h1>
+  <p class="text-muted-foreground text-sm">The requested page is missing. Check the URL or return to</p>
   <app-button (buttonClick)="goToHomePage()" impact="bold" tone="primary" shape="rounded" size="medium">
-    Homepage
+    Home Page
   </app-button>
-  <svg-icon src="assets/illustrations/404.svg" svgClass="w-[300px] h-[300px] text-muted-foreground  "> </svg-icon>
 </div>
