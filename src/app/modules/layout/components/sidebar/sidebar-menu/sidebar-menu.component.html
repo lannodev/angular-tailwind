@@ -37,8 +37,7 @@
 
         <!-- Workaround:: Disable routerLink -->
         <ng-template #childMenu let-item="item">
-          <div class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm 
-          ">
+          <div class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm">
             <a
               class="text-muted-foreground group-hover:text-foreground ms-10 truncate text-xs font-semibold tracking-wide focus:outline-hidden">
               {{ item.label }}
@@ -50,14 +49,15 @@
         <button
           *ngIf="item.children"
           [ngClass]="{ hidden: !menuService.showSideBar, 'ltr:rotate-90 rtl:rotate-[-90deg]': item.expanded }"
-          class="text-muted-foreground/50 pointer-events-none absolute top-1 ltr:right-0 rtl:left-0  flex items-center p-1 transition-all duration-500">
-          <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5 rtl:rotate-180'"> </svg-icon>
+          class="text-muted-foreground/50 pointer-events-none absolute top-1 flex items-center p-1 transition-all duration-500 ltr:right-0 rtl:left-0">
+          <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5 rtl:rotate-180'">
+          </svg-icon>
         </button>
 
         <!-- Tooltip -->
         <div class="fixed w-full" *ngIf="!menuService.showSideBar">
           <span
-            class="z-1 bg-foreground text-background absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md p-2 text-xs font-bold shadow-md transition-all duration-200 group-hover:scale-100">
+            class="z-1 bg-foreground text-background absolute -top-[34px] w-auto min-w-max scale-0 rounded-md p-2 text-xs font-bold shadow-md transition-all duration-200 group-hover:scale-100 ltr:left-14 ltr:origin-left rtl:right-14 rtl:origin-right">
             {{ item.label }}
           </span>
         </div>

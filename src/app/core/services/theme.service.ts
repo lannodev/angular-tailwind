@@ -6,12 +6,12 @@ import { effect } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeService {
-  public theme = signal<Theme>({ mode: 'dark', color: 'base' });
+  public theme = signal<Theme>({ mode: 'dark', color: 'base', direction: 'ltr' });
 
   constructor() {
     this.loadTheme();
     effect(() => {
-      this.setTheme();
+      this.setConfig();
     });
   }
 
@@ -22,9 +22,10 @@ export class ThemeService {
     }
   }
 
-  private setTheme() {
-    localStorage.setItem('theme', JSON.stringify(this.theme()));
+  private setConfig() {
+    this.setLocalStorage();
     this.setThemeClass();
+    this.setRTL();
   }
 
   public get isDark(): boolean {
@@ -34,5 +35,14 @@ export class ThemeService {
   private setThemeClass() {
     document.querySelector('html')!.className = this.theme().mode;
     document.querySelector('html')!.setAttribute('data-theme', this.theme().color);
+  }
+
+  private setLocalStorage() {
+    localStorage.setItem('theme', JSON.stringify(this.theme()));
+  }
+
+  private setRTL() {
+    document.querySelector('html')!.setAttribute('dir', this.theme().direction);
+    this.setLocalStorage();
   }
 }

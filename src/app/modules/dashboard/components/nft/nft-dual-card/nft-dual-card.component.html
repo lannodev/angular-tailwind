@@ -3,7 +3,7 @@
     [ngStyle]="{ 'background-image': 'url(' + nft.image + ')' }"
     class="min-h-[200px] w-full flex-1 cursor-pointer rounded-md bg-cover transition duration-150 ease-in-out hover:opacity-75"></div>
   <!-- Details  -->
-  <div class="mt-4 flex flex-1 flex-col justify-between space-y-2 sm:ml-6 md:mt-0">
+  <div class="mt-4 flex flex-1 flex-col justify-between space-y-2 ltr:sm:ml-6 rtl:sm:mr-6 md:mt-0">
     <div>
       <small class="text-muted-foreground font-semibold">NFT ID: {{ nft.id }}</small>
       <h2 class="text-foreground text-2xl font-semibold">{{ nft.title }}</h2>

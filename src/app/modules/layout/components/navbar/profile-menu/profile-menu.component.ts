@@ -86,6 +86,7 @@ export class ProfileMenuComponent implements OnInit {
   ];
 
   public themeMode = ['light', 'dark'];
+  public themeDirection = ['ltr', 'rtl'];
 
   constructor(public themeService: ThemeService) {}
 
@@ -105,6 +106,12 @@ export class ProfileMenuComponent implements OnInit {
   toggleThemeColor(color: string) {
     this.themeService.theme.update((theme) => {
       return { ...theme, color: color };
+    });
+  }
+
+  setDirection(value: string) {
+    this.themeService.theme.update((theme) => {
+      return { ...theme, direction: value };
     });
   }
 }

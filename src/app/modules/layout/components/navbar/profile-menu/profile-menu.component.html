@@ -12,7 +12,7 @@
   <!-- Dropdown -->
   <div
     [@openClose]="isOpen ? 'open' : 'closed'"
-    class="bg-background shadow-custom absolute ltr:right-0 rtl:left-0 z-20 mt-2 w-60 origin-top-right transform rounded-md py-4 ring-1 ring-transparent ring-opacity-5 transition focus:outline-hidden">
+    class="bg-background shadow-custom absolute z-20 mt-2 w-60 origin-top-right transform rounded-md py-4 ring-1 ring-transparent ring-opacity-5 transition focus:outline-hidden ltr:right-0 rtl:left-0">
     <div class="flext-row flex items-center px-4 pb-4">
       <div class="w-10 shrink-0">
         <img class="rounded-md" src="https://avatars.githubusercontent.com/u/12519008?v=4" alt="" />
@@ -45,10 +45,10 @@
           :key="$index"
           (click)="toggleThemeColor(item.name)"
           [ngClass]="{ 'border-muted-foreground bg-card': item.name == themeService.theme().color }"
-          class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+          class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start space-x-2 whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
           <span
             [style.backgroundColor]="item.code"
-            class="me-1.5 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-rose-500"></span>
+            class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-500"></span>
           <p class="capitalize">{{ item.name }}</p>
         </div>
         }
@@ -62,14 +62,36 @@
           :key="$index"
           (click)="toggleThemeMode()"
           [ngClass]="{ 'border-muted-foreground bg-card': item == themeService.theme().mode }"
-          class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+          class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start space-x-2 whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
           <svg-icon
             [src]="
               item == 'light' ? 'assets/icons/heroicons/outline/sun.svg' : 'assets/icons/heroicons/outline/moon.svg'
             "
-            [svgClass]="'h-5 mr-2 w-5 text-muted-foreground/50'">
+            [svgClass]="'h-5 w-5 text-muted-foreground/50'">
           </svg-icon>
           <p class="capitalize">{{ item }}</p>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="mx-4 my-2">
+      <span class="text-foreground text-xs font-semibold">Direction</span>
+      <div class="mt-2 grid grid-cols-2 gap-2">
+        @for (item of themeDirection; track $index) {
+        <div
+          :key="$index"
+          (click)="setDirection(item)"
+          [ngClass]="{ 'border-muted-foreground bg-card': item == themeService.theme().direction }"
+          class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground shadow-xs inline-flex h-8 cursor-pointer items-center justify-start space-x-2 whitespace-nowrap rounded-md border px-3 text-xs font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+          <svg-icon
+            [src]="
+              item == 'ltr'
+                ? 'assets/icons/tablericons/text-direction-ltr.svg'
+                : 'assets/icons/tablericons/text-direction-rtl.svg'
+            "
+            [svgClass]="'h-5 w-5 text-muted-foreground/50'">
+          </svg-icon>
+          <p class="uppercase">{{ item }}</p>
         </div>
         }
       </div>

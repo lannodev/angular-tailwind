@@ -1,7 +1,8 @@
 <div
-  class="max-h-0 overflow-hidden pt-1 pl-4 transition-all duration-500"
+  class="max-h-0 overflow-hidden pt-1 transition-all duration-500 ltr:pl-4 rtl:pr-4"
   [ngClass]="{ 'max-h-screen': submenu.expanded }">
-  <ul class="border-border text-muted-foreground flex flex-col border-l border-dashed pl-2">
+  <ul
+    class="border-border text-muted-foreground flex flex-col border-dashed ltr:border-l ltr:pl-2 rtl:border-r rtl:pr-2">
     <li *ngFor="let sub of submenu.children">
       <div class="hover:bg-card hover:text-foreground flex rounded-sm" (click)="toggleMenu(sub)">
         <!-- Condition -->
