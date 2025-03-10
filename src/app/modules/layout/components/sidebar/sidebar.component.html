@@ -10,13 +10,13 @@
           class="bg-primary flex cursor-pointer items-center justify-center rounded-sm p-2 focus:outline-hidden focus:ring-1">
           <svg-icon src="assets/icons/logo.svg"> </svg-icon>
         </a>
-        <b class="text-foreground ml-1 pl-2 text-sm font-bold">
+        <b class="text-foreground ml-1 ps-2 text-sm font-bold">
           {{ appJson.displayName }}
         </b>
       </div>
       <button
         (click)="toggleSidebar()"
-        class="text-muted-foreground/50 hover:text-muted-foreground absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-sm transition-all duration-200 focus:outline-hidden"
+        class="text-muted-foreground/50 hover:text-muted-foreground absolute top-2 rtl:left-2 ltr:right-2 flex h-5 w-5 items-center justify-center rounded-sm transition-all duration-200 focus:outline-hidden"
         [ngClass]="{ 'rotate-180': !menuService.showSideBar }">
         <svg-icon src="assets/icons/heroicons/solid/chevron-double-left.svg"> </svg-icon>
       </button>
