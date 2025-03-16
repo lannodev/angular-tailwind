@@ -1,7 +1,7 @@
 <div
   class="ps-4 max-h-0 overflow-hidden pt-1 transition-all duration-500"
   [ngClass]="{ hidden: !menuService.showSideBar, 'max-h-screen': submenu.expanded }">
-  <ul class="border-border text-muted-foreground ps-2 relative flex flex-col border-dashed ltr:border-l rtl:border-r">
+  <ul class="border-border text-muted-foreground relative flex flex-col border-dashed px-2 ltr:border-l rtl:border-r">
     <li *ngFor="let sub of submenu.children">
       <!-- <span
         class="-start-[3px] rtl:start-0 before:size-[6px] bg-primary absolute flex w-[6px] shrink-0 items-center before:absolute before:top-0 before:-translate-y-1/2 before:rounded-full rtl:before:translate-x-1/2">
@@ -47,7 +47,9 @@
         </ng-template>
       </div>
       <!-- Submenu items -->
+      @if(sub.children?.length){
       <app-sidebar-submenu [submenu]="sub"></app-sidebar-submenu>
+      }
     </li>
   </ul>
 </div>
