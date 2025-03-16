@@ -1,9 +1,13 @@
 <div
-  class="max-h-0 overflow-hidden pt-1 ps-4 transition-all duration-500"
+  class="ps-4 max-h-0 overflow-hidden pt-1 transition-all duration-500"
   [ngClass]="{ hidden: !menuService.showSideBar, 'max-h-screen': submenu.expanded }">
-  <ul class="border-border text-muted-foreground flex flex-col ltr:border-l rtl:border-r border-dashed ps-2">
+  <ul class="border-border text-muted-foreground ps-2 relative flex flex-col border-dashed ltr:border-l rtl:border-r">
     <li *ngFor="let sub of submenu.children">
-      <div class="text-muted-foreground hover:bg-card hover:text-foreground flex rounded-sm" (click)="toggleMenu(sub)">
+      <!-- <span
+        class="-start-[3px] rtl:start-0 before:size-[6px] bg-primary absolute flex w-[6px] shrink-0 items-center before:absolute before:top-0 before:-translate-y-1/2 before:rounded-full rtl:before:translate-x-1/2">
+      </span> -->
+
+      <div class="text-muted-foreground hover:text-primary flex rounded-sm" (click)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
@@ -16,20 +20,29 @@
             [routerLink]="sub.route"
             routerLinkActive="text-primary"
             [routerLinkActiveOptions]="{ exact: true }"
-            class="inline-block w-full px-4 py-2 text-xs font-semibold">
+            class="hover:bg-card inline-block w-full px-4 py-2 text-xs">
             {{ sub.label }}
           </a>
+          @if(menuService.isActive(sub.route)){
+          <span
+            class="size-[6px] bg-primary absolute flex w-[6px] translate-y-[13px] items-center rounded-full ltr:-translate-x-[11px] rtl:translate-x-[11px]">
+          </span>
+          }
         </ng-template>
 
         <!-- Child Menu -->
         <ng-template #childMenu let-sub="sub">
-          <a class="inline-block w-full cursor-pointer px-4 py-2 text-xs font-semibold">
+          <a class="inline-block w-full cursor-pointer px-4 py-2 text-xs">
             {{ sub.label }}
           </a>
           <button
-            [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': sub.expanded }"
-            class="text-muted-foreground flex items-center p-1 transition-all duration-500">
-            <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+            [ngClass]="{ hidden: !menuService.showSideBar }"
+            class="text-foreground/50 mx- mx-1 flex cursor-pointer items-center p-1 transition-all duration-500">
+            @if(!sub.expanded){
+            <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4"> </svg-icon>
+            }@else {
+            <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4"> </svg-icon>
+            }
           </button>
         </ng-template>
       </div>
