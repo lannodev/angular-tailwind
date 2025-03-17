@@ -16,9 +16,7 @@ export class SidebarSubmenuComponent implements OnInit {
 
   constructor(public menuService: MenuService) {}
 
-  ngOnInit(): void {
-    console.log(this.submenu);
-  }
+  ngOnInit(): void {}
 
   public toggleMenu(menu: any) {
     this.menuService.toggleSubMenu(menu);
