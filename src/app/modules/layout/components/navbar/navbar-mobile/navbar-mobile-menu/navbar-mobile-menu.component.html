@@ -1,18 +1,20 @@
 <div class="pt-4" *ngFor="let menu of menuService.pagesMenu">
   <div class="mx-1 mb-2 flex items-center justify-between">
-    <small class="text-muted-foreground text-xs font-semibold">
+    <small class="text-muted-foreground/50 text-xs font-semibold">
       {{ menu.group }}
     </small>
   </div>
-  <ul class="flex flex-col space-y-1">
+  <ul class="flex flex-col">
     <!-- List items -->
     <li *ngFor="let item of menu.items">
       <!-- Menu List -->
-      <div (click)="toggleMenu(item)" class="text-muted-foreground hover:text-foreground group relative">
+      <div
+        (click)="toggleMenu(item)"
+        class="text-muted-foreground hover:text-foreground group flex grow items-center gap-4">
         <!-- Icon -->
         <div
           [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'"
-          class="pointer-events-none absolute m-2">
+          class="pointer-events-none">
           <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
         </div>
 
@@ -26,11 +28,10 @@
         <ng-template #parentMenu let-item="item">
           <div
             routerLink="{{ item.route }}"
-            class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm">
+            class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm">
             <a
               routerLinkActive="text-primary"
-              (click)="closeMenu()"
-              class="truncate text-xs font-semibold tracking-wide focus:outline-hidden ltr:ml-10 rtl:mr-10">
+              class="truncate text-xs font-semibold tracking-wide focus:outline-hidden">
               {{ item.label }}
             </a>
           </div>
@@ -38,8 +39,9 @@
 
         <!-- Workaround:: Disable routerLink -->
         <ng-template #childMenu let-item="item">
-          <div class="hover:bg-card flex h-9 cursor-pointer items-center justify-start rounded-sm">
-            <a class="truncate text-xs font-semibold tracking-wide focus:outline-hidden ltr:ml-10 rtl:mr-10">
+          <div class="flex h-9 grow cursor-pointer items-center justify-start rounded-sm">
+            <a
+              class="text-muted-foreground group-hover:text-primary truncate text-xs font-semibold tracking-wide focus:outline-hidden">
               {{ item.label }}
             </a>
           </div>
@@ -48,9 +50,13 @@
         <!-- Arrow Icon -->
         <button
           *ngIf="item.children"
-          [ngClass]="{ hidden: !menuService.showSideBar, 'rotate-90': item.expanded }"
-          class="text-muted-foreground/50 pointer-events-none absolute top-1 flex items-center p-1 transition-all duration-500 ltr:right-0 rtl:left-0">
-          <svg-icon src="assets/icons/heroicons/solid/chevron-right.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+          [ngClass]="{ hidden: !menuService.showSideBar }"
+          class="text-foreground/50 flex cursor-pointer items-center justify-end p-0 transition-all duration-500 ltr:right-0 rtl:left-0">
+          @if(!item.expanded){
+          <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4"> </svg-icon>
+          }@else {
+          <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4"> </svg-icon>
+          }
         </button>
       </div>
 

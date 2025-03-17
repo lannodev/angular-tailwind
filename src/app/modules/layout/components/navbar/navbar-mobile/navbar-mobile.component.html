@@ -1,12 +1,3 @@
-<!--
-	Mobile menu, show/hide based on mobile menu state.
-	Entering: "duration-200 ease-out"
-		From: "opacity-0 scale-95"
-		To: "opacity-100 scale-100"
-	Leaving: "duration-100 ease-in"
-		From: "opacity-100 scale-100"
-		To: "opacity-0 scale-95"
--->
 <div
   [ngClass]="
     menuService.showMobileMenu
@@ -32,7 +23,6 @@
             type="button"
             class="text-muted-foreground focus:ring-primary hover:bg-card hover:text-foreground inline-flex items-center justify-center rounded-md p-2 transition-transform hover:rotate-90 focus:outline-hidden focus:ring-2 focus:ring-inset">
             <span class="sr-only">Close menu</span>
-            <!-- Heroicon name: outline/x -->
             <svg-icon src="assets/icons/heroicons/outline/x.svg"> </svg-icon>
           </button>
         </div>

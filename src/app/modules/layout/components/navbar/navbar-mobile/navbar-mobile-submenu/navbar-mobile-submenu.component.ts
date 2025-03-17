@@ -14,7 +14,7 @@ import { MenuService } from 'src/app/modules/layout/services/menu.service';
 export class NavbarMobileSubmenuComponent implements OnInit {
   @Input() public submenu = <SubMenuItem>{};
 
-  constructor(private menuService: MenuService) {}
+  constructor(public menuService: MenuService) {}
 
   ngOnInit(): void {}
 
