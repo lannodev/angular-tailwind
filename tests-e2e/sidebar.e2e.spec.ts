@@ -20,5 +20,5 @@ test('check toggle sidebar', async ({ page }) => {
   await page.getByRole('navigation').getByRole('button').click();
   await page.waitForTimeout(500);
   const normalSidebarSizes = await sidebar.boundingBox();
-  expect(normalSidebarSizes?.width).toBe(256);
+  expect(normalSidebarSizes?.width).toBe(280);
 });

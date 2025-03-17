@@ -75,7 +75,7 @@ export class MenuService implements OnDestroy {
     });
   }
 
-  private isActive(instruction: any): boolean {
+  public isActive(instruction: any): boolean {
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',
       queryParams: 'subset',
