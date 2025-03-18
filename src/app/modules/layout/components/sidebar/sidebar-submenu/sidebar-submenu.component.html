@@ -1,13 +1,10 @@
 <div
-  class="ps-4 max-h-0 overflow-hidden pt-1 transition-all duration-500"
+  class="max-h-0 overflow-hidden pt-1 transition-all duration-500 ltr:pl-4 rtl:pr-4"
   [ngClass]="{ hidden: !menuService.showSideBar, 'max-h-screen': submenu.expanded }">
-  <ul class="border-border text-muted-foreground relative flex flex-col border-dashed px-2 ltr:border-l rtl:border-r">
+  <ul
+    class="border-border text-muted-foreground flex flex-col border-dashed ltr:border-l ltr:pl-2 rtl:border-r rtl:pr-2">
     <li *ngFor="let sub of submenu.children">
-      <!-- <span
-        class="-start-[3px] rtl:start-0 before:size-[6px] bg-primary absolute flex w-[6px] shrink-0 items-center before:absolute before:top-0 before:-translate-y-1/2 before:rounded-full rtl:before:translate-x-1/2">
-      </span> -->
-
-      <div class="text-muted-foreground hover:text-primary flex rounded-sm" (click)="toggleMenu(sub)">
+      <div class="text-muted-foreground hover:text-primary relative flex" (click)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
@@ -20,12 +17,12 @@
             [routerLink]="sub.route"
             routerLinkActive="text-primary"
             [routerLinkActiveOptions]="{ exact: true }"
-            class="hover:bg-card inline-block w-full px-4 py-2 text-xs">
+            class="hover:bg-card inline-block w-full rounded-lg px-4 py-2 text-xs">
             {{ sub.label }}
           </a>
           @if(menuService.isActive(sub.route)){
           <span
-            class="size-[6px] bg-primary absolute flex w-[6px] translate-y-[13px] items-center rounded-full ltr:-translate-x-[11px] rtl:translate-x-[11px]">
+            class="size-1.5 bg-primary absolute flex translate-y-3.5 items-center rounded-full ltr:-translate-x-[11.5px] rtl:translate-x-[11.5px]">
           </span>
           }
         </ng-template>
@@ -37,7 +34,7 @@
           </a>
           <button
             [ngClass]="{ hidden: !menuService.showSideBar }"
-            class="text-foreground/50 flex cursor-pointer items-center p-1 transition-all duration-500">
+            class="text-foreground/50 flex cursor-pointer items-center justify-end px-2 transition-all duration-500">
             @if(!sub.expanded){
             <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4"> </svg-icon>
             }@else {

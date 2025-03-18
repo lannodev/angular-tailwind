@@ -12,9 +12,7 @@
         (click)="toggleMenu(item)"
         class="text-muted-foreground hover:text-foreground group flex grow items-center gap-4">
         <!-- Icon -->
-        <div
-          [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'"
-          class="pointer-events-none">
+        <div [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'">
           <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
         </div>
 
