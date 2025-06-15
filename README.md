@@ -28,7 +28,7 @@ See [Demo](https://at.lanno.dev) page.
 
 #### Versions
 
-<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 19-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 4-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
+<a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 20-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 4-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
 
 #### Features
 

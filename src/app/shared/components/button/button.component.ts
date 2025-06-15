@@ -15,7 +15,7 @@ type ButtonProps = {
   selector: 'app-button',
   imports: [CommonModule],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  styleUrl: './button.component.css',
 })
 export class ButtonComponent implements OnInit {
   impact = input<ButtonProps['impact']>('none');
