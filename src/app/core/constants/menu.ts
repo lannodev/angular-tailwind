@@ -37,7 +37,10 @@ export class Menu {
           icon: 'assets/icons/heroicons/outline/cube.svg',
           label: 'Components',
           route: '/components',
-          children: [{ label: 'Table', route: '/components/table' }],
+          children: [
+            { label: 'Table', route: '/components/table' },
+            { label: 'Cards', route: '/components/cards' }
+          ],
         },
       ],
     },
