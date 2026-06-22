@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { User } from '../../model/user.model';
@@ -7,6 +7,7 @@ import { User } from '../../model/user.model';
   selector: '[app-table-row]',
   imports: [FormsModule, AngularSvgIconModule],
   templateUrl: './table-row.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './table-row.component.css',
 })
 export class TableRowComponent {

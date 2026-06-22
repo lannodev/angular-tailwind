@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, input, ChangeDetectionStrategy } from '@angular/core';
 import { cx } from '../../utils/ckassnames';
 
 type ButtonProps = {
@@ -15,6 +15,7 @@ type ButtonProps = {
   selector: 'app-button',
   imports: [CommonModule],
   templateUrl: './button.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './button.component.css',
 })
 export class ButtonComponent implements OnInit {

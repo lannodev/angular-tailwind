@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { UikitHeaderComponent } from "../../components/uikit-header/uikit-header.component";
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { UikitHeaderComponent } from '../../components/uikit-header/uikit-header.component';
 import { NftSingleCardComponent } from 'src/app/modules/dashboard/components/nft/nft-single-card/nft-single-card.component';
 import { Nft } from 'src/app/modules/dashboard/models/nft';
 import { NftDualCardComponent } from 'src/app/modules/dashboard/components/nft/nft-dual-card/nft-dual-card.component';
 
 @Component({
   selector: 'app-cards',
-  imports: [
-    UikitHeaderComponent, NftSingleCardComponent, NftDualCardComponent],
+  imports: [UikitHeaderComponent, NftSingleCardComponent, NftDualCardComponent],
   templateUrl: './cards.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './cards.component.css',
 })
 export class CardsComponent {
-  nft: Nft[];  
+  nft: Nft[];
 
   constructor() {
     this.nft = [

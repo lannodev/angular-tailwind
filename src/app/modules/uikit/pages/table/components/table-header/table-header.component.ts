@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: '[app-table-header]',
   imports: [AngularSvgIconModule],
   templateUrl: './table-header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './table-header.component.css',
 })
 export class TableHeaderComponent {

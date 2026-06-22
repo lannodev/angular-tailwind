@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-nft-header',
-    templateUrl: './nft-header.component.html',
-    standalone: true,
+  selector: 'app-nft-header',
+  templateUrl: './nft-header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: true,
 })
 export class NftHeaderComponent implements OnInit {
   constructor() {}
