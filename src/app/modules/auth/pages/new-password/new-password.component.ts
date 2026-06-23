@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
@@ -8,6 +8,7 @@ import { ButtonComponent } from 'src/app/shared/components/button/button.compone
   selector: 'app-new-password',
   templateUrl: './new-password.component.html',
   styleUrls: ['./new-password.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FormsModule, RouterLink, AngularSvgIconModule, ButtonComponent],
 })
 export class NewPasswordComponent implements OnInit {

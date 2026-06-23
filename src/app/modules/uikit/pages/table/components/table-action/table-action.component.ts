@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { TableFilterService } from '../../services/table-filter.service';
 
@@ -6,6 +6,7 @@ import { TableFilterService } from '../../services/table-filter.service';
   selector: 'app-table-action',
   imports: [AngularSvgIconModule],
   templateUrl: './table-action.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './table-action.component.css',
 })
 export class TableActionComponent {
