@@ -46,12 +46,15 @@
             <!-- Arrow Icon -->
             @if (item.children) {
               <button
+                type="button"
+                [attr.aria-label]="item.label"
+                [attr.aria-expanded]="!!item.expanded"
                 [ngClass]="{ hidden: !menuService.showSideBar }"
                 class="text-foreground/50 flex cursor-pointer items-center justify-end p-0 transition-all duration-500 ltr:right-0 rtl:left-0">
                 @if(!item.expanded){
-                  <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4"> </svg-icon>
+                  <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4" aria-hidden="true"> </svg-icon>
                   }@else {
-                  <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4"> </svg-icon>
+                  <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4" aria-hidden="true"> </svg-icon>
                 }
               </button>
             }

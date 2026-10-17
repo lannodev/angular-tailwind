@@ -32,12 +32,15 @@
               {{ sub.label }}
             </a>
             <button
+              type="button"
+              [attr.aria-label]="sub.label"
+              [attr.aria-expanded]="!!sub.expanded"
               [ngClass]="{ hidden: !menuService.showSideBar }"
               class="text-foreground/50 flex cursor-pointer items-center justify-end px-2 transition-all duration-500">
               @if(!sub.expanded){
-                <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4"> </svg-icon>
+                <svg-icon src="assets/icons/heroicons/outline/plus.svg" svgClass="h-4 w-4" aria-hidden="true"> </svg-icon>
                 }@else {
-                <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4"> </svg-icon>
+                <svg-icon src="assets/icons/heroicons/outline/minus.svg" svgClass="h-4 w-4" aria-hidden="true"> </svg-icon>
               }
             </button>
           </ng-template>

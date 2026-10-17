@@ -2,6 +2,7 @@
   <td class="text-center">
     <input
       [(ngModel)]="user.selected"
+      [attr.aria-label]="'Select ' + user.name"
       class="checkbox checkbox-sm"
       data-datatable-row-check="true"
       type="checkbox"
@@ -35,8 +36,11 @@
   <td>{{ user.phone }}</td>
   <td class="text-center">
     <button
+      type="button"
+      [attr.aria-label]="'More actions for ' + user.name"
       class="text-muted-foreground hover:bg-card hover:text-foreground flex h-7 w-7 items-center justify-center rounded-md">
-      <svg-icon src="./assets/icons/heroicons/outline/ellipsis-vertical.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+      <svg-icon src="./assets/icons/heroicons/outline/ellipsis-vertical.svg" [svgClass]="'h-4 w-4'" aria-hidden="true">
+      </svg-icon>
     </button>
   </td>
 </ng-container>

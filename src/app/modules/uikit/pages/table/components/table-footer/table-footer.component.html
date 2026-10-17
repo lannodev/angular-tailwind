@@ -1,7 +1,7 @@
 <div class="text-muted-foreground flex flex-wrap items-center justify-between gap-2 py-3 px-5 text-xs">
   <div class="order-2 flex items-center gap-2 md:order-1">
     Show
-    <select class="w-16 p-2">
+    <select aria-label="Rows per page" class="w-16 p-2">
       <option value="5">5</option>
       <option value="10" selected>10</option>
       <option value="20">20</option>
@@ -14,9 +14,12 @@
     <span>1-10 of 100</span>
     <div class="inline-flex items-center gap-1">
       <button
+        type="button"
+        aria-label="Previous page"
         class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-sm disabled:opacity-50"
         disabled>
-        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-left.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-left.svg" [svgClass]="'h-4 w-4'" aria-hidden="true">
+        </svg-icon>
       </button>
       <button
         class="bg-muted-foreground/10 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-sm">
@@ -35,8 +38,11 @@
         ...
       </button>
       <button
+        type="button"
+        aria-label="Next page"
         class="hover:bg-muted-foreground/10 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-sm">
-        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-right.svg" [svgClass]="'h-4 w-4'"> </svg-icon>
+        <svg-icon src="./assets/icons/heroicons/outline/arrow-long-right.svg" [svgClass]="'h-4 w-4'" aria-hidden="true">
+        </svg-icon>
       </button>
     </div>
   </div>
