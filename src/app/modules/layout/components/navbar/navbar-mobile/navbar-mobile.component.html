@@ -2,9 +2,9 @@
   [ngClass]="
     menuService.showMobileMenu
       ? 'animate-fade-in-up pointer-events-auto scale-100 opacity-100 duration-200'
-      : 'pointer-events-none scale-95 opacity-0 duration-100 ease-out'
+      : 'pointer-events-none invisible scale-95 opacity-0 duration-100 ease-out'
   "
-  class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden">
+  class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition-[opacity,transform,visibility] md:hidden">
   <div class="bg-background rounded-lg shadow-lg">
     <div class="pt-5 pb-6">
       <div class="flex items-center justify-between px-5">

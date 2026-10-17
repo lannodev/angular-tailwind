@@ -1,6 +1,6 @@
 <div
   class="max-h-0 overflow-hidden pt-1 transition-all duration-500 ltr:pl-2.5 rtl:pr-2.5"
-  [ngClass]="{ 'max-h-screen': submenu.expanded }">
+  [ngClass]="{ 'max-h-screen': submenu.expanded, invisible: !submenu.expanded }">
   <ul
     class="border-border text-muted-foreground flex flex-col border-dashed ltr:border-l ltr:pl-2 rtl:border-r rtl:pr-2">
     @for (sub of submenu.children; track sub) {

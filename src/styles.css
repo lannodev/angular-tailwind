@@ -143,16 +143,19 @@
 }
 
 @utility dropdown-content {
-  @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
+  @apply pointer-events-none invisible scale-95 opacity-0 duration-100 ease-in;
 
-  .dropdown:hover>& {
-    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+  .dropdown:hover>&,
+  .dropdown:focus-within>& {
+    @apply pointer-events-auto visible block scale-100 animate-fade-in-up opacity-100 duration-200;
   }
 }
 
 @utility dropdown {
-  &:hover>.dropdown-content {
-    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+
+  &:hover>.dropdown-content,
+  &:focus-within>.dropdown-content {
+    @apply pointer-events-auto visible block scale-100 animate-fade-in-up opacity-100 duration-200;
   }
 }
 
