@@ -2,7 +2,7 @@
   <div>
     @if (menuService.showSideBar) {
       <div class="mx-1 flex items-center justify-between py-3">
-        <small [ngClass]="{ hidden: !menuService.showSideBar }" class="text-muted-foreground/50 text-xs font-semibold">
+        <small [ngClass]="{ hidden: !menuService.showSideBar }" class="text-muted-foreground text-xs font-semibold">
           {{ menu.group }}
         </small>
       </div>
