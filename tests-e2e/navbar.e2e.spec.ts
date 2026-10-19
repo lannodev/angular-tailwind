@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test('check navbar menu appears', async ({ page }) => {
   await page.getByRole('button', { name: 'Base' }).hover();
-  const authButton = page.getByRole('button', { name: 'Auth' });
+  const authButton = page.locator('app-navbar').getByRole('button', { name: 'Auth' });
   await expect(authButton).toBeVisible();
   await authButton.hover();
   const menu = page.locator('.dropdown-content ul').nth(2);

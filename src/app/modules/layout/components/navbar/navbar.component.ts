@@ -13,7 +13,7 @@ import { ProfileMenuComponent } from './profile-menu/profile-menu.component';
   imports: [AngularSvgIconModule, NavbarMenuComponent, ProfileMenuComponent, NavbarMobileComponent],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private menuService: MenuService) {}
+  constructor(public menuService: MenuService) {}
 
   ngOnInit(): void {}
 

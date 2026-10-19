@@ -20,9 +20,11 @@
       }
       <button
         (click)="toggleSidebar()"
+        type="button"
+        [attr.aria-label]="menuService.showSideBar ? 'Collapse sidebar' : 'Expand sidebar'"
         class="text-muted-foreground/50 hover:text-muted-foreground flex items-center justify-center rounded-md p-2 transition-all duration-200 focus:outline-hidden"
         [ngClass]="{ 'rotate-180': !menuService.showSideBar }">
-        <svg-icon src="assets/icons/heroicons/solid/chevron-double-left.svg"> </svg-icon>
+        <svg-icon src="assets/icons/heroicons/solid/chevron-double-left.svg" aria-hidden="true"> </svg-icon>
       </button>
     </div>
 

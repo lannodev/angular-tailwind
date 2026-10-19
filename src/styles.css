@@ -143,16 +143,19 @@
 }
 
 @utility dropdown-content {
-  @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
+  @apply pointer-events-none invisible scale-95 opacity-0 duration-100 ease-in;
 
-  .dropdown:hover>& {
-    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+  .dropdown:hover>&,
+  .dropdown:has(:focus-visible)>& {
+    @apply pointer-events-auto visible block scale-100 animate-fade-in-up opacity-100 duration-200;
   }
 }
 
 @utility dropdown {
-  &:hover>.dropdown-content {
-    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+
+  &:hover>.dropdown-content,
+  &:has(:focus-visible)>.dropdown-content {
+    @apply pointer-events-auto visible block scale-100 animate-fade-in-up opacity-100 duration-200;
   }
 }
 
@@ -165,7 +168,7 @@
     --primary: #E11D48;
     --primary-foreground: #FFFFFF;
     --muted: #CFD9E5;
-    --muted-foreground: #64748B;
+    --muted-foreground: #4F5D75;
     --destructive: #CC0033;
     --destructive-foreground: #FAFAFA;
     --border: #E2E8F0;

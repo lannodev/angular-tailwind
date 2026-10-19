@@ -1,11 +1,17 @@
 <ng-container>
   <th class="w-[50px]">
-    <input (change)="toggle($event)" class="checkbox checkbox-sm" data-datatable-check="true" type="checkbox" />
+    <span class="sr-only">Select</span>
+    <input
+      (change)="toggle($event)"
+      aria-label="Select all members"
+      class="checkbox checkbox-sm"
+      data-datatable-check="true"
+      type="checkbox" />
   </th>
   <th class="min-w-[300px]">Member</th>
   <th class="min-w-[180px]">Username</th>
   <th class="min-w-[180px]">Hobbies</th>
   <th class="min-w-[180px]">Occupation</th>
   <th class="min-w-[150px]">Phone</th>
-  <th class="w-[60px]"></th>
+  <th class="w-[60px]"><span class="sr-only">Actions</span></th>
 </ng-container>
